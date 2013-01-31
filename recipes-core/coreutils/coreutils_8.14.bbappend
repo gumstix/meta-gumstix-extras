@@ -4,6 +4,6 @@ PRINC := "${@int(PRINC) + 1}"
 
 do_install_append() {
 	install -d ${D}${bindir}
-	ln -s env.${PN} ${D}${bindir}/env
+#	ln -s env.${PN} ${D}${bindir}/env
 }
 

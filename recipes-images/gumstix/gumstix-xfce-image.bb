@@ -36,7 +36,6 @@ XFCE_DOCS = " \
   xfce4-screenshooter-doc \
   xfce4-session-doc \
   xfce-terminal-doc \
-  xfce-utils-doc \
   xfdesktop-doc \
   xfwm4-doc \
  "

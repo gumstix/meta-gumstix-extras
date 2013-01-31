@@ -37,7 +37,6 @@ BASE_INSTALL = " \
   shadow tinylogin \
   systemd systemd-compat-units \
   u-boot-mkimage \
-  udev \
   udisks udisks-systemd \
   upower \
   update-alternatives-cworth \
