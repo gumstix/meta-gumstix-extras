@@ -10,6 +10,10 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-openembedded/meta-gnome \
   ##COREBASE##/meta-openembedded/meta-oe \
   ##COREBASE##/meta-openembedded/meta-xfce \
+  ##COREBASE##/meta-openembedded/meta-systemd \
+  ##COREBASE##/meta-openembedded/meta-networking \
+  ##COREBASE##/meta-openembedded/meta-efl \
+  ##COREBASE##/meta-openembedded/meta-multimedia \
   ##COREBASE##/meta-gumstix \
   ##COREBASE##/meta-gumstix-extras \
   "
