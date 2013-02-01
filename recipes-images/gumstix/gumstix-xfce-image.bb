@@ -9,7 +9,7 @@ XSERVER +=  "\
  "
 
 XFCE_INSTALL = " \
-  task-xfce-base \
+  packagegroup-xfce-base \
   gdm-systemd \
   "
 
@@ -37,7 +37,6 @@ XFCE_DOCS = " \
   xfce4-session-doc \
   xfce-terminal-doc \
   xfdesktop-doc \
-  xfwm4-doc \
  "
 IMAGE_INSTALL += " \
   ${XSERVER} \
