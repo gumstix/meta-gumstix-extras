@@ -1,7 +1,5 @@
 LICENSE_FLAGS_WHITELIST = "commercial"
 
-SOURCE_MIRROR_URL ?= "http://source-cache.gumstix.org/"
-INHERIT += "own-mirrors"
 #
 # This file is your local configuration file and is where all local user settings
 # are placed. The comments in this file give some guide to the options a new user
@@ -15,18 +13,23 @@ INHERIT += "own-mirrors"
 # the option is a question of removing the # character and making any change to the
 # variable as required.
 
+# Use Gumstix source mirror as default premirror
+SOURCE_MIRROR_URL ?= "http://source-cache.gumstix.org/"
+INHERIT += "own-mirrors"
+#BB_GENERATE_MIRROR_TARBALLS = "1"
+
 #
 # Parallelism Options
 #
 # These two options control how much parallelism BitBake should use. The first 
 # option determines how many tasks bitbake should run in parallel:
 #
-BB_NUMBER_THREADS = "4"
+BB_NUMBER_THREADS ?= "4"
 # 
 # The second option controls how many processes make should run in parallel when
 # running compile tasks:
 #
-PARALLEL_MAKE = "-j 4"
+PARALLEL_MAKE ?= "-j 4"
 #
 # For a quad-core machine, BB_NUMBER_THREADS = "4", PARALLEL_MAKE = "-j 4" would
 # be appropriate for example.
@@ -52,7 +55,7 @@ PARALLEL_MAKE = "-j 4"
 #MACHINE ?= "routerstationpro"
 #
 # This sets the default machine to be qemux86 if no other machine is selected:
-MACHINE ??= "overo"
+MACHINE ?= "overo"
 
 #
 # Where to place downloads
@@ -221,7 +224,7 @@ PATCHRESOLVE = "noop"
 # machines). This variable works like fetcher MIRRORS/PREMIRRORS and points to the 
 # cache locations to check for the shared objects.
 #SSTATE_MIRRORS ?= "\
-#file://.* http://sstate-cache.gumstix.org/" 
+#file://.* http://sstate-cache.gumstix.org/"
 
 # CONF_VERSION is increased each time build/conf/ changes incompatibly and is used to
 # track the version of this file when it was generated. This can safely be ignored if
