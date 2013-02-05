@@ -1,5 +1,7 @@
 LICENSE_FLAGS_WHITELIST = "commercial"
 
+SOURCE_MIRROR_URL ?= "http://source-cache.gumstix.org/"
+INHERIT += "own-mirrors"
 #
 # This file is your local configuration file and is where all local user settings
 # are placed. The comments in this file give some guide to the options a new user
