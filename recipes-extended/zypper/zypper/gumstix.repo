@@ -1,0 +1,7 @@
+[gumstix]
+name=gumstix
+enabled=1
+autorefresh=1
+baseurl=http://package-cache.gumstix.org
+type=rpm-md
+keeppackages=0
