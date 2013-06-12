@@ -1,8 +1,10 @@
 DESCRIPTION = "The most basic Gumstix image"
+LICENSE = "CLOSED"
 
-inherit image
+inherit core-image
+
 IMAGE_FEATURES += "package-management"
-IMAGE_EXTRA_INSTALL ?= ""
+IMAGE_INSTALL = "packagegroup-core-boot ${ROOTFS_PKGMANAGE_BOOTSTRAP} ${CORE_IMAGE_EXTRA_INSTALL} "
 
 DEPENDS = "virtual/kernel"
 
@@ -14,11 +16,10 @@ AUDIO_INSTALL = " \
   alsa-utils-speakertest \
  "
 
-
 BASE_INSTALL = " \
   ${MACHINE_EXTRA_RRECOMMENDS} \
   ${@base_contains("DISTRO_FEATURES", "bluetooth", "bluez4", "", d)} \
-  avahi-systemd avahi-utils \
+  avahi-utils \
   base-files \
   base-passwd \
   bash \
@@ -29,20 +30,16 @@ BASE_INSTALL = " \
   man-pages \
   memtester \
   netbase \
-  ntp-systemd \
   net-tools \
   polkit \
-  rsyslog-systemd \
   sed \
   shadow tinylogin \
-  systemd systemd-compat-units \
   u-boot-mkimage \
-  udisks udisks-systemd \
+  udisks \
   upower \
   update-alternatives-cworth \
   util-linux \
   which \
-  zypper \
  "
 
 FIRMWARE_INSTALL = " \
@@ -72,22 +69,27 @@ TOOLS_INSTALL = " \
   gzip \
   htop \
   nano \
-  openssh-ssh openssh-keygen openssh-scp openssh-sshd-systemd \
+  openssh-ssh openssh-keygen openssh-scp \
   sudo \
-  systemd-analyze \
   tar \
-  vim \
   wget \
   zip \
  "
+ROS_INSTALL = "packagegroup-core-ssh-openssh cmake \
+  python-modules python-misc python-empy python-setuptools \
+  boost boost-dev python-dev libtinyxml libtinyxml-dev \
+  log4cxx log4cxx-dev libbz2-dev \
+  python-argparse python-rosdep python-wstool \
+  roslaunch \
+"
 
 IMAGE_INSTALL += " \
+  ${ROOTFS_PKGMANAGE} \
   ${BASE_INSTALL} \
   ${AUDIO_INSTALL} \
-  ${FIRMWARE_INSTALL} \
   ${NETWORK_INSTALL} \
-  ${ROOTFS_PKGMANAGE} \
   ${TOOLS_INSTALL} \
+  ${ROS_INSTALL} \
  "
 
 # this section removes remnants of legacy sysvinit support
@@ -105,8 +107,8 @@ IMAGE_FILE_BLACKLIST += " \
                        "
 
 remove_blacklist_files() {
-	for i in ${IMAGE_FILE_BLACKLIST}; do
-		rm -rf ${IMAGE_ROOTFS}$i
+        for i in ${IMAGE_FILE_BLACKLIST}; do
+	   rm -rf ${IMAGE_ROOTFS}$i
 	done
 
 }

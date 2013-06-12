@@ -10,7 +10,6 @@ XSERVER +=  "\
 
 XFCE_INSTALL = " \
   packagegroup-xfce-base \
-  gdm-systemd \
   "
 
 XFCE_APPS = "\
