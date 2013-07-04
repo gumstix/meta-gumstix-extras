@@ -75,6 +75,13 @@ TOOLS_INSTALL = " \
   wget \
   zip \
  "
+ROS_INSTALL = "packagegroup-core-ssh-openssh cmake \
+  python-modules python-misc python-empy python-setuptools \
+  boost boost-dev python-dev libtinyxml libtinyxml-dev \
+  log4cxx log4cxx-dev libbz2-dev \
+  python-argparse python-rosdep python-wstool \
+  roslaunch \
+"
 
 IMAGE_INSTALL += " \
   ${ROOTFS_PKGMANAGE} \
@@ -82,6 +89,7 @@ IMAGE_INSTALL += " \
   ${AUDIO_INSTALL} \
   ${NETWORK_INSTALL} \
   ${TOOLS_INSTALL} \
+  ${ROS_INSTALL} \
  "
 
 # this section removes remnants of legacy sysvinit support

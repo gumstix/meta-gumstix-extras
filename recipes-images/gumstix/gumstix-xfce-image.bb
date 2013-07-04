@@ -42,7 +42,6 @@ IMAGE_INSTALL += " \
   ${XFCE_INSTALL} \
   ${XFCE_APPS} \
   ${XFCE_THEMES} \
-  ${XFCE_DOCS} \
  "
 
 # this section removes remnants of legacy sysvinit support
