@@ -3,6 +3,7 @@ LICENSE = "CLOSED"
 
 inherit core-image
 
+CORE_IMAGE_EXTRA_INSTALL += "linux-firmware-rtl-license"
 IMAGE_FEATURES += "package-management"
 IMAGE_INSTALL = "packagegroup-core-boot ${ROOTFS_PKGMANAGE_BOOTSTRAP} ${CORE_IMAGE_EXTRA_INSTALL} "
 
