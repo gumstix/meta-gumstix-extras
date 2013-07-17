@@ -108,7 +108,7 @@ remove_blacklist_files() {
 
 }
 
-set_gumstix_user_and_root_passowrd() {
+set_gumstix_user_and_root_password() {
         ls ${IMAGE_ROOTFS}/etc
 	sed "s^root::0:0:root:$/home/root:/bin/bash^root:VQ43An5F8LYqc:0:0:root:/home/root:/bin/bash^" ${IMAGE_ROOTFS}/etc/passwd
 	echo "gumstix:x:500:" >> ${IMAGE_ROOTFS}/etc/group
