@@ -35,6 +35,7 @@ BASE_INSTALL = " \
   polkit \
   sed \
   shadow tinylogin \
+  strace \
   u-boot-mkimage \
   udisks \
   upower \
@@ -81,9 +82,9 @@ IMAGE_INSTALL += " \
   ${ROOTFS_PKGMANAGE} \
   ${BASE_INSTALL} \
   ${AUDIO_INSTALL} \
-  ${FIRMWARE_INSTALL} \
   ${NETWORK_INSTALL} \
   ${TOOLS_INSTALL} \
+  ${FIRMWARE_INSTALL} \
  "
 
 # this section removes remnants of legacy sysvinit support
@@ -107,5 +108,20 @@ remove_blacklist_files() {
 
 }
 
-ROOTFS_POSTPROCESS_COMMAND =+ "remove_blacklist_files ; "
+set_gumstix_user_and_root_passowrd() {
+        ls ${IMAGE_ROOTFS}/etc
+	sed "s^root::0:0:root:$/home/root:/bin/bash^root:VQ43An5F8LYqc:0:0:root:/home/root:/bin/bash^" ${IMAGE_ROOTFS}/etc/passwd
+	echo "gumstix:x:500:" >> ${IMAGE_ROOTFS}/etc/group
+	echo "gumstix:VQ43An5F8LYqc:500:500:Gumstix User,,,:/home/gumstix:/bin/bash"  >> ${IMAGE_ROOTFS}/etc/passwd
+
+	install -d ${IMAGE_ROOTFS}/home/gumstix
+	cp -f ${IMAGE_ROOTFS}/etc/skel/.bashrc ${IMAGE_ROOTFS}/etc/skel/.profile ${IMAGE_ROOTFS}/home/gumstix
+	chown gumstix:gumstix -R ${IMAGE_ROOTFS}/home/gumstix
+
+	echo "%gumstix ALL=(ALL) ALL" >> ${IMAGE_ROOTFS}/etc/sudoers
+	chmod 0440 ${IMAGE_ROOTFS}/etc/sudoers
+	chmod u+s ${IMAGE_ROOTFS}/usr/bin/sudo
+}
+
+ROOTFS_POSTPROCESS_COMMAND =+ "remove_blacklist_files ; set_gumstix_user_and_root_password ; "
 
