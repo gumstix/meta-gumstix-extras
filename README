@@ -3,15 +3,19 @@ Yocto layer for images and extra recipes for Gumstix products.
 This layer depends on:
 
 URI: git://git.yoctoproject.org/poky.git
-branch: danny
+branch: dylan
 revision: HEAD
 
 URI: git://github.com/openembedded/meta-oe.git
-branch: danny
+branch: dylan
 revision: HEAD
 
 URI: git://github.com/gumstix/meta-gumstix.git
-branch: danny
+branch: dylan
+revision: HEAD
+
+URI: git://github.com/bmwcarit/meta-ros.git
+branch: master
 revision: HEAD
 
 Layer maintainer: Adam Lee <adam@gumstix.com> for Gumstix, Inc.
