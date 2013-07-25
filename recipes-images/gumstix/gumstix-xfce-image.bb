@@ -11,6 +11,8 @@ XSERVER +=  "\
 XFCE_INSTALL = " \
   packagegroup-xfce-base \
   gdm \
+  gnome-keyring \
+  polkit-gnome \
   "
 
 XFCE_APPS = "\
