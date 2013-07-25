@@ -3,7 +3,6 @@ LICENSE = "CLOSED"
 
 inherit core-image
 
-CORE_IMAGE_EXTRA_INSTALL += "linux-firmware-rtl-license"
 IMAGE_FEATURES += "package-management"
 IMAGE_INSTALL = "packagegroup-core-boot ${ROOTFS_PKGMANAGE_BOOTSTRAP} ${CORE_IMAGE_EXTRA_INSTALL} "
 
@@ -44,13 +43,13 @@ BASE_INSTALL = " \
   which \
  "
 
+# Gumstix machines individually RDEPEND on the firware they need but we repeat
+# it here as we might want to use the same image on multiple different machines.
 FIRMWARE_INSTALL = " \
   linux-firmware-sd8686 \
-  linux-firmware-rtl8192cu \
-  linux-firmware-rtl8192ce \
-  linux-firmware-rtl8192su \
-  linux-firmware-wl12xx \
+  linux-firmware-sd8787 \
  "
+
 NETWORK_INSTALL = " \
   rfkill \
   wireless-tools \
