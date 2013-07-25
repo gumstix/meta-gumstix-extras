@@ -19,7 +19,7 @@ AUDIO_INSTALL = " \
 
 BASE_INSTALL = " \
   ${MACHINE_EXTRA_RRECOMMENDS} \
-  ${@base_contains("DISTRO_FEATURES", "bluetooth", "bluez4", "", d)} \
+  ${@base_contains("PACKAGECONFIG", "bluetooth", "bluez4", "", d)} \
   avahi-utils \
   base-files \
   base-passwd \
@@ -52,12 +52,10 @@ FIRMWARE_INSTALL = " \
   linux-firmware-wl12xx \
  "
 NETWORK_INSTALL = " \
-  networkmanager \
-  networkmanager-tests \
   rfkill \
   wireless-tools \
   crda \ 
-  ${@base_contains("DISTRO_FEATURES", "wifi", "iw wpa-supplicant", "", d)} \
+  ${@base_contains("PACKAGECONFIG", "wifi", "iw wpa-supplicant", "", d)} \
  "
 
 TOOLS_INSTALL = " \
@@ -110,7 +108,6 @@ remove_blacklist_files() {
 }
 
 set_gumstix_user_and_root_password() {
-        ls ${IMAGE_ROOTFS}/etc
 	sed "s^root::0:0:root:$/home/root:/bin/bash^root:VQ43An5F8LYqc:0:0:root:/home/root:/bin/bash^" ${IMAGE_ROOTFS}/etc/passwd
 	echo "gumstix:x:500:" >> ${IMAGE_ROOTFS}/etc/group
 	echo "gumstix:VQ43An5F8LYqc:500:500:Gumstix User,,,:/home/gumstix:/bin/bash"  >> ${IMAGE_ROOTFS}/etc/passwd
