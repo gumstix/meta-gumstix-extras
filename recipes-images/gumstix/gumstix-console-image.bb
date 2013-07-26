@@ -120,5 +120,11 @@ set_gumstix_user_and_root_password() {
 	chmod u+s ${IMAGE_ROOTFS}/usr/bin/sudo
 }
 
-ROOTFS_POSTPROCESS_COMMAND =+ "remove_blacklist_files ; set_gumstix_user_and_root_password ; "
+add_custom_smart_config() {
+        smart --data-dir=${IMAGE_ROOTFS}/var/lib/smart channel --add gumstix type=rpm-md name="Gumstix Package Repository" baseurl=http://package-cache.gumstix.org/ -y
+}
+
+
+
+ROOTFS_POSTPROCESS_COMMAND =+ "remove_blacklist_files ; set_gumstix_user_and_root_password ; add_custom_smart_config ;"
 
