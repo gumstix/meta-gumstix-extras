@@ -14,10 +14,8 @@ LICENSE_FLAGS_WHITELIST = "commercial"
 # variable as required.
 
 # Set a few Preferred Providers that aren't specified elsewhere
-PREFERRED_PROVIDER_ntp = "ntp"
-PREFERRED_PROVIDER_udev = "systemd"
-PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
-PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
+PREFERRED_PROVIDER_jpeg = "jpeg"
+PREFERRED_PROVIDER_jpeg-native = "jpeg-native"
 
 # Use Gumstix source mirror as default premirror
 SOURCE_MIRROR_URL ?= "http://source-cache.gumstix.org/"
@@ -177,7 +175,7 @@ EXTRA_IMAGE_FEATURES = "debug-tweaks"
 #   - 'image-swab' to perform host system intrusion detection
 # NOTE: if listing mklibs & prelink both, then make sure mklibs is before prelink
 # NOTE: mklibs also needs to be explicitly enabled for a given image, see local.conf.extended
-USER_CLASSES ?= "buildstats image-mklibs image-prelink"
+USER_CLASSES ?= "image-mklibs image-prelink"
 
 #
 # Runtime testing of images
@@ -242,6 +240,6 @@ CONF_VERSION = "1"
 # 
 # Gumstix shared distro features
 #
-DISTRO_FEATURES_append = " systemd pam"
+DISTRO_FEATURES_append = " systemd"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
