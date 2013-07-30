@@ -60,4 +60,9 @@ IMAGE_FILE_BLACKLIST += " \
 			/usr/share/gdm/autostart/LoginWindow/metacity.desktop \
 			/usr/share/gdm/autostart/LoginWindow/orca-screen-reader.desktop \
                        "
+set_xfce_user_permissions() {
+	gpasswd -a gumstix network
+	gpasswd -a gumstix sudo
+}
 
+ROOTFS_POSTPROCESS_COMMAND =+ "set_xfce_user_permissions"

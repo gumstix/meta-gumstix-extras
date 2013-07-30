@@ -1,0 +1,8 @@
+/* give group 'power' rights to change settings */
+/* taken from https://wiki.archlinux.org/index.php/NetworkManager#Set_up_PolicyKit_permissions */
+
+polkit.addRule(function(action, subject) {
+  if (action.id.indexOf("org.freedesktop.login1.") == 0 && subject.isInGroup("sudo")) {
+    return polkit.Result.YES;
+  }
+});
