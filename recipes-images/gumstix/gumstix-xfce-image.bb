@@ -13,6 +13,9 @@ XFCE_INSTALL = " \
   gdm \
   gnome-keyring \
   polkit-gnome \
+  polkit-group-network \
+  polkit-group-datetime \
+  polkit-group-shutdown \
   "
 
 XFCE_APPS = "\
