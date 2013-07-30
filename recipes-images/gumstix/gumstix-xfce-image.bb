@@ -63,8 +63,7 @@ IMAGE_FILE_BLACKLIST += " \
 			/usr/share/gdm/autostart/LoginWindow/metacity.desktop \
 			/usr/share/gdm/autostart/LoginWindow/orca-screen-reader.desktop \
                        "
-set_gumstix_user_and_root_password() {
-	sed "s^root::0:0:root:$/home/root:/bin/bash^root:VQ43An5F8LYqc:0:0:root:/home/root:/bin/bash^" ${IMAGE_ROOTFS}/etc/passwd
+set_gumstix_user() {
 	echo "gumstix:x:500:" >> ${IMAGE_ROOTFS}/etc/group
 	echo "gumstix:VQ43An5F8LYqc:500:500:Gumstix User,,,:/home/gumstix:/bin/bash"  >> ${IMAGE_ROOTFS}/etc/passwd
 
@@ -82,4 +81,4 @@ set_gumstix_user_and_root_password() {
 }
 
 
-ROOTFS_POSTPROCESS_COMMAND =+ "set_gumstix_user_and_root_password"
+ROOTFS_POSTPROCESS_COMMAND =+ "set_gumstix_user"
