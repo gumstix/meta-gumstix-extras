@@ -20,18 +20,4 @@ IMAGE_INSTALL += " \
   polkit-group-rule-shutdown \
 "
 
-set_gumstix_user() {
-	echo "gumstix:x:500:" >> ${IMAGE_ROOTFS}/etc/group
-	echo "gumstix:VQ43An5F8LYqc:500:500:Gumstix User,,,:/home/gumstix:/bin/bash"  >> ${IMAGE_ROOTFS}/etc/passwd
 
-	install -d ${IMAGE_ROOTFS}/home/gumstix
-	cp -f ${IMAGE_ROOTFS}/etc/skel/.bashrc ${IMAGE_ROOTFS}/etc/skel/.profile ${IMAGE_ROOTFS}/home/gumstix
-	chown gumstix:gumstix -R ${IMAGE_ROOTFS}/home/gumstix
-
-	echo "%gumstix ALL=(ALL) ALL" >> ${IMAGE_ROOTFS}/etc/sudoers
-	chmod 0440 ${IMAGE_ROOTFS}/etc/sudoers
-	chmod u+s ${IMAGE_ROOTFS}/usr/bin/sudo
-}
-
-
-#ROOTFS_POSTPROCESS_COMMAND =+ "set_gumstix_user"
