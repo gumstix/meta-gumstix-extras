@@ -24,6 +24,7 @@ TOOLS_INSTALL = " \
   iw \
   memtester \
   nano \
+  sudo \
   tar \
   tslib \
   u-boot-mkimage \
