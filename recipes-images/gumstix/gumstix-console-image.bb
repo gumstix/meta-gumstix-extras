@@ -42,7 +42,7 @@ IMAGE_INSTALL += " \
 "
 
 add_custom_smart_config() {
-        smart --data-dir=${IMAGE_ROOTFS}/var/lib/smart channel --add gumstix type=rpm-md name="Gumstix Package Repository" baseurl=http://package-cache.gumstix.org/dev/ -y
+        smart --data-dir=${IMAGE_ROOTFS}/var/lib/smart channel --add gumstix type=rpm-md name="Gumstix Package Repository" baseurl=http://package-cache.s3-website-us-west-2.amazonaws.com/dev/ -y
 }
 set_gumstix_user() {
 	echo "gumstix:x:500:" >> ${IMAGE_ROOTFS}/etc/group
