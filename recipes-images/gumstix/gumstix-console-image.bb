@@ -24,6 +24,7 @@ TOOLS_INSTALL = " \
   iw \
   memtester \
   nano \
+  ntp \
   sudo \
   tar \
   tslib \
