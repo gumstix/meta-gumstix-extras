@@ -242,4 +242,5 @@ CONF_VERSION = "1"
 #
 DISTRO_FEATURES_append = " systemd"
 VIRTUAL-RUNTIME_init_manager = "systemd"
+VIRTUAL-RUNTIME_graphical_init_manager = "gdm"
 DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
