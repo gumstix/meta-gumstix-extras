@@ -6,6 +6,7 @@ SRC_URI += " file://bluetooth-ttyO1.service"
 inherit systemd
 
 SYSTEMD_SERVICE_${PN} = "bluetooth-ttyO1.service bluetooth.service"
+SYSTEMD_AUTO_ENABLE = "enable"
 
 do_install_append() {
     install -d ${D}${systemd_unitdir}/system
