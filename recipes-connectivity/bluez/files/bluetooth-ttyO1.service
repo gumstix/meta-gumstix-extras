@@ -1,8 +1,0 @@
-[Unit]
-Description=Attach CSR Bluetooth Adapter on ttyO1
-
-[Service]
-ExecStart=/usr/sbin/hciattach -n ttyO1 csr
-
-[Install]
-WantedBy=default.target
