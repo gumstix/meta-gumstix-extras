@@ -1,0 +1,27 @@
+From 9c706a7943155845c4b70da203638d4434ff0c1e Mon Sep 17 00:00:00 2001
+From: Ash Charles <ashcharles@gmail.com>
+Date: Wed, 28 Aug 2013 19:49:14 -0700
+Subject: [PATCH] Assume testfreq is on the systempath
+
+
+Signed-off-by: Ash Charles <ashcharles@gmail.com>
+---
+ e2eaudiotest.sh |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/e2eaudiotest.sh b/e2eaudiotest.sh
+index 62ae43c..9cf71c3 100755
+--- a/e2eaudiotest.sh
++++ b/e2eaudiotest.sh
+@@ -14,7 +14,7 @@ STPID=$!
+ trap "kill $STPID" TERM INT EXIT
+ 
+ # check the loopback frequency
+-if ./testfreq ; then
++if testfreq ; then
+    # do the successful LAVA return 
+    echo "e2eaudiotest: pass 440 sinewave detected"
+ else
+-- 
+1.7.10.4
+

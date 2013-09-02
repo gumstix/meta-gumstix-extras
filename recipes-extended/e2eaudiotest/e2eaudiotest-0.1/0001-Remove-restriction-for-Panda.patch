@@ -1,0 +1,30 @@
+From f056c50d5db7ce8612b8a75f74dd577b9b0089ea Mon Sep 17 00:00:00 2001
+From: Ash Charles <ashcharles@gmail.com>
+Date: Wed, 28 Aug 2013 19:27:12 -0700
+Subject: [PATCH] Remove restriction for Panda.
+
+This works on other platforms too.
+---
+ e2eaudiotest.sh |    9 ---------
+ 1 file changed, 9 deletions(-)
+
+diff --git a/e2eaudiotest.sh b/e2eaudiotest.sh
+index 62ae43c..73d672f 100755
+--- a/e2eaudiotest.sh
++++ b/e2eaudiotest.sh
+@@ -1,12 +1,3 @@
+-# determine type of dev board and attempt configuration
+-if grep -q "Panda" /proc/cpuinfo ; then
+-   # we are testing a pandaboard
+-   echo "e2eaudiiotest: Pandaboard device configuration" 
+-   ./pandaboard.sh
+-else
+-   echo "e2eaudiotest: Unknown device, no configuration done"
+-fi
+-
+ #play a sine wave at A 440 hz
+ speaker-test -t sine -f 440 -l 1 &
+ 
+-- 
+1.7.10.4
+
