@@ -16,6 +16,7 @@ FIRMWARE_INSTALL = " \
 
 TOOLS_INSTALL = " \
   alsa-utils \
+  e2eaudiotest \
   systemd-analyze \
   cpufrequtils \
   grep \
@@ -33,6 +34,10 @@ TOOLS_INSTALL = " \
   vim \
   wget \
   zip \
+  media-ctl \
+  yavta \
+  v4l-utils \
+  mplayer2 \
 "
 
 IMAGE_INSTALL += " \
