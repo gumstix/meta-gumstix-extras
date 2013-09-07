@@ -37,7 +37,6 @@ TOOLS_INSTALL = " \
   media-ctl \
   yavta \
   v4l-utils \
-  mplayer2 \
   mtd-utils-ubifs \
 "
 
