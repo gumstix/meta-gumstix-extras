@@ -2,7 +2,7 @@ DESCRIPTION = "A basic console image for Gumstix boards."
 LICENSE = "MIT"
 PR = "r0"
 
-IMAGE_FEATURES += "splash package-management ssh-server-openssh tools-sdk"
+IMAGE_FEATURES += "splash package-management ssh-server-openssh"
 IMAGE_LINGUAS = "en-us"
 
 inherit core-image
@@ -37,8 +37,11 @@ TOOLS_INSTALL = " \
   media-ctl \
   yavta \
   v4l-utils \
-  mplayer2 \
   mtd-utils-ubifs \
+  coreutils \
+  diffutils \
+  findutils \
+  less \
 "
 
 IMAGE_INSTALL += " \
