@@ -38,6 +38,7 @@ TOOLS_INSTALL = " \
   yavta \
   v4l-utils \
   mplayer2 \
+  mtd-utils-ubifs \
 "
 
 IMAGE_INSTALL += " \
