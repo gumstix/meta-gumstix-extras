@@ -16,7 +16,6 @@ FIRMWARE_INSTALL = " \
 
 TOOLS_INSTALL = " \
   alsa-utils \
-  e2eaudiotest \
   systemd-analyze \
   cpufrequtils \
   grep \

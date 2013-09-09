@@ -1,6 +1,6 @@
 DESCRIPTION = "A Gumstix console image with ROS (Robot OS) installed"
 
-IMAGE_FEATURES += "dev-pkgs"
+IMAGE_FEATURES += "tools-sdk dev-pkgs"
 
 require gumstix-console-image.bb
 

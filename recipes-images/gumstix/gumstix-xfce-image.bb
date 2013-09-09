@@ -18,6 +18,7 @@ IMAGE_INSTALL += " \
   polkit-group-rule-network \
   polkit-group-rule-datetime \
   polkit-group-rule-shutdown \
+  mplayer2 \
 "
 
 
