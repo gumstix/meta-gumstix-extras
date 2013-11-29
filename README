@@ -3,15 +3,15 @@ Yocto layer for images and extra recipes for Gumstix products.
 This layer depends on:
 
 URI: git://git.yoctoproject.org/poky.git
-branch: dylan
+branch: dora
 revision: HEAD
 
 URI: git://github.com/openembedded/meta-oe.git
-branch: dylan
+branch: dora
 revision: HEAD
 
 URI: git://github.com/gumstix/meta-gumstix.git
-branch: dylan
+branch: dora
 revision: HEAD
 
 URI: git://github.com/bmwcarit/meta-ros.git
@@ -19,7 +19,3 @@ branch: master
 revision: HEAD
 
 Layer maintainer: Adam Lee <adam@gumstix.com> for Gumstix, Inc.
-
-To Dos:
-
-- [ ] Add default time zone (tzdata package) 
