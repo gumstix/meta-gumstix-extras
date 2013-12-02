@@ -28,6 +28,8 @@ TOOLS_INSTALL = " \
   sudo \
   tar \
   tslib \
+  u-boot-mkimage \
+  u-boot-fw-utils \
   vim \
   wget \
   zip \
