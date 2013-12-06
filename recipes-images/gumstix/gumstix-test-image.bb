@@ -6,4 +6,5 @@ require gumstix-console-image.bb
 IMAGE_INSTALL += " \
   mplayer2 \
   e2eaudiotest \
+  spidev-test \
 "
