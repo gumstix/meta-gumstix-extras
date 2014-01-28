@@ -22,6 +22,8 @@ TOOLS_INSTALL = " \
   gzip \
   iputils \
   iw \
+  dhcp-client \
+  init-ifupdown \
   memtester \
   nano \
   ntp \
