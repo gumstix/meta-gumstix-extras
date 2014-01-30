@@ -1,0 +1,11 @@
+[Unit]
+Description=Connection service (udhcpc)
+After=wpa_supplicant@IFACE.service
+Requires=wpa_supplicant@IFACE.service
+
+[Service]
+ExecStart=/sbin/udhcpc -i%I
+RemainAfterExit=yes
+
+[Install]
+WantedBy=network.target
