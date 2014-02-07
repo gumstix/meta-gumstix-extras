@@ -16,7 +16,8 @@ iface = "${GUMSTIX_WIFI_IFACE}"
 
 FILES_${PN} += "${systemd_unitdir}/system/udhcpc@.service \
 		${systemd_unitdir}/system/udhcpc@${iface}.service \
-		${systemd_unitdir}/system/multi-user.target.wants/udhcpc@${iface}.service"
+		${systemd_unitdir}/system/multi-user.target.wants/udhcpc@${iface}.service \
+		${systemd_unitdir}/system/multi-user.target.wants/udhcpc@.service "
 
 
 do_install_append() {
