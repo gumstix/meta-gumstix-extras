@@ -17,6 +17,7 @@ iface = "${GUMSTIX_WIFI_IFACE}"
 
 FILES_${PN} += "${systemd_unitdir}/system/wpa_supplicant@${iface}.service"
 FILES_${PN} += "${systemd_unitdir}/system/multi-user.target.wants/wpa_supplicant@${iface}.service"
+FILES_${PN} += "${systemd_unitdir}/system/multi-user.target.wants/wpa_supplicant@.service"
 #FILES_${PN} += "${sysconfdir}/wpa_supplicant.conf"
 
 do_install_append() {
