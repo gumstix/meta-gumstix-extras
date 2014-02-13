@@ -7,4 +7,5 @@ IMAGE_INSTALL += " \
   mplayer2 \
   e2eaudiotest \
   spidev-test \
+  utouch-mtview \
 "
