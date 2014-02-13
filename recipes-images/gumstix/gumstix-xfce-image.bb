@@ -8,7 +8,6 @@ require gumstix-console-image.bb
 
 IMAGE_INSTALL += " \
   epiphany \
-  gdm \
   man \
   man-pages \
   network-manager-applet \
