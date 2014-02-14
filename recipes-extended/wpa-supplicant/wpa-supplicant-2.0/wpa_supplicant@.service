@@ -4,7 +4,7 @@ Description=WPA supplicant
 [Service]
 Type=forking
 PIDFILE=/var/run/wpa_supplicant.pid
-ExecStart=/usr/sbin/wpa_supplicant -B -Dwext -i%I -c/etc/wpa_supplicant.conf
+ExecStart=/usr/sbin/wpa_supplicant -B -Dnl80211 -i%I -c/etc/wpa_supplicant.conf
 RestartSec=1min
 Restart=on-failure
 
