@@ -54,7 +54,7 @@ IMAGE_INSTALL += " \
 "
 
 add_custom_smart_config() {
-        smart --data-dir=${IMAGE_ROOTFS}/var/lib/smart channel --add gumstix type=rpm-md name="Gumstix Package Repository" baseurl=http://package-cache.s3-website-us-west-2.amazonaws.com/dev/ -y
+        smart --data-dir=${IMAGE_ROOTFS}/var/lib/smart channel --add gumstix type=rpm-md name="Gumstix Package Repository" baseurl=https://packages.gumstix.com/dev/ -y
 }
 set_gumstix_user() {
 	#To allow shutdown/restart
