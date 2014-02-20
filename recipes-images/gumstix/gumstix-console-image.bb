@@ -43,6 +43,7 @@ TOOLS_INSTALL = " \
   diffutils \
   findutils \
   less \
+  mtdev \ 
 "
 
 IMAGE_INSTALL += " \
