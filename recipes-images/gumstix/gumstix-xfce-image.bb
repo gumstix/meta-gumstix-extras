@@ -7,7 +7,7 @@ IMAGE_FEATURES += "x11"
 require gumstix-console-image.bb
 
 IMAGE_INSTALL += " \
-  epiphany \
+  midori \
   man \
   man-pages \
   network-manager-applet \
