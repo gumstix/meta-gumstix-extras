@@ -11,7 +11,7 @@ SRC_URI += "file://wpa_supplicant@.service \
 	    file://wpa_supplicant.conf-sane"
 
 SYSTEMD_SERVICE_wpa_supplicant = "wpa_supplicant@.service"
-SYSTEMD_AUTO_ENABLE_udhcpc = "enable"
+SYSTEMD_AUTO_ENABLE_udhcpc = "disable"
 
 iface = "${GUMSTIX_WIFI_IFACE}"
 

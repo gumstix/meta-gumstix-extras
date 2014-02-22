@@ -10,7 +10,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
 SRC_URI += "file://udhcpc@.service"
 
 SYSTEMD_SERVICE_udhcpc = "udhcpc@${iface}.service"
-SYSTEMD_AUTO_ENABLE_udhcpc = "enable"
+SYSTEMD_AUTO_ENABLE_udhcpc = "disable"
 
 iface = "${GUMSTIX_WIFI_IFACE}"
 
