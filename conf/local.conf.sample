@@ -253,6 +253,7 @@ INHERIT += "extrausers"
 EXTRA_USERS_PARAMS = "\
 	groupadd gumstix; \
 	groupadd network; \
+	groupadd sudo; \
 	useradd -p 'VQ43An5F8LYqc' -d /home/gumstix -g gumstix -G network -s /bin/sh gumstix; \
 "
 
