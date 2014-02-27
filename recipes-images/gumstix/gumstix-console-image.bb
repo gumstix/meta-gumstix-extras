@@ -44,6 +44,7 @@ TOOLS_INSTALL = " \
   findutils \
   less \
   mtdev \ 
+  raw2rgbpnm \
 "
 
 IMAGE_INSTALL += " \
