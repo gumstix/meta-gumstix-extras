@@ -14,8 +14,4 @@ URI: git://github.com/gumstix/meta-gumstix.git
 branch: dora
 revision: HEAD
 
-URI: git://github.com/bmwcarit/meta-ros.git
-branch: master
-revision: HEAD
-
 Layer maintainer: Adam Lee <adam@gumstix.com> for Gumstix, Inc.
