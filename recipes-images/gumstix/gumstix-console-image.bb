@@ -31,7 +31,6 @@ TOOLS_INSTALL = " \
   tar \
   tslib \
   u-boot-mkimage \
-  u-boot-fw-utils \
   vim \
   wget \
   zip \
