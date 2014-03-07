@@ -1,7 +1,4 @@
-DESCRIPTION = "Gumstix Busybox UDHCPC Systemd Service"
-SECTION = "base"
-LICENSE = "MIT"
-PR = "r49"
+# Gumstix Busybox UDHCPC Systemd Service
 
 inherit systemd
 

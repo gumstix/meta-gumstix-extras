@@ -1,6 +1,3 @@
-DESCRIPTION = "Gumstix Bash Profile"
-SECTION = "base"
-LICENSE = "MIT"
-PR = "r0"
+# Gumstix Bash Profile
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"

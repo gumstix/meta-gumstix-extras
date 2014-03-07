@@ -1,7 +1,4 @@
-DESCRIPTION = "Gumstix WPA Supplicant Systemd Service"
-SECTION = "base"
-LICENSE = "MIT"
-PR = "r5"
+# Gumstix WPA Supplicant Systemd Service
 
 inherit systemd
 

@@ -1,7 +1,4 @@
-DESCRIPTION = "Gumstix Serial ttyGS0 Systemd Service for serial console over USB OTG"
-SECTION = "base"
-LICENSE = "MIT"
-PR = "r0"
+# Gumstix Serial ttyGS0 Systemd Service for serial console over USB OTG
 
 FILES_${PN} += "${systemd_unitdir}/system/getty.target.wants/serial-getty@ttyGS0.service \
 		"
