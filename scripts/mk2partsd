@@ -23,6 +23,14 @@ sfdisk --force -D -uS -H 255 -S 63 -C $CYLINDERS $DRIVE << EOF
 131072,,,-
 EOF
 
-mkfs.vfat -F 32 -n "boot" ${DRIVE}1
-umount ${DRIVE}1
-mkfs.ext3 -L "rootfs" ${DRIVE}2
+if [ -b ${1}1 ]; then
+	mkfs.vfat -F 32 -n "boot" ${DRIVE}1 
+else 
+	mkfs.vfat -F 32 -n "boot" ${DRIVE}p1
+fi
+
+if [ -b ${1}2 ]; then
+	mkfs.ext3 -L "rootfs" ${DRIVE}2
+else 
+	mkfs.ext3 -L "rootfs" ${DRIVE}p2
+fi
