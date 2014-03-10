@@ -6,7 +6,6 @@
 # Based on mk2PartSDCard.sh from Texas Instrument
 # http://processors.wiki.ti.com/index.php/How_to_Make_3_Partition_SD_Card
 #
-# This script will create a boot partition 74 MB in size (9 * 255 * 63 * 512) and a rootfs that fills up the rest of the space in the SD card.
 # example usage: $ sudo mk2partsd /dev/sdb
 
 DRIVE=$1
@@ -19,9 +18,9 @@ echo DISK SIZE - $SIZE bytes
 
 CYLINDERS=`echo $SIZE/255/63/512 | bc`
 
-sfdisk -D -H 255 -S 63 -C $CYLINDERS $DRIVE << EOF
-,9,0x0C,*
-10,,,,
+sfdisk --force -D -uS -H 255 -S 63 -C $CYLINDERS $DRIVE << EOF
+128,130944,0x0C,*
+131072,,,-
 EOF
 
 mkfs.vfat -F 32 -n "boot" ${DRIVE}1
