@@ -13,6 +13,7 @@ RDEPENDS_packagegroup-gumstix = " \
     i2c-tools \
     python \
     devmem2 \
+    opencv \
     packagegroup-core-tools-debug \
     packagegroup-core-tools-profile \
     packagegroup-core-tools-testapps \
