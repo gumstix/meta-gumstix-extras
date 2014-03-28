@@ -16,6 +16,7 @@ LICENSE_FLAGS_WHITELIST = "commercial"
 # Set a few Preferred Providers that aren't specified elsewhere
 PREFERRED_PROVIDER_jpeg = "jpeg"
 PREFERRED_PROVIDER_jpeg-native = "jpeg-native"
+PREFERRED_PROVIDER_sshd = "openssh"
 
 # Use Gumstix source mirror as default premirror
 SOURCE_MIRROR_URL ?= "http://source-cache.gumstix.org/"
