@@ -2,7 +2,7 @@ DESCRIPTION = "The Gumstix XFCE image.  This provides simple desktop \
 environment using X11."
 LICENSE = "MIT"
 
-IMAGE_FEATURES += "x11"
+IMAGE_FEATURES += "x11-base"
 
 require gumstix-console-image.bb
 
