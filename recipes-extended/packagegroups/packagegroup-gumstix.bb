@@ -14,6 +14,7 @@ RDEPENDS_packagegroup-gumstix = " \
     python \
     devmem2 \
     opencv \
+    boost \
     packagegroup-core-tools-debug \
     packagegroup-core-tools-profile \
     packagegroup-core-tools-testapps \
