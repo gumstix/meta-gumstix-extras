@@ -53,12 +53,9 @@ IMAGE_INSTALL += " \
   ${TOOLS_INSTALL} \
 "
 
-add_custom_smart_config() {
-        smart --data-dir=${IMAGE_ROOTFS}/var/lib/smart channel --add gumstix type=rpm-md name="Gumstix Package Repository" baseurl=https://packages.gumstix.com/dev/ -y
-}
 set_gumstix_user() {
 	#To allow shutdown/restart
 	echo "%sudo ALL=(ALL) ALL" >> ${IMAGE_ROOTFS}/etc/sudoers
 }
 
-ROOTFS_POSTPROCESS_COMMAND =+ "set_gumstix_user ; add_custom_smart_config ;"
+ROOTFS_POSTPROCESS_COMMAND =+ "set_gumstix_user"
