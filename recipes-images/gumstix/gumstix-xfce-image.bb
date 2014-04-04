@@ -11,6 +11,7 @@ IMAGE_INSTALL += " \
   man \
   man-pages \
   network-manager-applet \
+  packagegroup-xfce-extended \
   packagegroup-xfce-multimedia \
   polkit-gnome \
   polkit-group-rule-network \
