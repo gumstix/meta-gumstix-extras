@@ -7,6 +7,7 @@ inherit packagegroup
 PACKAGES = "packagegroup-gumstix"
 
 RDEPENDS_packagegroup-gumstix = " \
+    ${ROS_INSTALL} \
     sshd \
     git \
     nano \
@@ -22,3 +23,15 @@ RDEPENDS_packagegroup-gumstix = " \
     packagegroup-core-standalone-sdk-target \
     packagegroup-core-qt-demoapps \
 "
+
+ROS_INSTALL = " \
+    packagegroup-ros-comm \
+    python-wstool \
+    python-email \
+    python-distutils \
+    git \
+    python-rosinstall \
+    rospy-tutorials \
+    roscpp-tutorials \
+"
+
