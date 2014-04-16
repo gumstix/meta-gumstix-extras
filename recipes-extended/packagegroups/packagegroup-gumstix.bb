@@ -17,7 +17,6 @@ RDEPENDS_packagegroup-gumstix = " \
     opencv \
     boost \
     packagegroup-core-tools-debug \
-    packagegroup-core-tools-profile \
     packagegroup-core-tools-testapps \
     packagegroup-core-sdk \
     packagegroup-core-standalone-sdk-target \
