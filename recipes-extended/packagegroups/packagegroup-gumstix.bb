@@ -16,6 +16,7 @@ RDEPENDS_packagegroup-gumstix = " \
     devmem2 \
     opencv \
     boost \
+    screen \
     packagegroup-core-tools-debug \
     packagegroup-core-tools-testapps \
     packagegroup-core-sdk \
@@ -29,6 +30,7 @@ ROS_INSTALL = " \
     python-email \
     python-distutils \
     git \
+    git-perltools \
     python-rosinstall \
     rospy-tutorials \
     roscpp-tutorials \
