@@ -44,6 +44,7 @@ TOOLS_INSTALL = " \
   less \
   mtdev \ 
   raw2rgbpnm \
+  tzdata \
 "
 
 IMAGE_INSTALL += " \
