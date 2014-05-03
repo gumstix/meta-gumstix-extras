@@ -7,6 +7,7 @@ IMAGE_FEATURES += "x11-base"
 require gumstix-console-image.bb
 
 IMAGE_INSTALL += " \
+  florence \
   midori \
   man \
   man-pages \
