@@ -12,6 +12,7 @@ RDEPENDS_packagegroup-gumstix = " \
     devmem2 \
     git \
     i2c-tools \
+    mavlink-socket \
     nano \
     opencv \
     packagegroup-core-qt-demoapps \
