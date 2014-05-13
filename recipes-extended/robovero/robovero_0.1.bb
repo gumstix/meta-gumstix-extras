@@ -6,8 +6,7 @@ SRCREV = "a0c5719086348af7d1a9c91f04a255f512bb38d4"
 SRC_URI = "git://github.com/robovero/python.git;branch=master"
 DEPENDS = "python python-pyserial"
 RDEPENDS_${PN} = "python-pyserial"
-
-PACKAGES += "${PN}-examples"
+PACKAGES += "${PN}-python ${PN}-examples"
 
 inherit python-dir
 
@@ -23,5 +22,5 @@ do_install() {
 	install -m 755 ${S}/robovero/*.py ${SITE_PACKAGES}/robovero/
 }
 
-FILES_${PN} += "${PYTHON_SITEPACKAGES_DIR} "
-FILES_${PN}-examples += "${SHARE}/robovero-python"
+FILES_${PN}-examples += "${SHARE}/robovero-python "
+FILES_${PN}-python += "${PYTHON_SITEPACKAGES_DIR} "
