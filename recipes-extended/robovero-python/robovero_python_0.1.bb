@@ -7,9 +7,11 @@ SRC_URI = "git://github.com/robovero/python.git;branch=master"
 DEPENDS = "python python-pyserial"
 RDEPENDS_${PN} = "python-pyserial"
 
+PACKAGES += "${PN}-examples"
+
 S = "${WORKDIR}/git"
 
-inherit python-dir 
+inherit python-dir
 
 do_install() {
 	SITE_PACKAGES=${D}/${PYTHON_SITEPACKAGES_DIR}
@@ -20,4 +22,5 @@ do_install() {
 	install -m 755 ${S}/robovero/*.py ${SITE_PACKAGES}/robovero/
 }
 
-FILES_${PN} += "${PYTHON_SITEPACKAGES_DIR} ${ROOT_HOME}/robovero-python"
+FILES_${PN} += "${PYTHON_SITEPACKAGES_DIR} "
+FILES_${PN}-examples += "${ROOT_HOME}/robovero-python"
