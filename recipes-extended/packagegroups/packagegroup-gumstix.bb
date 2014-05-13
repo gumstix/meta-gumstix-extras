@@ -8,20 +8,22 @@ PACKAGES = "packagegroup-gumstix"
 
 RDEPENDS_packagegroup-gumstix = " \
     ${ROS_INSTALL} \
-    sshd \
-    git \
-    nano \
-    i2c-tools \
-    python \
-    devmem2 \
-    opencv \
     boost \
-    screen \
-    packagegroup-core-tools-debug \
-    packagegroup-core-tools-testapps \
+    devmem2 \
+    git \
+    i2c-tools \
+    nano \
+    opencv \
+    packagegroup-core-qt-demoapps \
     packagegroup-core-sdk \
     packagegroup-core-standalone-sdk-target \
-    packagegroup-core-qt-demoapps \
+    packagegroup-core-tools-debug \
+    packagegroup-core-tools-testapps \
+    python \
+    robovero \
+    robovero-examples \
+    screen \
+    sshd \
 "
 
 ROS_INSTALL = " \
