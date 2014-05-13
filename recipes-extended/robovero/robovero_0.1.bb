@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://${WORKDIR}/git/COPYING;md5=52b7490557d2fd1a2c673d32aa
 SRCREV = "a0c5719086348af7d1a9c91f04a255f512bb38d4"
 SRC_URI = "git://github.com/robovero/python.git;branch=master"
 DEPENDS = "python python-pyserial"
-RDEPENDS_${PN} = "python-pyserial"
+RDEPENDS_${PN}-python = "python-pyserial"
 PACKAGES += "${PN}-python ${PN}-examples"
 
 inherit python-dir
