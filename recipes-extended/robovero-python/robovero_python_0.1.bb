@@ -9,18 +9,19 @@ RDEPENDS_${PN} = "python-pyserial"
 
 PACKAGES += "${PN}-examples"
 
-S = "${WORKDIR}/git"
-
 inherit python-dir
 
-do_install() {
-	SITE_PACKAGES=${D}/${PYTHON_SITEPACKAGES_DIR}
+S = "${WORKDIR}/git"
 
-	install -d ${D}${ROOT_HOME}/robovero-python
+SITE_PACKAGES="${D}/${PYTHON_SITEPACKAGES_DIR}"
+SHARE="/usr/share"
+
+do_install() {
+	install -d ${D}${SHARE}/robovero-python
         install -d ${SITE_PACKAGES}/robovero
-	install -m 755 ${S}/*.py ${D}${ROOT_HOME}/robovero-python/
+	install -m 755 ${S}/*.py ${D}${SHARE}/robovero-python/
 	install -m 755 ${S}/robovero/*.py ${SITE_PACKAGES}/robovero/
 }
 
 FILES_${PN} += "${PYTHON_SITEPACKAGES_DIR} "
-FILES_${PN}-examples += "${ROOT_HOME}/robovero-python"
+FILES_${PN}-examples += "${SHARE}/robovero-python"
