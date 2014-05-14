@@ -78,4 +78,4 @@ set_gumstix_user() {
 	echo "%sudo ALL=(ALL) ALL" >> ${IMAGE_ROOTFS}/etc/sudoers
 }
 
-ROOTFS_POSTPROCESS_COMMAND =+ "set_gumstix_user"
+ROOTFS_POSTPROCESS_COMMAND =+ "set_gumstix_user;"
