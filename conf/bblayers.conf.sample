@@ -16,4 +16,7 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-gumstix \
   ##COREBASE##/meta-gumstix-extras \
   ##COREBASE##/meta-ros \
+  ##COREBASE##/meta-ti \
   "
+
+BBMASK = "meta-ti/recipes-(connectivity|core|kernel)"

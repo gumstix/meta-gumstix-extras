@@ -6,7 +6,7 @@ URI: git://git.yoctoproject.org/poky.git
 branch: master-next
 revision: HEAD
 
-URI: git://github.com/openembedded/meta-oe.git
+URI: git://git.openembedded.org/meta-openembedded.git
 branch: master-next
 revision: HEAD
 
@@ -17,5 +17,9 @@ revision: HEAD
 URI: git://github.com/bmwcarit/meta-ros.git
 branch: master
 revision: HEAD 
+
+URI: git://git.yoctoproject.org/meta-ti.git
+branch: master
+revision: HEAD
 
 Layer maintainer: Adam Lee <adam@gumstix.com> for Gumstix, Inc.
