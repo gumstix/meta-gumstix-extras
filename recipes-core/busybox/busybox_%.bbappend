@@ -15,9 +15,6 @@ FILES_${PN} += "${systemd_unitdir}/system/udhcpc@.service \"
 
 
 do_install_append() {
-
-	echo "DO_INSTALL: install dhcpc systemd service"
-
         install -d ${D}${systemd_unitdir}/system/
 	# generic service file for future use
         install -m 0644 ${WORKDIR}/udhcpc@.service ${D}${systemd_unitdir}/system/udhcpc@.service
