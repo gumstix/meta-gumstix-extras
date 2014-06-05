@@ -16,6 +16,7 @@ RDEPENDS_packagegroup-gumstix = " \
     nano \
     opencv \
     packagegroup-core-qt-demoapps \
+    packagegroup-core-qt4e \
     packagegroup-core-sdk \
     packagegroup-core-standalone-sdk-target \
     packagegroup-core-tools-debug \
