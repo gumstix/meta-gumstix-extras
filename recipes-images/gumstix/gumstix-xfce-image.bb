@@ -7,6 +7,8 @@ IMAGE_FEATURES += "x11-base"
 require gumstix-console-image.bb
 
 IMAGE_INSTALL += " \
+  eglinfo-fb \
+  eglinfo-x11 \
   florence \
   midori \
   man \
