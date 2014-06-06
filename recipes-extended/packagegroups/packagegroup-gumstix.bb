@@ -21,6 +21,7 @@ RDEPENDS_packagegroup-gumstix = " \
     packagegroup-core-tools-debug \
     packagegroup-core-tools-testapps \
     python \
+    python-pyserial \
     robovero-examples \
     robovero-python \
     screen \
