@@ -1,0 +1,9 @@
+[Unit]
+Description=Connection service (udhcpc)
+
+[Service]
+ExecStart=/sbin/udhcpc -ieth0
+RemainAfterExit=yes
+
+[Install]
+WantedBy=network.target
