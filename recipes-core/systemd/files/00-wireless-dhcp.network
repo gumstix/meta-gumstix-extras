@@ -1,11 +1,5 @@
 [Match]
-Name=wlan0
-
-[Network]
-DHCP=v4
-
-[Match]
-Name=mlan0
+Name=[mw]lan*
 
 [Network]
 DHCP=v4
