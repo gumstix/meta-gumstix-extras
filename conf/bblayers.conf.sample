@@ -13,6 +13,7 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-openembedded/meta-systemd \
   ##COREBASE##/meta-openembedded/meta-networking \
   ##COREBASE##/meta-openembedded/meta-multimedia \
+  ##COREBASE##/meta-openembedded/meta-python \
   ##COREBASE##/meta-gumstix \
   ##COREBASE##/meta-gumstix-extras \
   ##COREBASE##/meta-ros \
