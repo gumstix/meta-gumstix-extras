@@ -12,6 +12,7 @@ inherit core-image
 FIRMWARE_INSTALL = " \
   linux-firmware-sd8686 \
   linux-firmware-sd8787 \
+  linux-firmware-wl18xx \
 "
 
 SYSTEM_TOOLS_INSTALL = " \
