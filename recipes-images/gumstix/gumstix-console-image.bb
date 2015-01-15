@@ -51,6 +51,7 @@ UTILITIES_INSTALL = " \
   coreutils \
   diffutils \
   findutils \
+  gpsd \
   grep \
   gzip \
   less \
