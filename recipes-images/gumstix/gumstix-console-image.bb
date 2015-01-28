@@ -1,6 +1,5 @@
 DESCRIPTION = "A basic console image for Gumstix boards."
 LICENSE = "MIT"
-PR = "r0"
 
 IMAGE_FEATURES += "splash package-management ssh-server-openssh"
 IMAGE_LINGUAS = "en-us"
