@@ -2,6 +2,9 @@ DESCRIPTION = "A basic console image for Gumstix boards."
 LICENSE = "MIT"
 
 IMAGE_FEATURES += "splash package-management ssh-server-openssh"
+# Uncomment below to include dev tools and packages
+# IMAGE_FEATURES += "tools-sdk dev-pkgs"
+
 IMAGE_LINGUAS = "en-us"
 
 inherit core-image
