@@ -3,9 +3,8 @@ SECTION = "testing"
 # See http://bazaar.launchpad.net/~linaro-validation/lava-test/trunk/view/head:/lava_test/test_definitions/e2eaudiotest.py
 LICENSE = "GPL-1.0"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-1.0;md5=e9e36a9de734199567a4d769498f743d"
-PR = "r2"
 
-DEPENDS = "fftw"
+DEPENDS = "fftw alsa-utils"
 REDEPENDS = "alsa-utils"
 
 SRC_URI[md5sum] = "8a0cd99fd4df441ea2a60a55a2b76ea1"
