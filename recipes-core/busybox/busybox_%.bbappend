@@ -4,8 +4,11 @@ inherit systemd
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-SRC_URI += "file://udhcpc@.service \
-	    file://udhcpc@eth0.service"
+SRC_URI += " \
+    file://udhcpc@.service \
+    file://udhcpc@eth0.service \
+    file://yes_mesg.cfg \
+"
 
 SYSTEMD_SERVICE_udhcpc = "udhcpc@.service"
 SYSTEMD_AUTO_ENABLE_udhcpc = "disable"
