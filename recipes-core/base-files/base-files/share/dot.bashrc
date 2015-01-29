@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
-export PS1='\[\e[00;37m\]\u@\h:\w\\$ \[\e[0m\] '
+export PS1='\u@\h:\w\$ '
 umask 022
 
 # You may uncomment the following lines if you want `ls' to be colorized:

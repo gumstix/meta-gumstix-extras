@@ -15,7 +15,7 @@ if [ "$HOME" = "ROOTHOME" ]; then
    PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
 fi
 # works for bash and ash (no other shells known to be in use here)
-PS1='\[\e[00;37m\]\u@\h:\w\\$ \[\e[0m\] '
+PS1='\u@\h:\w\$ '
 
 if [ -d /etc/profile.d ]; then
   for i in /etc/profile.d/* ; do
