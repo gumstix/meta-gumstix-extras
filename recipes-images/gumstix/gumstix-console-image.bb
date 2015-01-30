@@ -80,9 +80,11 @@ IMAGE_INSTALL += " \
   ${UTILITIES_INSTALL} \
 "
 
-set_gumstix_user() {
-	#To allow shutdown/restart
-	echo "%sudo ALL=(ALL) ALL" >> ${IMAGE_ROOTFS}/etc/sudoers
-}
-
-ROOTFS_POSTPROCESS_COMMAND =+ "set_gumstix_user;"
+# Create a generic 'gumstix' user account, part of the gumstix group,
+# using '/bin/sh' and with a home directory '/home/gumstix' (see
+# /etc/default/useradd).  We set the password to 'gumstix' and add them
+# to the 'sudo' group.
+inherit extrausers
+EXTRA_USERS_PARAMS = " \
+    useradd -P gumstix -G sudo gumstix; \
+"
