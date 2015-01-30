@@ -22,6 +22,7 @@ RDEPENDS_packagegroup-gumstix = " \
     packagegroup-core-standalone-sdk-target \
     packagegroup-core-tools-debug \
     packagegroup-core-tools-testapps \
+    picodlp-control \
     python \
     python-pip \
     python-pyserial \
