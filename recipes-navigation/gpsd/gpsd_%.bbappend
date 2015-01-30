@@ -1,4 +1,3 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-SRC_URI += "file://gpsd.service \
-            file://gpsd-default"
+SRC_URI += "file://gpsd-default"
