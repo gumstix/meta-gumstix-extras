@@ -31,6 +31,7 @@ RDEPENDS_packagegroup-gumstix = " \
     screen \
     spidev-test \
     sshd \
+    uart-loop-test \
 "
 
 ROS_INSTALL = " \

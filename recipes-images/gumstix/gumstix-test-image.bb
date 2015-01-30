@@ -7,5 +7,6 @@ IMAGE_FEATURES += "tools-testapps"
 IMAGE_INSTALL += " \
   e2eaudiotest \
   spidev-test \
+  uart-loop-test \
   utouch-mtview \
 "
