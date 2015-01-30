@@ -2,6 +2,7 @@
 
 export PS1='\u@\h:\w\$ '
 umask 022
+export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
 
 # You may uncomment the following lines if you want `ls' to be colorized:
 # export LS_OPTIONS='--color=auto'
