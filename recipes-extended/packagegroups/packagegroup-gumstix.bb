@@ -34,6 +34,10 @@ RDEPENDS_packagegroup-gumstix = " \
     uart-loop-test \
 "
 
+RDEPENDS_packagegroup-gumstix_omap3 = " \
+    omap3-isp-live \
+"
+
 ROS_INSTALL = " \
     packagegroup-ros-comm \
     python-wstool \
