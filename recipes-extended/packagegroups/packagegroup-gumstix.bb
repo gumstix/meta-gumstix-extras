@@ -15,6 +15,7 @@ RDEPENDS_packagegroup-gumstix = " \
     mavlink-socket \
     nano \
     opencv \
+    omap3-writeprom \
     packagegroup-core-qt-demoapps \
     packagegroup-core-qt4e \
     packagegroup-core-sdk \
