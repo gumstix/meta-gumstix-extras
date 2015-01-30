@@ -29,6 +29,7 @@ RDEPENDS_packagegroup-gumstix = " \
     robovero-examples \
     robovero-python \
     screen \
+    spidev-test \
     sshd \
 "
 
