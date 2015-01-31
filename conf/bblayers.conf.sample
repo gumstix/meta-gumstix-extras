@@ -20,4 +20,4 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-ti \
   "
 
-BBMASK = "meta-ti/recipes-(connectivity|core|kernel)"
+BBMASK = "meta-ti/recipes-kernel"

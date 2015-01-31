@@ -242,10 +242,13 @@ PATCHRESOLVE = "noop"
 # this doesn't mean anything to you.
 CONF_VERSION = "1"
 
-# 
-# Gumstix shared distro features
-#
-DISTRO_FEATURES_append = " systemd pam"
+# Use systemd as init manager
+DISTRO_FEATURES_append = " systemd"
 VIRTUAL-RUNTIME_init_manager = "systemd"
-VIRTUAL-RUNTIME_graphical_init_manager = "lxdm"
 DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
+
+# Consider pam
+DISTRO_FEATURES_append = " pam"
+
+# Use lxdm as graphical greeter
+VIRTUAL-RUNTIME_graphical_init_manager = "lxdm"
