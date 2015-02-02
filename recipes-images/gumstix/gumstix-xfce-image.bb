@@ -17,7 +17,6 @@ IMAGE_INSTALL += " \
   polkit-gnome \
   polkit-group-rule-network \
   polkit-group-rule-datetime \
-  polkit-group-rule-shutdown \
 "
 
 
