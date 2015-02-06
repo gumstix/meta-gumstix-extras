@@ -1,0 +1,9 @@
+# Automatically bring-up default wifi interface as a wireless client.
+# If possible, get an address using DHCP. This works in tandem with
+# wpa_supplicant to establish a network connection.
+# See http://www.freedesktop.org/software/systemd/man/systemd.network.html
+[Match]
+Name=[mw]lan0
+
+[Network]
+DHCP=v4

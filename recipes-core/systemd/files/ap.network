@@ -1,0 +1,12 @@
+# Automatically bring-up secondary wifi interface as a wireless host
+# and provide a simple DHCP server allocating from the 192.168.2/24
+# range.  This works in tandem with the hostapd which is responsible
+# for bringing up any secondary wifi interfaces under the 'ap0'
+# name. For some extra hints, see
+# http://processors.wiki.ti.com/index.php/WiLink8_WLAN_Demo:_Linux
+[Match]
+Name=ap0
+
+[Network]
+Address=192.168.2.1/24
+DHCPServer=yes
