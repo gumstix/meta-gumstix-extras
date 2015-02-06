@@ -32,7 +32,6 @@ DEV_TOOLS_INSTALL = " \
 
 NETWORK_TOOLS_INSTALL = " \
   curl \
-  init-ifupdown \
   iputils \
   iw \
   ntp \
