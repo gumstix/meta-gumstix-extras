@@ -1,0 +1,8 @@
+# For the SD8787 wifi module, override the default 'mlan0' name.
+# Give userspace the standard name 'wlan0' instead
+[Match]
+OriginalName=mlan*
+Driver=mwifiex_sdio
+
+[Link]
+Name=wlan0

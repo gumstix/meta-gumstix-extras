@@ -3,7 +3,7 @@
 # wpa_supplicant to establish a network connection.
 # See http://www.freedesktop.org/software/systemd/man/systemd.network.html
 [Match]
-Name=[mw]lan0
+Name=wlan0
 
 [Network]
 DHCP=v4

@@ -8,6 +8,7 @@ SRC_URI += " \
     file://eth.network \
     file://wifi.network \
     file://ap.network \
+    file://85-mlan.link \
 "
 
 FILES_${PN} += "${sysconfdir}/systemd/network/*"
@@ -15,6 +16,7 @@ FILES_${PN} += "${sysconfdir}/systemd/network/*"
 do_install_append() {
 	install -d ${D}${sysconfdir}/systemd/network/
 	install -m 0644 ${WORKDIR}/*.network ${D}${sysconfdir}/systemd/network/
+	install -m 0644 ${WORKDIR}/*.link ${D}${sysconfdir}/systemd/network/
 }
 
 USERADD_PARAM_${PN} = "--system --home /dev/null systemd-journal-gateway"
