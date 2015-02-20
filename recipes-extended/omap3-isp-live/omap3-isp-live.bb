@@ -27,3 +27,4 @@ FILES_{PN} += "${D}/${bindir}/* \
 PARALLEL_MAKE = ""
 
 COMPATIBLE_MACHINE = "omap3"
+PACKAGE_ARCH = "${MACHINE_ARCH}"
