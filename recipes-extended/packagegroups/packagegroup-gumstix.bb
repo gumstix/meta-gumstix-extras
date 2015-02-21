@@ -1,6 +1,7 @@
 SUMMARY = "Build extra packages for the package repository"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=4d92cd373abda3937c2bc47fbc49d690"
+PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit packagegroup
 
@@ -34,7 +35,7 @@ RDEPENDS_packagegroup-gumstix = " \
     uart-loop-test \
 "
 
-RDEPENDS_packagegroup-gumstix_omap3 = " \
+RDEPENDS_packagegroup-gumstix_append_overo = " \
     omap3-isp-live \
 "
 
