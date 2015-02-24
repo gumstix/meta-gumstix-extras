@@ -5,6 +5,7 @@ require gumstix-console-image.bb
 IMAGE_FEATURES += "tools-testapps"
 
 IMAGE_INSTALL += " \
+  bluez-hcidump \
   e2eaudiotest \
   spidev-test \
   uart-loop-test \

@@ -9,6 +9,7 @@ PACKAGES = "packagegroup-gumstix"
 
 RDEPENDS_packagegroup-gumstix = " \
     ${ROS_INSTALL} \
+    bluez-hcidump \
     boost \
     devmem2 \
     git \
