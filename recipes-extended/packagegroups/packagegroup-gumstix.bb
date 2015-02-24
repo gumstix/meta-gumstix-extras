@@ -11,6 +11,7 @@ RDEPENDS_packagegroup-gumstix = " \
     ${ROS_INSTALL} \
     bluez-hcidump \
     boost \
+    caspa-streaming \
     devmem2 \
     git \
     i2c-tools \
@@ -51,4 +52,3 @@ ROS_INSTALL = " \
     rospy-tutorials \
     roscpp-tutorials \
 "
-
