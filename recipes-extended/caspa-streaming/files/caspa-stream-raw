@@ -1,0 +1,24 @@
+#!/bin/sh
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 <ip address of host machine>"
+    exit -1
+fi
+
+set -e
+echo "[Configure Caspa for RAW streaming]"
+
+modprobe omap3-isp
+echo "[Installed omap3-isp kernel module]"
+
+media-ctl -r -l '"mt9v032 2-005c":0->"OMAP3 ISP CCDC":0[1], "OMAP3 ISP CCDC":2->"OMAP3 ISP preview":0[1], "OMAP3 ISP preview":1->"OMAP3 ISP resizer":0[1], "OMAP3 ISP resizer":1->"OMAP3 ISP resizer output":0[1]'
+echo "[Configured ISP Pipeline]"
+
+media-ctl -V '"mt9v032 2-005c":0[SGRBG10 752x480], "OMAP3 ISP CCDC":2[SGRBG10 752x480], "OMAP3 ISP preview":1[UYVY 752x480], "OMAP3 ISP resizer":1[UYVY 752x480]'
+echo "[Configured ISP Formats]"
+
+gst-launch -v v4l2src device=/dev/video6 ! rtpvrawpay ! udpsink host=$1 port=5000 &
+echo "[Launched Gstreamer Pipeline]"
+
+echo "On the host machine, now run'
+echo ' $ gst-launch -v udpsrc port=5000 caps="application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)RAW, sampling=(string)YCbCr-4:2:2, depth=(string)8, width=(string)752, height=(string)480, colorimetry=(string)SMPTE240M, payload=(int)96" ! rtpvrawdepay ! xvimagesink'
+set +e
