@@ -33,6 +33,7 @@ DEV_TOOLS_INSTALL = " \
 NETWORK_TOOLS_INSTALL = " \
   curl \
   hostapd \
+  iproute2 \
   iputils \
   iw \
   ntp \
