@@ -1,0 +1,59 @@
+From ff768354af5ad497ec526b079aa7300be8505fc9 Mon Sep 17 00:00:00 2001
+From: Ash Charles <ashcharles@gmail.com>
+Date: Wed, 25 Mar 2015 10:22:12 -0700
+Subject: [PATCH] DHCPServer: provide dns server
+
+We hard-code this to the public Google DNS for now.
+
+Signed-off-by: Ash Charles <ashcharles@gmail.com>
+---
+ src/libsystemd-network/sd-dhcp-server.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/src/libsystemd-network/sd-dhcp-server.c b/src/libsystemd-network/sd-dhcp-server.c
+index ab68322..9c598f6 100644
+--- a/src/libsystemd-network/sd-dhcp-server.c
++++ b/src/libsystemd-network/sd-dhcp-server.c
+@@ -409,6 +409,7 @@ static int server_send_offer(sd_dhcp_server *server, DHCPRequest *req,
+         _cleanup_free_ DHCPPacket *packet = NULL;
+         size_t offset;
+         be32_t lease_time;
++        be32_t dns_server = 0x08080808;
+         int r;
+ 
+         r = server_message_init(server, &packet, DHCP_OFFER, &offset, req);
+@@ -434,6 +435,11 @@ static int server_send_offer(sd_dhcp_server *server, DHCPRequest *req,
+         if (r < 0)
+                 return r;
+ 
++        r = dhcp_option_append(&packet->dhcp, req->max_optlen, &offset, 0,
++                               DHCP_OPTION_DOMAIN_NAME_SERVER, 4, &dns_server);
++        if (r < 0)
++                return r;
++
+         r = dhcp_server_send_packet(server, req, packet, DHCP_OFFER, offset);
+         if (r < 0)
+                 return r;
+@@ -446,6 +452,7 @@ static int server_send_ack(sd_dhcp_server *server, DHCPRequest *req,
+         _cleanup_free_ DHCPPacket *packet = NULL;
+         size_t offset;
+         be32_t lease_time;
++        be32_t dns_server = 0x08080808;
+         int r;
+ 
+         r = server_message_init(server, &packet, DHCP_ACK, &offset, req);
+@@ -471,6 +478,11 @@ static int server_send_ack(sd_dhcp_server *server, DHCPRequest *req,
+         if (r < 0)
+                 return r;
+ 
++        r = dhcp_option_append(&packet->dhcp, req->max_optlen, &offset, 0,
++                               DHCP_OPTION_DOMAIN_NAME_SERVER, 4, &dns_server);
++        if (r < 0)
++                return r;
++
+         r = dhcp_server_send_packet(server, req, packet, DHCP_ACK, offset);
+         if (r < 0)
+                 return r;
+-- 
+2.1.0
+

@@ -5,6 +5,7 @@ PACKAGECONFIG_append = " networkd resolved"
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 SRC_URI += " \
+    file://0001-DHCPServer-provide-local-dns-server.patch \
     file://eth.network \
     file://wifi.network \
     file://ap.network \
