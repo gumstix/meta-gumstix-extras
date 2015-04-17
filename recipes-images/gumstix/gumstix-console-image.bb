@@ -38,7 +38,6 @@ NETWORK_TOOLS_INSTALL = " \
   iputils \
   iw \
   ntp \
-  ti-wifi-utils \
   uim \
 "
 
