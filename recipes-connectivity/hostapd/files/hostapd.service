@@ -1,6 +1,7 @@
 [Unit]
 Description=Hostapd IEEE 802.11 AP, IEEE 802.1X/WPA/WPA2/EAP/RADIUS Authenticator
 After=network.target
+Wants=dnsmasq.service
 
 [Service]
 Type=forking
@@ -8,6 +9,7 @@ PIDFile=/run/hostapd.pid
 # Use a new interface 'ap0' to host access point (concurrent with wlan0)
 # Note: type='__ap' rather than the more appropriate 'managed' as this
 #       is needed for SD8787 and works for Wilink8.
+ExecStartPre=@SBINDIR@/iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
 ExecStartPre=@SBINDIR@/iw phy0 interface add ap0 type __ap
 ExecStart=@SBINDIR@/hostapd @SYSCONFDIR@/hostapd.conf -P /run/hostapd.pid -B
 ExecStopPost=@SBINDIR@/iw phy0 interface del ap0

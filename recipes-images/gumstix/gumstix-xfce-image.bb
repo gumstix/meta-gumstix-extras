@@ -19,4 +19,10 @@ IMAGE_INSTALL += " \
   polkit-group-rule-datetime \
 "
 
+# Network Manager manages WPA supplicant---we don't need an interface-specific
+# systemd service in this case.
+zap_wlan0_wpa() {
+    rm -f ${IMAGE_ROOTFS}/etc/systemd/system/multi-user.target.wants/wpa_supplicant@wlan0.service
+}
 
+ROOTFS_POSTPROCESS_COMMAND =+ "zap_wlan0_wpa;"
