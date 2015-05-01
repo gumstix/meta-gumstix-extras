@@ -12,8 +12,14 @@ RDEPENDS_packagegroup-gumstix = " \
     bluez-hcidump \
     boost \
     caspa-streaming \
+    cheese \
     devmem2 \
     git \
+    gstreamer1.0-meta-base \
+    gstreamer1.0-meta-x11-base \
+    gstreamer1.0-meta-audio \
+    gstreamer1.0-meta-debug \
+    gstreamer1.0-meta-video \
     i2c-tools \
     mavlink-socket \
     nano \
@@ -38,6 +44,7 @@ RDEPENDS_packagegroup-gumstix = " \
     spidev-test \
     sshd \
     uart-loop-test \
+    vlc \
 "
 
 RDEPENDS_packagegroup-gumstix_append_overo = " \
