@@ -52,13 +52,7 @@ RDEPENDS_packagegroup-gumstix_append_overo = " \
 "
 
 ROS_INSTALL = " \
-    packagegroup-ros-comm \
+    packagegroup-ros-world \
     python-wstool \
-    python-email \
     python-distutils \
-    git \
-    git-perltools \
-    python-rosinstall \
-    rospy-tutorials \
-    roscpp-tutorials \
 "
