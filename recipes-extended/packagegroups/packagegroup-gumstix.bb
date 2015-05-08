@@ -25,6 +25,7 @@ RDEPENDS_packagegroup-gumstix = " \
     nano \
     opencv \
     omap3-writeprom \
+    packagegroup-core-eclipse-debug \
     packagegroup-core-qt-demoapps \
     packagegroup-core-qt4e \
     packagegroup-core-sdk \
