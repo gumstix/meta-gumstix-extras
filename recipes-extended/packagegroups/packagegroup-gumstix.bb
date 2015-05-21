@@ -15,16 +15,16 @@ RDEPENDS_packagegroup-gumstix = " \
     cheese \
     devmem2 \
     git \
-    gstreamer1.0-meta-base \
-    gstreamer1.0-meta-x11-base \
     gstreamer1.0-meta-audio \
+    gstreamer1.0-meta-base \
     gstreamer1.0-meta-debug \
     gstreamer1.0-meta-video \
+    gstreamer1.0-meta-x11-base \
     i2c-tools \
     mavlink-socket \
     nano \
-    opencv \
     omap3-writeprom \
+    opencv \
     packagegroup-core-eclipse-debug \
     packagegroup-core-qt-demoapps \
     packagegroup-core-qt4e \
@@ -32,9 +32,9 @@ RDEPENDS_packagegroup-gumstix = " \
     packagegroup-core-standalone-sdk-target \
     packagegroup-core-tools-debug \
     packagegroup-core-tools-testapps \
+    php \
     php-cgi \
     php-cli \
-    php \
     picodlp-control \
     python \
     python-pip \
@@ -54,6 +54,6 @@ RDEPENDS_packagegroup-gumstix_append_overo = " \
 
 ROS_INSTALL = " \
     packagegroup-ros-world \
-    python-wstool \
     python-distutils \
+    python-wstool \
 "
