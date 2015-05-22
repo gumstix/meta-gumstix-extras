@@ -21,10 +21,12 @@ RDEPENDS_packagegroup-gumstix = " \
     gstreamer1.0-meta-video \
     gstreamer1.0-meta-x11-base \
     i2c-tools \
+    librxtx-java \
     mavlink-socket \
     nano \
     omap3-writeprom \
     opencv \
+    openjdk-7-jdk \
     packagegroup-core-eclipse-debug \
     packagegroup-core-qt-demoapps \
     packagegroup-core-qt4e \
