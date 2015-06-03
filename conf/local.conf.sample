@@ -17,6 +17,12 @@ LICENSE_FLAGS_WHITELIST = "commercial"
 PREFERRED_PROVIDER_sshd = "openssh"
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
+PREFERRED_PROVIDER_virtual/java-initial-native = "cacao-initial-native"
+PREFERRED_PROVIDER_virtual/java-native = "cacao-native"
+DEFAULTJRE ?= "openjdk-7-jre"
+PREFERRED_PROVIDER_java2-vm = "${DEFAULTJRE}"
+PREFERRED_PROVIDER_java2-runtime = "${DEFAULTJRE}"
+PREFERRED_PROVIDER_openjdk-7-jre = "${DEFAULTJRE}"
 
 # Use Gumstix source mirror as default premirror
 SOURCE_MIRROR_URL ?= "http://source-cache.gumstix.org/"
