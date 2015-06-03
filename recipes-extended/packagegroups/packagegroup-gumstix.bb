@@ -33,6 +33,7 @@ RDEPENDS_packagegroup-gumstix = " \
     packagegroup-core-sdk \
     packagegroup-core-standalone-sdk-target \
     packagegroup-core-tools-debug \
+    packagegroup-core-tools-profile \
     packagegroup-core-tools-testapps \
     php \
     php-cgi \
