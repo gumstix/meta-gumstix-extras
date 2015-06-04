@@ -18,23 +18,27 @@ and feature-requests/issues can be raised against the top-level
 This layer depends on:
 
 URI: git://git.yoctoproject.org/poky.git
-branch: dizzy
+branch: fido
 revision: HEAD
 
 URI: git://git.openembedded.org/meta-openembedded.git
-branch: dizzy
+branch: fido
 revision: HEAD
 
 URI: git://github.com/gumstix/meta-gumstix.git
-branch: dizzy
+branch: next
 revision: HEAD
 
 URI: git://github.com/bmwcarit/meta-ros.git
 branch: master
 revision: HEAD
 
-URI: git://git.yoctoproject.org/meta-ti.git
+URI: git://git.yoctoproject.org/meta-java.git
 branch: master
+revision: HEAD
+
+URI: git://git.yoctoproject.org/meta-ti.git
+branch: fido
 revision: HEAD
 
 Layer maintainer: Adam Lee <adam@gumstix.com> for Gumstix, Inc.
