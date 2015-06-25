@@ -23,6 +23,7 @@ RDEPENDS_packagegroup-gumstix = " \
     i2c-tools \
     librxtx-java \
     mavlink-socket \
+    mplayer2 \
     nano \
     omap3-writeprom \
     opencv \
