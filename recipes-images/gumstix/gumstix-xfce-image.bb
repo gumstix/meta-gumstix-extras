@@ -8,6 +8,7 @@ require gumstix-console-image.bb
 
 IMAGE_INSTALL += " \
   florence \
+  gnome-bluetooth \
   midori \
   man \
   man-pages \
