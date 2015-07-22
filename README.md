@@ -19,26 +19,26 @@ This layer depends on:
 
 URI: git://git.yoctoproject.org/poky.git
 branch: fido
-revision: HEAD
+revision: 83aa565d93aacae484976562ef1ae8dbbb6b2bc0
 
 URI: git://git.openembedded.org/meta-openembedded.git
 branch: fido
-revision: HEAD
+revision: 10d3c8f85280a0bf867a8e4f84bcda81c290d28e
 
 URI: git://github.com/gumstix/meta-gumstix.git
-branch: next
-revision: HEAD
+branch: fido
+revision: 7a926aaafccfc6d9f752ff507ecd112bcede0c44
 
 URI: git://github.com/bmwcarit/meta-ros.git
 branch: master
-revision: HEAD
+revision: d465a23c0a96e651419d46b29ab7c0c3663da314
 
 URI: git://git.yoctoproject.org/meta-java.git
 branch: master
-revision: HEAD
+revision: 66c97ae7461f4c1a13917131787bb76dc34e6b6f
 
 URI: git://git.yoctoproject.org/meta-ti.git
 branch: fido
-revision: HEAD
+revision: 03cb3ff15f3b8535ca409ce682f44ec1b81da0c3
 
 Layer maintainer: Adam Lee <adam@gumstix.com> for Gumstix, Inc.
