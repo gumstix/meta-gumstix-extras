@@ -11,7 +11,6 @@ QT_INSTALL = " \
   qtbase-mkspecs \
   qtbase-plugins \
   qtbase-tools \
-  qtbase-examples \
   packagegroup-qt5-qtcreator-debug \
   packagegroup-qt5-toolchain-target  \
 "
