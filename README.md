@@ -41,4 +41,8 @@ URI: git://git.yoctoproject.org/meta-ti.git
 branch: fido
 revision: HEAD
 
+URI: https://github.com/meta-qt5/meta-qt5.git
+branch: fido
+revision: HEAD
+
 Layer maintainer: Adam Lee <adam@gumstix.com> for Gumstix, Inc.
