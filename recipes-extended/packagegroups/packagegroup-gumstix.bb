@@ -20,6 +20,7 @@ RDEPENDS_packagegroup-gumstix = " \
     gstreamer1.0-meta-video \
     gstreamer1.0-meta-x11-base \
     i2c-tools \
+    kernel-devsrc \
     librxtx-java \
     mavlink-socket \
     mplayer2 \
