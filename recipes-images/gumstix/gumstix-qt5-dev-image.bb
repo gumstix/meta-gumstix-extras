@@ -18,3 +18,11 @@ QT_INSTALL = " \
 IMAGE_INSTALL += " \
   ${QT_INSTALL} \
 "
+
+IMAGE_INSTALL_append_pepper = " \
+  libgles-omap3 \
+  libgles-omap3-rawdemos \
+  omap3-sgx-modules \
+  qt5-demo-extrafiles \
+  qt5everywheredemo \
+"
