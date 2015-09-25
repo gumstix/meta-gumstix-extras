@@ -24,6 +24,12 @@ PREFERRED_PROVIDER_java2-vm = "${DEFAULTJRE}"
 PREFERRED_PROVIDER_java2-runtime = "${DEFAULTJRE}"
 PREFERRED_PROVIDER_openjdk-7-jre = "${DEFAULTJRE}"
 
+# Specify SGX GFX providers for Pepper
+PREFERRED_PROVIDER_virtual/egl_pepper ?= "libgles-omap3"
+PREFERRED_PROVIDER_virtual/libgles1_pepper ?= "libgles-omap3"
+PREFERRED_PROVIDER_virtual/libgles2_pepper ?= "libgles-omap3"
+PREFERRED_PROVIDER_virtual/mesa_pepper ?= "mesa-gl"
+
 # Use Gumstix source mirror as default premirror
 SOURCE_MIRROR_URL ?= "http://source-cache.gumstix.org/"
 INHERIT += "own-mirrors"
