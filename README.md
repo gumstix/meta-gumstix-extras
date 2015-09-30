@@ -27,7 +27,7 @@ revision: 10d3c8f85280a0bf867a8e4f84bcda81c290d28e
 
 URI: git://github.com/gumstix/meta-gumstix.git
 branch: fido
-revision: 7a926aaafccfc6d9f752ff507ecd112bcede0c44
+revision: 68e4b5771aef2d11fcf04bb8759fecd409de1ac3
 
 URI: git://github.com/bmwcarit/meta-ros.git
 branch: master
