@@ -22,6 +22,7 @@ RDEPENDS_packagegroup-gumstix = " \
     i2c-tools \
     kernel-devsrc \
     librxtx-java \
+    lowpan-tools \
     mavlink-socket \
     mplayer2 \
     nano \
