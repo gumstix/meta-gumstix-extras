@@ -27,3 +27,12 @@ IMAGE_INSTALL += " \
 #   qt5-demo-extrafiles \
 #   qt5everywheredemo \
 # "
+
+# For Overo SGX-Qt5
+# IMAGE_INSTALL_append_overo = " \
+#   libgles-omap3 \
+#   libgles-omap3-rawdemos \
+#   omap3-sgx-modules \
+#   qt5-demo-extrafiles \
+#   qt5everywheredemo \
+# "

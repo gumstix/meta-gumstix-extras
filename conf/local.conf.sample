@@ -30,6 +30,19 @@ PREFERRED_PROVIDER_openjdk-7-jre = "${DEFAULTJRE}"
 # PREFERRED_PROVIDER_virtual/libgles2_pepper ?= "libgles-omap3"
 # PREFERRED_PROVIDER_virtual/mesa_pepper ?= "mesa-gl"
 
+# Specify SGX GFX providers for Overo
+# PREFERRED_PROVIDER_virtual/egl_overo ?= "libgles-omap3"
+# PREFERRED_PROVIDER_virtual/libgles1_overo ?= "libgles-omap3"
+# PREFERRED_PROVIDER_virtual/libgles2_overo ?= "libgles-omap3"
+#
+# PREFERRED_VERSION_libgles-omap3_overo = "5.01.01.02"
+# PREFERRED_VERSION_omap3-sgx-modules_overo = "5.01.01.02"
+
+# SGX for Overo requires Kernel v3.5.7
+# PREFERRED_PROVIDER_virtual/kernel = "linux-gumstix"
+# PREFERRED_VERSION_linux-gumstix = "3.5.7"
+
+
 # Use Gumstix source mirror as default premirror
 SOURCE_MIRROR_URL ?= "http://source-cache.gumstix.org/"
 INHERIT += "own-mirrors"
