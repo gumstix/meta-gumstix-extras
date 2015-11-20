@@ -9,9 +9,11 @@ PACKAGES = "packagegroup-gumstix"
 
 RDEPENDS_packagegroup-gumstix = " \
     ${ROS_INSTALL} \
+    apache2 \
     boost \
     caspa-streaming \
     cheese \
+    cronie \
     devmem2 \
     git \
     gstreamer1.0-meta-audio \
@@ -26,6 +28,7 @@ RDEPENDS_packagegroup-gumstix = " \
     mavlink-socket \
     mplayer2 \
     nano \
+    ofono \
     omap3-writeprom \
     opencv \
     openjdk-7-jdk \
