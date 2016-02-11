@@ -15,6 +15,8 @@ RDEPENDS_packagegroup-gumstix = " \
     cheese \
     cronie \
     devmem2 \
+    ethtool \
+    fb-test \
     git \
     gstreamer1.0-meta-audio \
     gstreamer1.0-meta-base \
