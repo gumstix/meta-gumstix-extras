@@ -15,6 +15,7 @@ RDEPENDS_packagegroup-gumstix = " \
     cheese \
     cronie \
     devmem2 \
+    dtc \
     ethtool \
     fb-test \
     git \
