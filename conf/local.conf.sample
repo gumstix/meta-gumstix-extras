@@ -280,3 +280,6 @@ VIRTUAL-RUNTIME_graphical_init_manager = "lxdm"
 
 # Use bluez5 rather than bluez4
 DISTRO_FEATURES_append = " bluez5"
+
+# meta-ros fails to build because of this package. Just skip it to get it building
+INSANE_SKIP_python-wstool = "installed-vs-shipped"
