@@ -7,7 +7,6 @@ IMAGE_FEATURES += "tools-debug tools-sdk"
 QT_INSTALL = " \
   qtbase \
   qtbase-dev \
-  qtbase-fonts \
   qtbase-mkspecs \
   qtbase-plugins \
   qtbase-tools \
