@@ -285,7 +285,7 @@ DISTRO_FEATURES_append = " bluez5"
 INSANE_SKIP_python-wstool = "installed-vs-shipped"
 
 # Use wic to generate 2G SD-card image for overo
-IMAGE_FSTYPES_append_overo = " wic"
-WKS_FILE_overo = "sdimage-gumstix.wks"
-IMAGE_BOOT_FILES_overo ?= "MLO u-boot.img uImage"
+#IMAGE_FSTYPES_append_overo = " wic"
+#WKS_FILE_overo = "sdimage-gumstix.wks"
+#IMAGE_BOOT_FILES_overo ?= "MLO u-boot.img uImage"
 
