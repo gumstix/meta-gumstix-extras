@@ -45,4 +45,4 @@ URI: https://github.com/meta-qt5/meta-qt5.git
 branch: fido
 revision: HEAD
 
-Layer maintainer: Adam Lee <adam@gumstix.com> for Gumstix, Inc.
+Layer maintainer: Arun Bharadwaj <arun@gumstix.com> for Gumstix, Inc.
