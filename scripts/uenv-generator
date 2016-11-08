@@ -1,0 +1,87 @@
+#!/usr/bin/env python
+"""\
+Flash EEPROM from u-boot according to the specification here:
+http://elinux.org/BeagleBoardPinMux#EEPROM_content.  In addition,
+we added content as per the writeprom.sh script.
+
+Parameters
+----------
+fab_rev: string (7 chars)
+    revision e.g. `R1234`
+env: dictionary [default: None]
+    key is u-boot env variable name e.g. `dvimode` (15 chars)
+    value is u-boot env variable setting e.g. `1024x768MR-16@60` (63 chars)
+device_id : string
+    device_id [default: 0x0000]
+rev:  int
+    hardware revision [default: 0x00]
+bus : int
+    i2c-bus number (0-indexed unlike Linux) [default: 2]
+address : string
+    i2c-address [default: '0x51']
+"""
+from __future__ import print_function
+from argparse import ArgumentParser
+from ast import literal_eval
+from sys import stderr
+
+
+def execute(fab_rev, env=None, device_id='0x0000', rev='0x00', bus=2, address='0x51'):
+    vendor_id = 0x0002  # gumstix
+    device_id = int(device_id, 16)
+    rev = int(rev, 16)
+    fab_rev = to_hex(fab_rev)
+    if len(fab_rev) > 8:
+        print("ERROR: Fab revision too long", file=sys.stderr)
+        return -1
+    if env is not None:
+        env_var = to_hex(env.keys()[0])
+        env_setting = to_hex(env.values()[0])
+        if len(env_var) > 16 or len(env_setting) > 64:
+            print("ERROR: Environment too big", file=sys.stderr)
+            return -1
+
+    # multi-byte writes don't work consistently in uboot so we write byte-by-byte
+    vendor_id_bot = (vendor_id & 0x00FF)
+    vendor_id_top = (vendor_id & 0xFF00) >> 8
+    device_id_bot = (device_id & 0x00FF)
+    device_id_top = (device_id & 0xFF00) >> 8
+    print("i2c dev {bus}".format(bus=bus))
+    print("i2c mw {address} 0x00 {vendor_id_top:#x}".format(**locals()))
+    print("i2c mw {address} 0x01 {vendor_id_bot:#x}".format(**locals()))
+    print("i2c mw {address} 0x02 {device_id_top:#x}".format(**locals()))
+    print("i2c mw {address} 0x03 {device_id_bot:#x}".format(**locals()))
+    print("i2c mw {address} 0x04 {rev:#x}".format(**locals()))
+    print("i2c mw {address} 0x05 0x00".format(**locals()))
+
+    for i, x in enumerate(fab_rev):
+        j = i + 0x06
+        print("i2c mw {address} {j:#x} {x}".format(**locals()))
+
+    if env is not None:
+        print("i2c mw {address} 0x05 0x01".format(**locals()))
+        for i, x in enumerate(env_var):
+            j = i + 14
+            print("i2c mw {address} {j:#x} {x}".format(**locals()))
+        for i, x in enumerate(env_setting):
+            j = i + 30
+            print("i2c mw {address} {j:#x} {x}".format(**locals()))
+    return 0
+
+def to_hex(word):
+    """\Generate a null-terminated sequence of hex byte-strings."""
+    return [hex(ord(c)) for c in word] + ['0x00']
+
+if __name__ == '__main__':
+    parser = ArgumentParser('Generate a u-boot EEPROM flashing data.')
+    parser.add_argument('-f', '--fab-rev', default='R0000', help='PCB revision')
+    parser.add_argument('-e', '--env', default=None, help='Dictionary for environment e.g {"fdtfile": "omap3-overo-storm-arbor70c.dtb"}')
+    parser.add_argument('-d', '--device-id', default='0x0000', help='Device ID')
+    parser.add_argument('-r', '--rev', default='0', help='Board revision')
+    parser.add_argument('-b', '--bus', type=int, default=2, help='EEPROM I2C Bus (0-indexed)')
+    parser.add_argument('-a', '--address', default='0x51', help='EEPROM I2C address')
+    args = parser.parse_args()
+    if args.env:
+        args.env = literal_eval(args.env)
+    execute(args.fab_rev, args.env, args.device_id, args.rev, args.bus, args.address)
+

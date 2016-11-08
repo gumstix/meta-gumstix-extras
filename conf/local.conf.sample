@@ -24,6 +24,25 @@ PREFERRED_PROVIDER_java2-vm = "${DEFAULTJRE}"
 PREFERRED_PROVIDER_java2-runtime = "${DEFAULTJRE}"
 PREFERRED_PROVIDER_openjdk-7-jre = "${DEFAULTJRE}"
 
+# Specify SGX GFX providers for Pepper
+# PREFERRED_PROVIDER_virtual/egl_pepper ?= "libgles-omap3"
+# PREFERRED_PROVIDER_virtual/libgles1_pepper ?= "libgles-omap3"
+# PREFERRED_PROVIDER_virtual/libgles2_pepper ?= "libgles-omap3"
+# PREFERRED_PROVIDER_virtual/mesa_pepper ?= "mesa-gl"
+
+# Specify SGX GFX providers for Overo
+# PREFERRED_PROVIDER_virtual/egl_overo ?= "libgles-omap3"
+# PREFERRED_PROVIDER_virtual/libgles1_overo ?= "libgles-omap3"
+# PREFERRED_PROVIDER_virtual/libgles2_overo ?= "libgles-omap3"
+#
+# PREFERRED_VERSION_libgles-omap3_overo = "5.01.01.02"
+# PREFERRED_VERSION_omap3-sgx-modules_overo = "5.01.01.02"
+
+# SGX for Overo requires Kernel v3.5.7
+# PREFERRED_PROVIDER_virtual/kernel = "linux-gumstix"
+# PREFERRED_VERSION_linux-gumstix = "3.5.7"
+
+
 # Use Gumstix source mirror as default premirror
 SOURCE_MIRROR_URL ?= "http://source-cache.gumstix.org/"
 INHERIT += "own-mirrors"
@@ -258,3 +277,15 @@ DISTRO_FEATURES_append = " pam"
 
 # Use lxdm as graphical greeter
 VIRTUAL-RUNTIME_graphical_init_manager = "lxdm"
+
+# Use bluez5 rather than bluez4
+DISTRO_FEATURES_append = " bluez5"
+
+# meta-ros fails to build because of this package. Just skip it to get it building
+INSANE_SKIP_python-wstool = "installed-vs-shipped"
+
+# Use wic to generate 2G SD-card image for overo
+#IMAGE_FSTYPES_append_overo = " wic"
+#WKS_FILE_overo = "sdimage-gumstix.wks"
+#IMAGE_BOOT_FILES_overo ?= "MLO u-boot.img uImage"
+

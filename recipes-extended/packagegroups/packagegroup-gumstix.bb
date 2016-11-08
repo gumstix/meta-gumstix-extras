@@ -9,11 +9,15 @@ PACKAGES = "packagegroup-gumstix"
 
 RDEPENDS_packagegroup-gumstix = " \
     ${ROS_INSTALL} \
-    bluez-hcidump \
+    apache2 \
     boost \
     caspa-streaming \
     cheese \
+    cronie \
     devmem2 \
+    dtc \
+    ethtool \
+    fb-test \
     git \
     gstreamer1.0-meta-audio \
     gstreamer1.0-meta-base \
@@ -21,10 +25,13 @@ RDEPENDS_packagegroup-gumstix = " \
     gstreamer1.0-meta-video \
     gstreamer1.0-meta-x11-base \
     i2c-tools \
+    kernel-devsrc \
     librxtx-java \
+    lowpan-tools \
     mavlink-socket \
     mplayer2 \
     nano \
+    ofono \
     omap3-writeprom \
     opencv \
     openjdk-7-jdk \

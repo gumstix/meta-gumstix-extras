@@ -14,11 +14,13 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-openembedded/meta-networking \
   ##COREBASE##/meta-openembedded/meta-multimedia \
   ##COREBASE##/meta-openembedded/meta-python \
+  ##COREBASE##/meta-openembedded/meta-webserver \
   ##COREBASE##/meta-gumstix \
   ##COREBASE##/meta-gumstix-extras \
   ##COREBASE##/meta-ros \
   ##COREBASE##/meta-ti \
   ##COREBASE##/meta-java \
+  ##COREBASE##/meta-qt5 \
   "
 
 BBMASK = "meta-ti/recipes-kernel"
