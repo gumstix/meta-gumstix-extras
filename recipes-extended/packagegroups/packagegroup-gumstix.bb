@@ -29,15 +29,12 @@ RDEPENDS_packagegroup-gumstix = " \
     librxtx-java \
     lowpan-tools \
     mavlink-socket \
-    mplayer2 \
     nano \
     ofono \
     omap3-writeprom \
     opencv \
     openjdk-7-jdk \
     packagegroup-core-eclipse-debug \
-    packagegroup-core-qt-demoapps \
-    packagegroup-core-qt4e \
     packagegroup-core-sdk \
     packagegroup-core-standalone-sdk-target \
     packagegroup-core-tools-debug \
