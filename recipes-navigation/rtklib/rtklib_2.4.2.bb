@@ -5,7 +5,7 @@ LICENSE = "BSD"
 LIC_FILES_CHKSUM = "file://readme.txt;beginline=104;endline=141;md5=9adf78faf728f2be96f266651c3e1d05"
 
 # corresponds to "rtklib 2.4.2 p11"
-SRCREV = "b3d1441f24dc73bb6b0cb6138233349053692c73"
+SRCREV = "76b9c97257f304aedad38b5a6bbbac444724aab3"
 SRC_URI = " \
     git://github.com/tomojitakasu/RTKLIB.git \
     file://rtkrcv.conf \
