@@ -9,7 +9,7 @@ require gumstix-console-image.bb
 IMAGE_INSTALL += " \
   florence \
   gnome-bluetooth \
-  epiphany \
+  chromium \
   man \
   man-pages \
   network-manager-applet \

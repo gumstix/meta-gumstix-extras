@@ -22,6 +22,7 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-java \
   ##COREBASE##/meta-qt5 \
   ##COREBASE##/meta-qt4 \
+  ##COREBASE##/meta-browser \
   "
 
 BBMASK = "meta-ti/recipes-kernel"

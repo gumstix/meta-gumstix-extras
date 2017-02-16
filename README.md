@@ -18,31 +18,39 @@ and feature-requests/issues can be raised against the top-level
 This layer depends on:
 
 URI: git://git.yoctoproject.org/poky.git
-branch: fido
+branch: krogoth
 revision: HEAD
 
 URI: git://git.openembedded.org/meta-openembedded.git
-branch: fido
+branch: krogoth
 revision: HEAD
 
 URI: git://github.com/gumstix/meta-gumstix.git
-branch: next
+branch: krogoth
 revision: HEAD
 
 URI: git://github.com/bmwcarit/meta-ros.git
 branch: master
-revision: HEAD
+revision: eb4f9edf2af38a854a2a8d28e45ea02f6bdb7f12
 
 URI: git://git.yoctoproject.org/meta-java.git
 branch: master
-revision: HEAD
+revision: 33ddb28a6428b02ddcc82d1954ecf27cd426fbb5
 
 URI: git://git.yoctoproject.org/meta-ti.git
-branch: fido
+branch: krogoth
 revision: HEAD
 
 URI: https://github.com/meta-qt5/meta-qt5.git
-branch: fido
+branch: krogoth
 revision: HEAD
 
-Layer maintainer: Arun Bharadwaj <arun@gumstix.com> for Gumstix, Inc.
+URI: https://github.com/meta-qt5/meta-qt4.git
+branch: krogoth
+revision: HEAD
+
+URI: https://github.com/OSSystems/meta-browser.git
+branch: krogoth
+revision: 393d2aa15da21ffa532c3cd77d8cb91de997cd31
+
+Layer maintainer: Jerry Hung <jerry@gumstix.com>, Jason Liu <jason.liu@gumstix.com> for Gumstix, Inc.
