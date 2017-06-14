@@ -85,9 +85,27 @@ PARALLEL_MAKE ?= "-j ${@oe.utils.cpu_count()}"
 #MACHINE ?= "routerstationpro"
 #
 # This sets the default machine to be overo if no other machine is selected:
+#
+# Use raspberrypi2 for the RPi2, RPi3 or CM3.
+# Use raspberry for the RPi0 or original CM.
+#
 MACHINE ?= "overo"
 #MACHINE ?= "pepper"
 #MACHINE ?= "duovero"
+#MACHINE ?= "raspberrypi"
+#MACHINE ?= "raspberrypi2"
+
+#
+# This sets the correct providers for virtual/egl, virtual/libgles2, etc 
+# and remove "dispmanx" from the PACKAGECONFIG for gstreamer1.0-plugins-bad.
+# Get rid of the compilation errors for raspberry pi devices
+#
+MACHINE_FEATURES_raspberrypi0 += "vc4graphics"
+MACHINE_FEATURES_raspberrypi2 += "vc4graphics"
+MACHINE_FEATURES_raspberrypi3 += "vc4graphics"
+MACHINE_FEATURES_raspberrypi-cm += "vc4graphics"
+MACHINE_FEATURES_raspberrypi-cm3 += "vc4graphics"
+INSANE_SKIP_mesa = "installed-vs-shipped"
 
 #
 # Where to place downloads
