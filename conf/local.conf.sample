@@ -19,10 +19,10 @@ PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
 PREFERRED_PROVIDER_virtual/java-initial-native = "cacao-initial-native"
 PREFERRED_PROVIDER_virtual/java-native = "cacao-native"
-DEFAULTJRE ?= "openjdk-7-jre"
+DEFAULTJRE ?= "openjdk-8-jre"
 PREFERRED_PROVIDER_java2-vm = "${DEFAULTJRE}"
 PREFERRED_PROVIDER_java2-runtime = "${DEFAULTJRE}"
-PREFERRED_PROVIDER_openjdk-7-jre = "${DEFAULTJRE}"
+PREFERRED_PROVIDER_openjdk-8-jre = "${DEFAULTJRE}"
 
 # Specify SGX GFX providers for Pepper
 # PREFERRED_PROVIDER_virtual/egl_pepper ?= "libgles-omap3"
@@ -92,6 +92,7 @@ PARALLEL_MAKE ?= "-j ${@oe.utils.cpu_count()}"
 MACHINE ?= "overo"
 #MACHINE ?= "pepper"
 #MACHINE ?= "duovero"
+#MACHINE ?= "poblano"
 #MACHINE ?= "raspberrypi"
 #MACHINE ?= "raspberrypi2"
 
@@ -176,7 +177,8 @@ DISTRO ?= "poky"
 # E.g.: PACKAGE_CLASSES ?= "package_rpm package_deb package_ipk"
 # We default to rpm:
 PACKAGE_CLASSES ?= "package_rpm"
-PACKAGE_FEED_URIS = "https://packages.gumstix.com/dev"
+PACKAGE_FEED_URIS = "https://packages.gumstix.com/morty"
+PACKAGE_FEED_BASE_PATHS = "rpm"
 
 # Use local PR server by default
 PRSERV_HOST ?= "localhost:0"
