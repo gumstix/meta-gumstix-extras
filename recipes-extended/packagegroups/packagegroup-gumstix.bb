@@ -34,6 +34,7 @@ RDEPENDS_packagegroup-gumstix = " \
     omap3-writeprom \
     opencv \
     openjdk-8 \
+    openocd \
     packagegroup-core-eclipse-debug \
     packagegroup-core-sdk \
     packagegroup-core-standalone-sdk-target \
