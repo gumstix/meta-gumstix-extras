@@ -35,6 +35,7 @@ RDEPENDS_packagegroup-gumstix = " \
     omap3-writeprom \
     opencv \
     openjdk-7-jdk \
+    openocd \
     packagegroup-core-eclipse-debug \
     packagegroup-core-qt-demoapps \
     packagegroup-core-qt4e \
