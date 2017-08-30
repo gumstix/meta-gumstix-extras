@@ -17,6 +17,7 @@ do_install_append() {
 	install -d ${D}${sysconfdir}/systemd/network/
 	install -m 0644 ${WORKDIR}/*.network ${D}${sysconfdir}/systemd/network/
 	install -m 0644 ${WORKDIR}/*.link ${D}${sysconfdir}/systemd/network/
+	ln -s /run/systemd/resolve/resolv.conf ${D}${sysconfdir}/resolv.conf
 }
 
 USERADD_PARAM_${PN} = "--system --home /dev/null systemd-journal-gateway"
