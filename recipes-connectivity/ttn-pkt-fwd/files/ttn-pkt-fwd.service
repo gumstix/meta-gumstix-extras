@@ -1,0 +1,14 @@
+[Unit]
+Description=TTN Packet Forwarder Startup
+After=network.target
+
+[Service]
+TimeoutSec=86400
+Type=forking
+PIDFile=/var/run/startstream.pid
+ExecStart=/etc/ttn-pkt-fwd/ttn-pkt-fwd.sh
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target 

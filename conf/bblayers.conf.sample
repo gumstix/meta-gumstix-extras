@@ -23,6 +23,7 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-qt5 \
   ##COREBASE##/meta-browser \
   ##COREBASE##/meta-raspberrypi \
+  ##COREBASE##/oe-meta-go \
   "
 
 BBMASK = "meta-ti/recipes-kernel"

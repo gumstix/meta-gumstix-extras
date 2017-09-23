@@ -54,6 +54,7 @@ RDEPENDS_packagegroup-gumstix = " \
     screen \
     spidev-test \
     sshd \
+    ttn-pkt-fwd \
     uart-loop-test \
     vlc \
 "
