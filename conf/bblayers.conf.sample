@@ -24,6 +24,13 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-browser \
   ##COREBASE##/meta-raspberrypi \
   ##COREBASE##/oe-meta-go \
+  ##COREBASE##/meta-toradex-nxp \
+  ##COREBASE##/meta-toradex-bsp-common \
+  ##COREBASE##/meta-freescale \
+  ##COREBASE##/meta-fsl-arm-extra \
   "
 
-BBMASK = "meta-ti/recipes-kernel"
+BBMASK = "meta-ti/recipes-kernel \
+    meta-freescale/recipes-graphics/gtk+ \
+    meta-toradex-bsp-common/recipes-devtools/mtd \
+"

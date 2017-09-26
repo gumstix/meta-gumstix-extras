@@ -95,6 +95,7 @@ MACHINE ?= "overo"
 #MACHINE ?= "poblano"
 #MACHINE ?= "raspberrypi"
 #MACHINE ?= "raspberrypi2"
+#MACHINE ?= "colibri-imx6"
 
 #
 # This sets the correct providers for virtual/egl, virtual/libgles2, etc 
@@ -107,6 +108,9 @@ MACHINE_FEATURES_raspberrypi3 += "vc4graphics"
 MACHINE_FEATURES_raspberrypi-cm += "vc4graphics"
 MACHINE_FEATURES_raspberrypi-cm3 += "vc4graphics"
 INSANE_SKIP_mesa = "installed-vs-shipped"
+
+# Accept the Freescale EULA in order to compile image for imx6
+ACCEPT_FSL_EULA_colibri-imx6 = "1"
 
 #
 # Where to place downloads
