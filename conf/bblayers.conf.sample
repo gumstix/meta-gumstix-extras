@@ -23,6 +23,20 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-qt5 \
   ##COREBASE##/meta-qt4 \
   ##COREBASE##/meta-browser \
+  ##COREBASE##/meta-fsl-arm-extra \
+  ##COREBASE##/meta-fsl-arm \
+  ##COREBASE##/meta-fsl-bsp-release/imx/meta-bsp \
+  ##COREBASE##/meta-fsl-bsp-release/imx/meta-sdk \
+  ##COREBASE##/meta-nxp-imx-scm \
+  ##COREBASE##/meta-fsl-demos \
   "
 
-BBMASK = "meta-ti/recipes-kernel"
+BBMASK = "meta-ti/recipes-kernel \
+    meta-fsl-arm-extra \
+    meta-fsl-arm \
+    meta-fsl-bsp-release \
+    meta-nxp-imx-scm \
+    meta-fsl-demos \
+    meta-gumstix/recipes-kernel/linux/linux-imx_4.1.15.bbappend \
+    meta-gumstix/recipes-bsp/u-boot/u-boot-imx_2016.03.bbappend \
+"

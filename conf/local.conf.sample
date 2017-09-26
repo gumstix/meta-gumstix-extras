@@ -48,6 +48,13 @@ SOURCE_MIRROR_URL ?= "http://source-cache.gumstix.org/"
 INHERIT += "own-mirrors"
 #BB_GENERATE_MIRROR_TARBALLS = "1"
 
+# Set the distro for imx6 scm
+# The build options are X11, Wayland, both X11 and Wayland
+# Default is X11
+DISTRO_imx6dqscm-1gb-gumstix = "fsl-imx-x11"
+#DISTRO_imx6dqscm-1gb-gumstix = "fsl-imx-wayland"
+#DISTRO_imx6dqscm-1gb-gumstix = "fsl-imx-xwayland"
+
 #
 # Parallelism Options
 #
@@ -88,6 +95,8 @@ PARALLEL_MAKE ?= "-j ${@oe.utils.cpu_count()}"
 MACHINE ?= "overo"
 #MACHINE ?= "pepper"
 #MACHINE ?= "duovero"
+#MACHINE ?= "poblano"
+#MACHINE ?= "imx6dqscm-1gb-gumstix"
 
 #
 # Where to place downloads
@@ -284,6 +293,9 @@ DISTRO_FEATURES_append = " bluez5"
 
 # meta-ros fails to build because of this package. Just skip it to get it building
 INSANE_SKIP_python-wstool = "installed-vs-shipped"
+
+# Accept the Freescale EULA in order to compile image for NXP
+ACCEPT_FSL_EULA = "1"
 
 # Use wic to generate 2G SD-card image for overo
 #IMAGE_FSTYPES_append_overo = " wic"
