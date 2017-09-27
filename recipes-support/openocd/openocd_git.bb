@@ -5,6 +5,7 @@ DEPENDS = "libusb-compat libftdi"
 RDEPENDS_${PN} = "libusb1"
 
 SRC_URI = "git://repo.or.cz/openocd.git \
+	   file://sysfsgpio-overo.cfg \
 	"
 SRCREV = "cb317eabf2d162365467aeb89b564828e5e6d6f3"
 
@@ -33,6 +34,11 @@ do_install() {
     if [ -e "${D}${bindir}/.debug" ]; then
       rm -Rf ${D}${bindir}/.debug
     fi
+
+    # add sysfsgpio-overo.cfg to interface directory
+    install -d ${D}${datadir}/openocd/scripts/interface
+    install -m 0644 ${WORKDIR}/sysfsgpio-overo.cfg ${D}${datadir}/openocd/scripts/interface/
+
 }
 
 FILES_${PN} = " \
