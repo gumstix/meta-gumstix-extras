@@ -36,7 +36,7 @@ DEPENDS += "\
 "
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
-INSANE_SKIP_${PN} = "ldflags"
+INSANE_SKIP_${PN} = "ldflags already-stripped"
 
 do_compile() {
 
