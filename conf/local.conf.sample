@@ -86,15 +86,15 @@ PARALLEL_MAKE ?= "-j ${@oe.utils.cpu_count()}"
 #
 # This sets the default machine to be overo if no other machine is selected:
 #
-# Use raspberrypi2 for the RPi2, RPi3 or CM3.
-# Use raspberry for the RPi0 or original CM.
-#
 MACHINE ?= "overo"
 #MACHINE ?= "pepper"
 #MACHINE ?= "duovero"
 #MACHINE ?= "poblano"
 #MACHINE ?= "raspberrypi"
 #MACHINE ?= "raspberrypi2"
+#MACHINE ?= "raspbeerypi3"
+#MACHINE ?= "raspberrypi-cm"
+#MACHINE ?= "raspberrypi-cm3"
 #MACHINE ?= "colibri-imx6"
 
 #
@@ -111,6 +111,9 @@ INSANE_SKIP_mesa = "installed-vs-shipped"
 
 # Accept the Freescale EULA in order to compile image for imx6
 ACCEPT_FSL_EULA_colibri-imx6 = "1"
+
+# Use gumstix device tree as default
+KERNEL_DEVICETREE_colibri-imx6 = "imx6dl-colibri-gumstix.dtb"
 
 #
 # Where to place downloads
