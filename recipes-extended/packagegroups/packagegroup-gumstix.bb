@@ -25,6 +25,7 @@ RDEPENDS_packagegroup-gumstix = " \
     gstreamer1.0-meta-video \
     gstreamer1.0-meta-x11-base \
     i2c-tools \
+    iperf \
     kernel-devsrc \
     librxtx-java \
     lowpan-tools \
