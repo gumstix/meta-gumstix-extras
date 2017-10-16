@@ -112,6 +112,9 @@ INSANE_SKIP_mesa = "installed-vs-shipped"
 # Accept the Freescale EULA in order to compile image for imx6
 ACCEPT_FSL_EULA_colibri-imx6 = "1"
 
+# Use ext3 rootfs format to match u-boot configuration
+SDCARD_ROOTFS_colibri-imx6 = "${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.ext3"
+
 # Use gumstix device tree as default
 KERNEL_DEVICETREE_colibri-imx6 = "imx6dl-colibri-gumstix.dtb"
 
