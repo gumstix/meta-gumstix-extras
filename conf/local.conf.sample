@@ -92,7 +92,7 @@ MACHINE ?= "overo"
 #MACHINE ?= "poblano"
 #MACHINE ?= "raspberrypi"
 #MACHINE ?= "raspberrypi2"
-#MACHINE ?= "raspbeerypi3"
+#MACHINE ?= "raspberrypi3"
 #MACHINE ?= "raspberrypi-cm"
 #MACHINE ?= "raspberrypi-cm3"
 #MACHINE ?= "colibri-imx6"
@@ -102,11 +102,7 @@ MACHINE ?= "overo"
 # and remove "dispmanx" from the PACKAGECONFIG for gstreamer1.0-plugins-bad.
 # Get rid of the compilation errors for raspberry pi devices
 #
-MACHINE_FEATURES_raspberrypi0 += "vc4graphics"
-MACHINE_FEATURES_raspberrypi2 += "vc4graphics"
-MACHINE_FEATURES_raspberrypi3 += "vc4graphics"
-MACHINE_FEATURES_raspberrypi-cm += "vc4graphics"
-MACHINE_FEATURES_raspberrypi-cm3 += "vc4graphics"
+MACHINE_FEATURES_rpi += "vc4graphics"
 INSANE_SKIP_mesa = "installed-vs-shipped"
 
 # Accept the Freescale EULA in order to compile image for imx6
@@ -188,7 +184,9 @@ DISTRO ?= "poky"
 # We default to rpm:
 PACKAGE_CLASSES ?= "package_rpm"
 PACKAGE_FEED_URIS = "https://packages.gumstix.com/morty"
-PACKAGE_FEED_BASE_PATHS = "rpm"
+PACKAGE_FEED_BASE_PATHS ?= "rpm"
+PACKAGE_CLASSES_rpi = "package_rpm package_deb"
+PACKAGE_FEED_BASE_PATHS_rpi = "rpm deb"
 
 # Use local PR server by default
 PRSERV_HOST ?= "localhost:0"
