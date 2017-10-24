@@ -39,4 +39,5 @@ BBMASK = "meta-ti/recipes-kernel \
     meta-fsl-demos \
     meta-gumstix/recipes-kernel/linux/linux-imx_4.1.15.bbappend \
     meta-gumstix/recipes-bsp/u-boot/u-boot-imx_2016.03.bbappend \
+    meta-gumstix-extras/recipes-multimedia/gstreamer/ \
 "
