@@ -309,6 +309,10 @@ VIRTUAL-RUNTIME_graphical_init_manager = "lxdm"
 # Use bluez5 rather than bluez4
 DISTRO_FEATURES_append = " bluez5"
 
+# Remove the wayland feature because on iMX6, wayland is not compatible with X11
+# at the same time
+DISTRO_FEATURES_remove_colibri-imx6 = "wayland"
+
 # meta-ros fails to build because of this package. Just skip it to get it building
 INSANE_SKIP_python-wstool = "installed-vs-shipped"
 
