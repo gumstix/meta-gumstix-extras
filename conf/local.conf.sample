@@ -96,6 +96,7 @@ MACHINE ?= "overo"
 #MACHINE ?= "raspberrypi-cm"
 #MACHINE ?= "raspberrypi-cm3"
 #MACHINE ?= "colibri-imx6"
+#MACHINE ?= "imx6dqscm-1gb-gumstix"
 
 #
 # This sets the correct providers for virtual/egl, virtual/libgles2, etc 
@@ -105,8 +106,8 @@ MACHINE ?= "overo"
 MACHINE_FEATURES_rpi += "vc4graphics"
 INSANE_SKIP_mesa = "installed-vs-shipped"
 
-# Accept the Freescale EULA in order to compile image for imx6
-ACCEPT_FSL_EULA_colibri-imx6 = "1"
+# Accept the Freescale EULA in order to compile image for imx6 machines
+ACCEPT_FSL_EULA_mx6 = "1"
 
 # Use ext3 rootfs format to match u-boot configuration
 SDCARD_ROOTFS_colibri-imx6 = "${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.ext3"
@@ -310,8 +311,11 @@ VIRTUAL-RUNTIME_graphical_init_manager = "lxdm"
 DISTRO_FEATURES_append = " bluez5"
 
 # Remove the wayland feature because on iMX6, wayland is not compatible with X11
-# at the same time
-DISTRO_FEATURES_remove_colibri-imx6 = "wayland"
+# at the same time on Colibri iMX6. On NXP iMX6, you can enable wayland by removing
+# directfb and x11 feature, or enable both by removing directfb, or enable fb by
+# removing x11, wayland and directfb.
+DISTRO_FEATURES_remove_mx6 = "wayland"
+DISTRO_FEATURES_append_mx6 = " x11"
 
 # meta-ros fails to build because of this package. Just skip it to get it building
 INSANE_SKIP_python-wstool = "installed-vs-shipped"
