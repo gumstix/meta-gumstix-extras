@@ -97,6 +97,7 @@ MACHINE ?= "overo"
 #MACHINE ?= "raspberrypi-cm3"
 #MACHINE ?= "colibri-imx6"
 #MACHINE ?= "imx6dqscm-1gb-gumstix"
+#MACHINE ?= "dragonboard-410c"
 
 #
 # This sets the correct providers for virtual/egl, virtual/libgles2, etc 
@@ -106,8 +107,9 @@ MACHINE ?= "overo"
 MACHINE_FEATURES_rpi += "vc4graphics"
 INSANE_SKIP_mesa = "installed-vs-shipped"
 
-# Accept the Freescale EULA in order to compile image for imx6 machines
+# Accept the Freescale EULA in order to compile image for machines
 ACCEPT_FSL_EULA_mx6 = "1"
+ACCEPT_EULA_dragonboard-410c = "1"
 
 # Use ext3 rootfs format to match u-boot configuration
 SDCARD_ROOTFS_colibri-imx6 = "${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.ext3"

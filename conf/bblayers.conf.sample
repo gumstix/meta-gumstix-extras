@@ -28,6 +28,7 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-toradex-bsp-common \
   ##COREBASE##/meta-freescale \
   ##COREBASE##/meta-fsl-arm-extra \
+  ##COREBASE##/meta-qcom \ 
   "
 
 BBMASK = "meta-ti/recipes-kernel \

@@ -20,6 +20,10 @@ IMAGE_INSTALL += " \
     polkit-group-rule-datetime \
 "
 
+IMAGE_INSTALL_remove_dragonboard-410c += " \
+    chromium \
+"
+
 IMAGE_INSTALL_append_mx6 += " \
     xf86-video-imxfb-vivante \
     xserver-xorg-extension-viv-autohdmi \
