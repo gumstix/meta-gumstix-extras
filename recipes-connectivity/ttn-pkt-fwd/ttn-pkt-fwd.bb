@@ -6,11 +6,11 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=c6ca344bf10fb1aea76fb0ab3e92e14d"
 GO_PACKAGE_NAME = "github.com/TheThingsNetwork/packet_forwarder"
 SRCREV = "${AUTOREV}"
 SRC_URI = " \
-    git://github.com/ThethingsNetwork/packet_forwarder.git;destsuffix=src/${GO_PACKAGE_NAME};branch=develop \
-    file://ttn-config.yml \
-    file://ttn-pkt-fwd.service \
-    file://ttn-pkt-fwd.sh \
-    file://imst_* \
+	git://github.com/ThethingsNetwork/packet_forwarder.git;destsuffix=src/${GO_PACKAGE_NAME};branch=develop \
+	file://ttn-config.yml \
+	file://ttn-pkt-fwd.service \
+	file://ttn-pkt-fwd.sh \
+	file://imst_* \
 "
 
 S = "${WORKDIR}/src/${GO_PACKAGE_NAME}"
@@ -65,11 +65,14 @@ do_install() {
 
 	install -d ${D}${bindir}/
 
+	TEMPSTRUC="aarch64"
 	# custom machine file means custom binary output
-	if [ -f "${WORKDIR}/imst_${MACHINE}.h" ]; then
-	        install -m 0755 ${S}/release/packet-forwarder-linux-arm-imst_${MACHINE}-native ${D}${bindir}/packet-forwarder
+	if [ "${TUNE_FEATURES}" = "$TEMPSTRUC" ]; then
+		install -m 0755 ${S}/release/packet-forwarder-linux-arm64-imst_rpi-native ${D}${bindir}/packet-forwarder
+	elif [ -f "${WORKDIR}/imst_${MACHINE}.h" ]; then
+		install -m 0755 ${S}/release/packet-forwarder-linux-arm-imst_${MACHINE}-native ${D}${bindir}/packet-forwarder
 	else
-	        install -m 0755 ${S}/release/packet-forwarder-linux-arm-imst_rpi-native ${D}${bindir}/packet-forwarder
+		install -m 0755 ${S}/release/packet-forwarder-linux-arm-imst_rpi-native ${D}${bindir}/packet-forwarder
 	fi
 
 	# install config file to /etc/ttn-pkt-fwd/

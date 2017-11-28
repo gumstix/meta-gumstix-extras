@@ -60,6 +60,10 @@ RDEPENDS_packagegroup-gumstix = " \
     vlc \
 "
 
+RDEPENDS_packagegroup-gumstix_remove_dragonboard-410c += " \
+    openjdk-8 \
+"
+
 RDEPENDS_packagegroup-gumstix_append_overo = " \
     omap3-isp-live \
 "
