@@ -99,13 +99,10 @@ MACHINE ?= "overo"
 #MACHINE ?= "imx6dqscm-1gb-gumstix"
 #MACHINE ?= "dragonboard-410c"
 
-#
-# This sets the correct providers for virtual/egl, virtual/libgles2, etc 
-# and remove "dispmanx" from the PACKAGECONFIG for gstreamer1.0-plugins-bad.
-# Get rid of the compilation errors for raspberry pi devices
-#
-MACHINE_FEATURES_rpi += "vc4graphics"
-INSANE_SKIP_mesa = "installed-vs-shipped"
+# Get rid of the mesa packaging errors for rasberrypi and dragonbard devices
+INSANE_SKIP_mesa_rpi = "installed-vs-shipped"
+INSANE_SKIP_mesa_dragonboard-410c = "installed-vs-shipped"
+
 
 # Accept the Freescale EULA in order to compile image for machines
 ACCEPT_FSL_EULA_mx6 = "1"
@@ -116,6 +113,7 @@ SDCARD_ROOTFS_colibri-imx6 = "${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.ext3"
 
 # Use gumstix device tree as default
 KERNEL_DEVICETREE_colibri-imx6 = "imx6dl-colibri-gumstix.dtb"
+KERNEL_DEVICETREE_append_rpi = " overlays/sdio-wlink8-cow.dtbo"
 
 #
 # Where to place downloads
@@ -318,6 +316,16 @@ DISTRO_FEATURES_append = " bluez5"
 # removing x11, wayland and directfb.
 DISTRO_FEATURES_remove_mx6 = "wayland"
 DISTRO_FEATURES_append_mx6 = " x11"
+
+# vc4graphics is required for rpi to build qtwayland
+# However vc4graphics will stop the HDMI from working on RPI CM and CM3
+DISTRO_FEATURES_remove_rpi = "wayland"
+
+# RPI configurations to enable i2c, spi, uart
+SERIAL_CONSOLE_raspberrypi-cm3 = "115200 ttyS0"
+ENABLE_UART_rpi = "1"
+ENABLE_I2C_rpi = "1"
+ENABLE_RPI3_SERIAL_CONSOLE_rpi = "1"
 
 # meta-ros fails to build because of this package. Just skip it to get it building
 INSANE_SKIP_python-wstool = "installed-vs-shipped"

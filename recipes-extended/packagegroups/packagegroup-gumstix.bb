@@ -68,6 +68,10 @@ RDEPENDS_packagegroup-gumstix_append_overo = " \
     omap3-isp-live \
 "
 
+RDEPENDS_packagegroup-gumstix_remove_rpi = " \
+    packagegroup-core-tools-testapps \
+"
+
 ROS_INSTALL = " \
     packagegroup-ros-world \
     python-distutils \
