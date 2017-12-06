@@ -96,6 +96,7 @@ MACHINE ?= "overo"
 #MACHINE ?= "raspberrypi-cm"
 #MACHINE ?= "raspberrypi-cm3"
 #MACHINE ?= "colibri-imx6"
+#MACHINE ?= "colibri-imx7"
 #MACHINE ?= "imx6dqscm-1gb-gumstix"
 #MACHINE ?= "dragonboard-410c"
 
@@ -106,6 +107,7 @@ INSANE_SKIP_mesa_dragonboard-410c = "installed-vs-shipped"
 
 # Accept the Freescale EULA in order to compile image for machines
 ACCEPT_FSL_EULA_mx6 = "1"
+ACCEPT_FSL_EULA_mx7 = "1"
 ACCEPT_EULA_dragonboard-410c = "1"
 
 # Use ext3 rootfs format to match u-boot configuration
@@ -113,6 +115,7 @@ SDCARD_ROOTFS_colibri-imx6 = "${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.ext3"
 
 # Use gumstix device tree as default
 KERNEL_DEVICETREE_colibri-imx6 = "imx6dl-colibri-gumstix.dtb"
+KERNEL_DEVICETREE_colibri-imx7 = " imx7d-colibri-gumstix.dtb"
 KERNEL_DEVICETREE_append_rpi = " overlays/sdio-wlink8-cow.dtbo"
 
 #
