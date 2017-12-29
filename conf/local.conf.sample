@@ -42,6 +42,10 @@ PREFERRED_PROVIDER_openjdk-8-jre = "${DEFAULTJRE}"
 # PREFERRED_PROVIDER_virtual/kernel = "linux-gumstix"
 # PREFERRED_VERSION_linux-gumstix = "3.5.7"
 
+# Use 1.10.4 version Gstreamer for OV5640 camera on Dragonboard-410c
+PREFERRED_VERSION_gstreamer1.0_dragonboard-410c = "1.10.4"
+PREFERRED_VERSION_gstreamer1.0 += "1.8.3"
+
 
 # Use Gumstix source mirror as default premirror
 SOURCE_MIRROR_URL ?= "http://source-cache.gumstix.org/"

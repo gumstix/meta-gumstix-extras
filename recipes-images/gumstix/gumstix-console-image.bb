@@ -70,7 +70,18 @@ UTILITIES_INSTALL = " \
     wget \
     zip \
 "
- 
+
+GSTREAMER_INSTALL = " \
+    gstreamer1.0 \
+    gstreamer1.0-libav \
+    gstreamer1.0-rtsp-server \
+    gstreamer1.0-meta-base \
+    gstreamer1.0-plugins-good \
+    gstreamer1.0-plugins-bad \
+    gstreamer1.0-plugins-base \
+    gstreamer1.0-plugins-ugly \
+"
+
 IMAGE_INSTALL += " \
     ${FIRMWARE_INSTALL} \
     ${SYSTEM_TOOLS_INSTALL} \
@@ -80,9 +91,14 @@ IMAGE_INSTALL += " \
     ${GRAPHICS_LIBS} \
     ${UTILITIES_INSTALL} \
 "
+
 IMAGE_INSTALL_append_rpi += " \
     dpkg \
     apt \
+"
+
+IMAGE_INSTALL_append_dragonboard-410c += " \
+    ${GSTREAMER_INSTALL} \
 "
 
 # Create a generic 'gumstix' user account, part of the gumstix group,
