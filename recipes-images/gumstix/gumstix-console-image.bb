@@ -15,6 +15,7 @@ FIRMWARE_INSTALL = " \
     linux-firmware-sd8686 \
     linux-firmware-sd8787 \
     linux-firmware-wl18xx \
+    wl18xx-fw \
 "
 
 SYSTEM_TOOLS_INSTALL = " \
