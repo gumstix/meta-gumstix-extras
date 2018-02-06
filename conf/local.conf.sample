@@ -120,7 +120,7 @@ SDCARD_ROOTFS_colibri-imx6 = "${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.ext3"
 # Use gumstix device tree as default
 KERNEL_DEVICETREE_colibri-imx6 = "imx6dl-colibri-gumstix.dtb"
 KERNEL_DEVICETREE_colibri-imx7 = " imx7d-colibri-gumstix.dtb"
-KERNEL_DEVICETREE_append_rpi = " overlays/sdio-wlink8-cow.dtbo"
+KERNEL_DEVICETREE_rpi = " overlays/sdio-wlink8.dtbo"
 
 #
 # Where to place downloads
@@ -329,10 +329,8 @@ DISTRO_FEATURES_append_mx6 = " x11"
 DISTRO_FEATURES_remove_rpi = "wayland"
 
 # RPI configurations to enable i2c, spi, uart
-SERIAL_CONSOLE_raspberrypi-cm3 = "115200 ttyS0"
 ENABLE_UART_rpi = "1"
 ENABLE_I2C_rpi = "1"
-ENABLE_RPI3_SERIAL_CONSOLE_rpi = "1"
 
 # meta-ros fails to build because of this package. Just skip it to get it building
 INSANE_SKIP_python-wstool = "installed-vs-shipped"
