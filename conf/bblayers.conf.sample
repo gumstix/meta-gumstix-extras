@@ -6,11 +6,10 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 BBLAYERS ?= " \
   ##COREBASE##/meta \
-  ##COREBASE##/meta-yocto \
+  ##COREBASE##/meta-poky \
   ##COREBASE##/meta-openembedded/meta-gnome \
   ##COREBASE##/meta-openembedded/meta-oe \
   ##COREBASE##/meta-openembedded/meta-xfce \
-  ##COREBASE##/meta-openembedded/meta-systemd \
   ##COREBASE##/meta-openembedded/meta-networking \
   ##COREBASE##/meta-openembedded/meta-multimedia \
   ##COREBASE##/meta-openembedded/meta-python \
