@@ -88,8 +88,10 @@ PARALLEL_MAKE ?= "-j ${@oe.utils.cpu_count()}"
 #MACHINE ?= "mpc8315e-rdb"
 #MACHINE ?= "routerstationpro"
 #
+PREFERRED_PROVIDER_cryptodev-linux = "cryptodev-linux"
 # This sets the default machine to be overo if no other machine is selected:
 #
+COMPATIBLE_MACHINE_overo = "overo"
 MACHINE ?= "overo"
 #MACHINE ?= "pepper"
 #MACHINE ?= "duovero"

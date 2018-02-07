@@ -18,15 +18,15 @@ and feature-requests/issues can be raised against the top-level
 This layer depends on:
 
 URI: git://git.yoctoproject.org/poky.git
-branch: morty
+branch: rocko
 revision: HEAD
 
 URI: git://git.openembedded.org/meta-openembedded.git
-branch: morty
+branch: rocko
 revision: HEAD
 
 URI: git://github.com/gumstix/meta-gumstix.git
-branch: morty
+branch: rocko
 revision: HEAD
 
 URI: git://github.com/bmwcarit/meta-ros.git
@@ -34,23 +34,26 @@ branch: master
 revision: HEAD
 
 URI: git://git.yoctoproject.org/meta-java.git
-branch: morty
+branch: rocko
 revision: HEAD
 
 URI: git://git.yoctoproject.org/meta-ti.git
-branch: morty
+branch: rocko
 revision: HEAD
 
 URI: https://github.com/meta-qt5/meta-browser.git
-branch: morty
+branch: rocko
 revision: HEAD
 
 URI: https://github.com/OSSystems/meta-qt5.git
-branch: morty
+branch: rocko
 revision: HEAD
 
 URI: git://git.yoctoproject.org/meta-raspberrypi.git
-branch: morty
+branch: rocko
 revision: HEAD
 
-Layer maintainer: Jason Liu <jason.liu@gumstix.com> for Gumstix, Inc.
+Layer maintainer: 
+
+Sicong Jia <sicong.jia@gumstix.com> for Gumstix, Inc.
+Jay Zhao <jay.zhao@gumstix.com> for Gumstix, Inc.

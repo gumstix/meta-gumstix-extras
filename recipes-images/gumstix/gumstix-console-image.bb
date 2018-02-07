@@ -91,6 +91,7 @@ IMAGE_INSTALL += " \
     ${MEDIA_TOOLS_INSTALL} \
     ${GRAPHICS_LIBS} \
     ${UTILITIES_INSTALL} \
+    ${GSTREAMER_INSTALL} \
 "
 
 IMAGE_INSTALL_append_rpi += " \
