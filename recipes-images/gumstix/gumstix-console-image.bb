@@ -57,6 +57,7 @@ GRAPHICS_LIBS = " \
 UTILITIES_INSTALL = " \
     coreutils \
     diffutils \
+    dtc \
     findutils \
     gpsd \
     grep \
@@ -101,6 +102,16 @@ IMAGE_INSTALL_append_rpi += " \
 IMAGE_INSTALL_append_dragonboard-410c += " \
     ${GSTREAMER_INSTALL} \
 "
+
+ROOTFS_CMD ?= ""
+ROOTFS_POSTPROCESS_COMMAND += "${ROOTFS_CMD}"
+
+# To speed up boot time for devices that do not have a wireless
+# network adapter on-board by default, remove the wpa service
+# for the wireless adapter
+remove_wpa() {
+    rm -rf ${IMAGE_ROOTFS}/etc/systemd/system/multi-user.target.wants/wpa_supplicant@wlan0.service
+}
 
 # Create a generic 'gumstix' user account, part of the gumstix group,
 # using '/bin/sh' and with a home directory '/home/gumstix' (see

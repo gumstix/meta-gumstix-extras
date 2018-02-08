@@ -329,8 +329,15 @@ DISTRO_FEATURES_append_mx6 = " x11"
 DISTRO_FEATURES_remove_rpi = "wayland"
 
 # RPI configurations to enable i2c, spi, uart
+SERIAL_CONSOLE_rpi = "115200 serial0"
 ENABLE_UART_rpi = "1"
 ENABLE_I2C_rpi = "1"
+# if using Wifi on Raspberry Pi CM3
+#RPI_EXTRA_CONFIG = '\n# Raspberry Pi CM3 WLink8 Enable\ndtoverlay=sdio-wlink8\n'
+
+# if Wifi is not needed and you'd like to speed up boot time
+# remove the wpa_supplicant@wlan0 service
+#ROOTFS_CMD = "remove_wpa; "
 
 # meta-ros fails to build because of this package. Just skip it to get it building
 INSANE_SKIP_python-wstool = "installed-vs-shipped"
