@@ -44,13 +44,15 @@ PREFERRED_PROVIDER_openjdk-8-jre = "${DEFAULTJRE}"
 
 # Use 1.10.4 version Gstreamer for OV5640 camera on Dragonboard-410c
 PREFERRED_VERSION_gstreamer1.0_dragonboard-410c = "1.10.4"
-PREFERRED_VERSION_gstreamer1.0 += "1.8.3"
-
 
 # Use Gumstix source mirror as default premirror
 SOURCE_MIRROR_URL ?= "http://source-cache.gumstix.org/"
 INHERIT += "own-mirrors"
 #BB_GENERATE_MIRROR_TARBALLS = "1"
+
+# Raspberry pi ov5640 camera driver and unicam driver require 4.14 kernel
+PREFERRED_PROVIDER_virtual/kernel_raspberrypi-cm3 = "linux-raspberrypi"
+PREFERRED_VERSION_linux-raspberrypi = "1:4.14%"
 
 #
 # Parallelism Options
@@ -122,7 +124,8 @@ SDCARD_ROOTFS_colibri-imx6 = "${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.ext3"
 # Use gumstix device tree as default
 KERNEL_DEVICETREE_colibri-imx6 = "imx6dl-colibri-gumstix.dtb"
 KERNEL_DEVICETREE_colibri-imx7 = " imx7d-colibri-gumstix.dtb"
-KERNEL_DEVICETREE_rpi = " overlays/sdio-wlink8.dtbo"
+KERNEL_DEVICETREE_append_rpi = " overlays/sdio-wlink8.dtbo"
+KERNEL_DEVICETREE_append_raspberrypi-cm3 = " overlays/ov5640-gumstix.dtbo"
 
 #
 # Where to place downloads
