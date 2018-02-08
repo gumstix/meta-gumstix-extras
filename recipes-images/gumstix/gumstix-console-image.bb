@@ -103,6 +103,11 @@ IMAGE_INSTALL_append_dragonboard-410c += " \
     ${GSTREAMER_INSTALL} \
 "
 
+IMAGE_INSTALL_append_imx6dqscm-1gb-gumstix += " \
+    ${GSTREAMER_INSTALL} \
+    gstreamer1.0-plugins-imx \
+"
+
 ROOTFS_CMD ?= ""
 ROOTFS_POSTPROCESS_COMMAND += "${ROOTFS_CMD}"
 
