@@ -120,7 +120,7 @@ SDCARD_ROOTFS_colibri-imx6 = "${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.ext3"
 # Use gumstix device tree as default
 KERNEL_DEVICETREE_colibri-imx6 = "imx6dl-colibri-gumstix.dtb"
 KERNEL_DEVICETREE_colibri-imx7 = " imx7d-colibri-gumstix.dtb"
-KERNEL_DEVICETREE_rpi = " overlays/sdio-wlink8.dtbo"
+KERNEL_DEVICETREE_append_rpi = " overlays/sdio-wlink8.dtbo"
 
 #
 # Where to place downloads
