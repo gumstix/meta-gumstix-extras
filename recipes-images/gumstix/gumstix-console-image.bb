@@ -1,7 +1,8 @@
 DESCRIPTION = "A basic console image for Gumstix boards."
 LICENSE = "MIT"
 
-IMAGE_FEATURES += "splash package-management ssh-server-openssh"
+IMAGE_FEATURES += "splash ssh-server-openssh"
+IMAGE_FEATURES += "package-management debug-tweaks"
 # Uncomment below to include dev tools and packages
 # IMAGE_FEATURES += "tools-sdk dev-pkgs"
 
@@ -71,6 +72,8 @@ UTILITIES_INSTALL = " \
     vim \
     wget \
     zip \
+    python \
+    bzip2 \
 "
 
 GSTREAMER_INSTALL = " \

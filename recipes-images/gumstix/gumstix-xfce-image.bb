@@ -9,19 +9,17 @@ require gumstix-console-image.bb
 IMAGE_INSTALL += " \
     florence \
     gnome-bluetooth \
-    chromium \
+    chromium-x11 \
     man \
     man-pages \
     network-manager-applet \
     packagegroup-xfce-extended \
     packagegroup-xfce-multimedia \
     polkit-gnome \
-    polkit-group-rule-network \
-    polkit-group-rule-datetime \
 "
 
 IMAGE_INSTALL_remove_dragonboard-410c += " \
-    chromium \
+    chromium-x11 \
 "
 
 IMAGE_INSTALL_append_mx6 += " \
