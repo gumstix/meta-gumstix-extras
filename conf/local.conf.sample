@@ -120,7 +120,7 @@ SDCARD_ROOTFS_colibri-imx6 = "${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.ext3"
 # Use gumstix device tree as default
 KERNEL_DEVICETREE_colibri-imx6 = "imx6dl-colibri-gumstix.dtb"
 KERNEL_DEVICETREE_colibri-imx7 = " imx7d-colibri-gumstix.dtb"
-KERNEL_DEVICETREE_append_rpi = " overlays/sdio-wlink8.dtbo"
+KERNEL_DEVICETREE_append_rpi = " overlays/sdio-wlink8.dtbo overlays/i2c0-bcm2708.dtbo overlays/tlv320aic3x-simple.dtbo"
 
 #
 # Where to place downloads
@@ -332,8 +332,12 @@ DISTRO_FEATURES_remove_rpi = "wayland"
 SERIAL_CONSOLE_rpi = "115200 serial0"
 ENABLE_UART_rpi = "1"
 ENABLE_I2C_rpi = "1"
+# if i2c0 is being used, enable the overlay
+RPI_EXTRA_CONFIG = '\n# i2c0 pins 0 and 1 enable\n#dtoverlay=i2c0-bcm2708,pins_0_1\n#dtparam=i2c0=on\n'
+# if audio is being used, enable i2s and the overlay
+RPI_EXTRA_CONFIG += '\n# i2s enable on 18-21\n#dtparam=i2s=on\n# enable the tlv320aic3x audio codec\n#dtoverlay=tlv320aic3x-simple\n'
 # if using Wifi on Raspberry Pi CM3
-#RPI_EXTRA_CONFIG = '\n# Raspberry Pi CM3 WLink8 Enable\ndtoverlay=sdio-wlink8\n'
+RPI_EXTRA_CONFIG += '\n# Raspberry Pi CM3 WLink8 Enable\n#dtoverlay=sdio-wlink8\n'
 
 # if Wifi is not needed and you'd like to speed up boot time
 # remove the wpa_supplicant@wlan0 service
