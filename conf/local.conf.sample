@@ -342,8 +342,8 @@ RPI_EXTRA_CONFIG += '\n# i2s enable on 18-21 \n\
 #dtoverlay=tlv320aic3x-simple \n\
 #dtoverlay=i2s-gpio28-31 \n'
 
-# if using Wifi on Raspberry Pi CM3
-RPI_EXTRA_CONFIG += '\n# Raspberry Pi CM3 WLink8 Enable\n#dtoverlay=sdio-wlink8\n'
+# if using Wifi on Raspberry Pi CM/CM3
+RPI_EXTRA_CONFIG += '\n# Raspberry Pi CM3 WLink8 Enable\n#dtoverlay=sdio-wlink8,sdio_overclock=25\n'
 
 # if Wifi is not needed and you'd like to speed up boot time
 # remove the wpa_supplicant@wlan0 service
@@ -356,3 +356,7 @@ INSANE_SKIP_python-wstool = "installed-vs-shipped"
 #IMAGE_FSTYPES_append_overo = " wic"
 #WKS_FILE_overo = "sdimage-gumstix.wks"
 #IMAGE_BOOT_FILES_overo ?= "MLO u-boot.img uImage"
+
+# Temporary fix for multiple list for package linux-firmware-sd8887
+# Disable the bbappend file in meta-toradex-bsp-common
+BBMASK += "/meta-toradex-bsp-common/recipes-kernel/linux-firmware/linux-firmware_%.bbappend"
