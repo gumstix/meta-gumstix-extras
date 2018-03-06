@@ -12,13 +12,7 @@ DRIVE=$1
 
 dd if=/dev/zero of=$DRIVE bs=1024 count=1024
 
-SIZE=`fdisk -l $DRIVE | grep Disk | awk '{print $5}'`
-
-echo DISK SIZE - $SIZE bytes
-
-CYLINDERS=`echo $SIZE/255/63/512 | bc`
-
-sfdisk --force -D -uS -H 255 -S 63 -C $CYLINDERS $DRIVE << EOF
+sfdisk --force $DRIVE << EOF
 128,130944,0x0C,*
 131072,,,-
 EOF
@@ -30,7 +24,7 @@ else
 fi
 
 if [ -b ${1}2 ]; then
-	mkfs.ext3 -L "rootfs" ${DRIVE}2
+	mkfs.ext4 -L "rootfs" ${DRIVE}2
 else 
-	mkfs.ext3 -L "rootfs" ${DRIVE}p2
+	mkfs.ext4 -L "rootfs" ${DRIVE}p2
 fi
