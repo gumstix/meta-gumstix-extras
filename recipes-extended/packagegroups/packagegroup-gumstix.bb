@@ -12,7 +12,6 @@ RDEPENDS_packagegroup-gumstix = " \
     apache2 \
     boost \
     caspa-streaming \
-    cheese \
     cronie \
     devmem2 \
     dtc \
@@ -25,7 +24,7 @@ RDEPENDS_packagegroup-gumstix = " \
     gstreamer1.0-meta-video \
     gstreamer1.0-meta-x11-base \
     i2c-tools \
-    iperf \
+    iperf3 \
     kernel-devsrc \
     librxtx-java \
     lowpan-tools \
