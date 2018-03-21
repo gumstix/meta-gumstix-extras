@@ -97,6 +97,7 @@ IMAGE_INSTALL += " \
 IMAGE_INSTALL_append_rpi += " \
     dpkg \
     apt \
+    userland \
 "
 
 IMAGE_INSTALL_append_dragonboard-410c += " \
