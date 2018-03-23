@@ -356,11 +356,3 @@ INSANE_SKIP_python-wstool = "installed-vs-shipped"
 #IMAGE_FSTYPES_append_overo = " wic"
 #WKS_FILE_overo = "sdimage-gumstix.wks"
 #IMAGE_BOOT_FILES_overo ?= "MLO u-boot.img uImage"
-
-# Temporary fix for multiple list for package linux-firmware-sd8887
-# Disable the bbappend file in meta-toradex-bsp-common
-BBMASK += "/meta-toradex-bsp-common/recipes-kernel/linux-firmware/linux-firmware_%.bbappend"
-
-# Temporary fix for do_populat_sysroot error for qcom firmware
-# Remove the target firmware-qcom-dragonboard410c since the firmware already installed in linux-firmware
-MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS_remove_dragonboard-410c += "firmware-qcom-dragonboard410c"
