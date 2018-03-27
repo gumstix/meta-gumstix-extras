@@ -361,3 +361,9 @@ INSANE_SKIP_python-wstool = "installed-vs-shipped"
 #IMAGE_FSTYPES_append_overo = " wic"
 #WKS_FILE_overo = "sdimage-gumstix.wks"
 #IMAGE_BOOT_FILES_overo ?= "MLO u-boot.img uImage"
+
+# Fix up issues on dragonboard 410c xfce image
+# Disable the touchscreen calibration
+RDEPENDS_x11-common_remove_dragonboard-410c += "xinput-calibrator"
+# Remove the duplicate target in packagegroup to solve the PolicyKit Error with xfce image
+RRECOMMENDS_packagegroup-xfce-extended_remove_dragonboard-410c += "xfce-polkit"
