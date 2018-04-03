@@ -103,6 +103,7 @@ MACHINE ?= "overo"
 #MACHINE ?= "colibri-imx7"
 #MACHINE ?= "imx6dqscm-1gb-gumstix"
 #MACHINE ?= "imx6dqscm-1gb-zircon"
+#MACHINE ?= "imx6dqscm-2gb-zircon"
 #MACHINE ?= "dragonboard-410c"
 
 # Get rid of the mesa packaging errors for rasberrypi and dragonbard devices
