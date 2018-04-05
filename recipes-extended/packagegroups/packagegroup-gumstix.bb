@@ -69,7 +69,13 @@ RDEPENDS_packagegroup-gumstix_append_overo = " \
 
 RDEPENDS_packagegroup-gumstix_remove_rpi = " \
     packagegroup-core-tools-testapps \
+    ttn-pkt-fwd \
+    librxtx-java \
+    openocd \
+    opencv \
+    packagegroup-ros-world \
 "
+
 
 ROS_INSTALL = " \
     packagegroup-ros-world \
