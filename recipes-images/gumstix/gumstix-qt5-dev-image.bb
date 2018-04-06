@@ -18,6 +18,10 @@ IMAGE_INSTALL += " \
   ${QT_INSTALL} \
 "
 
+QT_INSTALL_remove_rpi += " \
+  packagegroup-qt5-qtcreator-debug \
+"
+
 # For Pepper SGX-Qt5
 # IMAGE_INSTALL_append_pepper = " \
 #   libgles-omap3 \
