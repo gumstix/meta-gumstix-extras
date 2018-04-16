@@ -98,6 +98,7 @@ IMAGE_INSTALL_append_rpi += " \
     dpkg \
     apt \
     userland \
+    i2c-dev \
 "
 
 IMAGE_INSTALL_append_dragonboard-410c += " \
