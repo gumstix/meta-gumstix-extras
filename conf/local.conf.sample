@@ -23,6 +23,7 @@ DEFAULTJRE ?= "openjdk-8-jre"
 PREFERRED_PROVIDER_java2-vm = "${DEFAULTJRE}"
 PREFERRED_PROVIDER_java2-runtime = "${DEFAULTJRE}"
 PREFERRED_PROVIDER_openjdk-8-jre = "${DEFAULTJRE}"
+PREFERRED_PROVIDER_virtual/libg2d_mx6 = "imx-gpu-g2d"
 
 # Specify SGX GFX providers for Pepper
 # PREFERRED_PROVIDER_virtual/egl_pepper ?= "libgles-omap3"
