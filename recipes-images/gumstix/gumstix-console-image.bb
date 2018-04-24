@@ -95,15 +95,25 @@ IMAGE_INSTALL += " \
     ${MEDIA_TOOLS_INSTALL} \
     ${GRAPHICS_LIBS} \
     ${UTILITIES_INSTALL} \
-    ${GSTREAMER_INSTALL} \
 "
 
 IMAGE_INSTALL_append_rpi += " \
     dpkg \
     apt \
+    userland \
 "
 
+# Add gstreamer to three platforms which has camera support
 IMAGE_INSTALL_append_dragonboard-410c += " \
+    ${GSTREAMER_INSTALL} \
+"
+
+IMAGE_INSTALL_append_mx6q += " \
+    ${GSTREAMER_INSTALL} \
+    gstreamer1.0-plugins-imx \
+"
+
+IMAGE_INSTALL_append_raspberrypi-cm3 += " \
     ${GSTREAMER_INSTALL} \
 "
 
