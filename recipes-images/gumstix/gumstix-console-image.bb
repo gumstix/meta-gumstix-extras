@@ -36,6 +36,7 @@ NETWORK_TOOLS_INSTALL = " \
     curl \
     dnsmasq \
     hostapd \
+    ethtool \
     iproute2 \
     iputils \
     iw \
