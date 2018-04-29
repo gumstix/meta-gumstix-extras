@@ -127,8 +127,8 @@ KERNEL_DEVICETREE_colibri-imx6 = "imx6dl-colibri-gumstix.dtb"
 KERNEL_DEVICETREE_colibri-imx7 = "imx7d-colibri-gumstix.dtb"
 
 # Add dtoverlays for Gumstix wifi and sensor modules on raspberry pi machines
-KERNEL_DEVICETREE_append_rpi = "overlays/sdio-wlink8.dtbo overlays/i2c0-bcm2708.dtbo overlays/tlv320aic3x-simple.dtbo overlays/i2s-gpio28-31.dtbo"
-KERNEL_DEVICETREE_append_raspberrypi-cm3 = "overlays/ov5640-gumstix.dtbo"
+KERNEL_DEVICETREE_append_rpi = "overlays/sdio-wlink8.dtbo overlays/i2c0-bcm2708.dtbo overlays/tlv320aic3x-simple.dtbo overlays/i2s-gpio28-31.dtbo "
+KERNEL_DEVICETREE_append_raspberrypi-cm3 = "overlays/ov5640-gumstix.dtbo "
 
 #
 # Where to place downloads
