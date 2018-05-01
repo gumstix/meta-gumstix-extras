@@ -23,6 +23,10 @@ do_configure() {
     oe_runconf ${EXTRA_OECONF}
 }
 
+do_compile_prepend(){
+  sed -i -e 's/-Werror//g' Makefile
+}
+
 do_install() {
     oe_runmake DESTDIR=${D} install
     if [ -e "${D}${infodir}" ]; then
