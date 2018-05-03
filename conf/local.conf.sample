@@ -355,3 +355,6 @@ INSANE_SKIP_python-wstool = "installed-vs-shipped"
 #WKS_FILE_overo = "sdimage-gumstix.wks"
 #IMAGE_BOOT_FILES_overo ?= "MLO u-boot.img uImage"
 
+# AutoBSP
+RPI_EXTRA_CONFIG += '\n#For Raspberry Pi Compute Module:\n#dtoverlay=devicetree-rpi_cm\n'
+RPI_EXTRA_CONFIG += '\n#For Pi HAT connector:\n#dtoverlay=devicetree-rpi_hat\n'
