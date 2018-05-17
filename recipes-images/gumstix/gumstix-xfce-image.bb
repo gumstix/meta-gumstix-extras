@@ -18,8 +18,15 @@ IMAGE_INSTALL += " \
     polkit-gnome \
     polkit-group-rule-network \
     polkit-group-rule-datetime \
+    ${GSTREAMER_INSTALL} \
 "
 
+# Add extra gstreamer plugins for iMX6 SCM boards
+IMAGE_INSTALL_append_mx6q += " \
+    gstreamer1.0-plugins-imx \
+"
+
+# Remove the chromium since no 64-bit support for dragonboard 410c processor
 IMAGE_INSTALL_remove_dragonboard-410c += " \
     chromium \
 "

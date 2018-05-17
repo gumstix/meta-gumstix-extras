@@ -102,14 +102,15 @@ IMAGE_INSTALL_append_rpi += " \
     i2c-dev \
 "
 
-IMAGE_INSTALL_append_dragonboard-410c += " \
-    ${GSTREAMER_INSTALL} \
-"
+# Uncomment following to enable gstreamer support on console image
+#IMAGE_INSTALL_append += " \
+#    ${GSTREAMER_INSTALL} \
+#"
 
-IMAGE_INSTALL_append_mx6q += " \
-    ${GSTREAMER_INSTALL} \
-    gstreamer1.0-plugins-imx \
-"
+# Uncomment following to add extra gstreamer plugins for iMX6 SCM boards
+#IMAGE_INSTALL_append_mx6q += " \
+#    gstreamer1.0-plugins-imx \
+#"
 
 ROOTFS_CMD ?= ""
 ROOTFS_POSTPROCESS_COMMAND += "${ROOTFS_CMD}"
