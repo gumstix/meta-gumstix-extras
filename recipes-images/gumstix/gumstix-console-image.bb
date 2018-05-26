@@ -72,6 +72,7 @@ UTILITIES_INSTALL = " \
     vim \
     wget \
     zip \
+    git \
 "
 
 GSTREAMER_INSTALL = " \
