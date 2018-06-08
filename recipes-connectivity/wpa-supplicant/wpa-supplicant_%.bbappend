@@ -6,7 +6,8 @@
 # configuring networks.
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
-SRC_URI += "file://wpa_supplicant.conf"
+SRC_URI += "file://wpa_supplicant.conf \
+            file://wpa_supplicant@.service"
 
 do_install_append() {
 	install -d ${D}${sysconfdir}/wpa_supplicant
@@ -16,7 +17,9 @@ do_install_append() {
         #   $ systemctl enable wpa_supplicant@wlan0
         # on the target system.
 	install -d ${D}${sysconfdir}/systemd/system/multi-user.target.wants
-        ln -s ${systemd_unitdir}/wpa_supplicant@.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/wpa_supplicant@wlan0.service
+	# copying modified wpa_supplicant@.service file and add symlink
+	install -m 644 ${WORKDIR}/wpa_supplicant@.service ${D}/${systemd_unitdir}/system
+        ln -s ${systemd_unitdir}/system/wpa_supplicant@.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/wpa_supplicant@wlan0.service
 }
 
 CONFFILES_${PN} += "${sysconfdir}/wpa_supplicant/*.conf"
