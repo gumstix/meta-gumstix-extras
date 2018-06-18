@@ -75,6 +75,7 @@ UTILITIES_INSTALL = " \
     zip \
     python \
     bzip2 \
+    git \
 "
 
 GSTREAMER_INSTALL = " \
