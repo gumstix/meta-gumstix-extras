@@ -12,6 +12,7 @@ QT_INSTALL = " \
   qtbase-tools \
   packagegroup-qt5-qtcreator-debug \
   packagegroup-qt5-toolchain-target  \
+  ttf-dejavu-common \
 "
 
 IMAGE_INSTALL += " \
