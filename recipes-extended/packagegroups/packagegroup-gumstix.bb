@@ -35,6 +35,7 @@ RDEPENDS_packagegroup-gumstix = " \
     opencv \
     openjdk-8 \
     openocd \
+    openssh \
     packagegroup-core-eclipse-debug \
     packagegroup-core-sdk \
     packagegroup-core-standalone-sdk-target \
