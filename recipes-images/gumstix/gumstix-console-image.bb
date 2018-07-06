@@ -20,6 +20,7 @@ FIRMWARE_INSTALL = " \
 
 SYSTEM_TOOLS_INSTALL = " \
     alsa-utils \
+    bluez-alsa \
     cpufrequtils \
     systemd-analyze \
     tzdata \
