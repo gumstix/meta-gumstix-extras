@@ -12,7 +12,7 @@ DEPENDS += "\
 do_compile() {
 	export GOPATH="${S}/"
 	go get -u github.com/kardianos/govendor
-	go get -u github.com/golang/lint/golint
+	go get -u golang.org/x/lint/golint
 }
 
 do_install() {
