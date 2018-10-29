@@ -33,4 +33,5 @@ BBLAYERS ?= " \
 BBMASK = "meta-ti/recipes-kernel \
     meta-freescale/recipes-graphics/gtk+ \
     meta-toradex-bsp-common/recipes-devtools/mtd \
+    meta-browser/recipes-browser/firefox* \
 "
