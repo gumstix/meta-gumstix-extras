@@ -35,3 +35,5 @@ BBMASK = "meta-ti/recipes-kernel \
     meta-toradex-bsp-common/recipes-devtools/mtd \
     meta-browser/recipes-browser/firefox* \
 "
+#Need to remove dependency on rust for firefox
+LAYERDEPENDS_browser-layer_remove = "rust-layer"
