@@ -28,6 +28,7 @@ SYSTEM_TOOLS_INSTALL = " \
 "
 
 DEV_TOOLS_INSTALL = " \
+    e2fsprogs-resize2fs \
     memtester \
     mtd-utils-ubifs \
     u-boot-mkimage \
