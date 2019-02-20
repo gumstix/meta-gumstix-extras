@@ -42,10 +42,11 @@ PREFERRED_PROVIDER_openjdk-8-jre = "${DEFAULTJRE}"
 # PREFERRED_PROVIDER_virtual/kernel = "linux-gumstix"
 # PREFERRED_VERSION_linux-gumstix = "3.5.7"
 
-# Use 1.10.4 version Gstreamer all the platforms
+# Use 1.10.4 version Gstreamer for all the platforms
 PREFERRED_VERSION_gstreamer1.0 = "1.10.4"
 
-
+# Use 3.1.1 version assimp for all the platforms to avoid meta-ros packagegroups build conflict
+PREFERRED_VERSION_assimp = "3.1.1"
 
 # Use Gumstix source mirror as default premirror
 SOURCE_MIRROR_URL ?= "http://source-cache.gumstix.org/"
