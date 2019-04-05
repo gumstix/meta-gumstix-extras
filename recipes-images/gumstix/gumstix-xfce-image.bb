@@ -7,7 +7,7 @@ IMAGE_FEATURES += "x11-base"
 require gumstix-console-image.bb
 
 IMAGE_INSTALL += " \
-    florence \
+    matchbox-keyboard \
     gnome-bluetooth \
     chromium-x11 \
     man \
@@ -15,10 +15,12 @@ IMAGE_INSTALL += " \
     network-manager-applet \
     packagegroup-xfce-extended \
     packagegroup-xfce-multimedia \
-    polkit-gnome \
 "
 
 IMAGE_INSTALL_remove_dragonboard-410c += " \
+    chromium-x11 \
+"
+IMAGE_INSTALL_remove_raspberrypi-cm3 += " \
     chromium-x11 \
 "
 
