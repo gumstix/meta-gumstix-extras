@@ -124,8 +124,8 @@ KERNEL_DEVICETREE_colibri-imx6 = "imx6dl-colibri-gumstix.dtb"
 KERNEL_DEVICETREE_colibri-imx7 = "imx7d-colibri-gumstix.dtb"
 
 # Add dtoverlays for Gumstix wifi and sensor modules on raspberry pi machines
-#KERNEL_DEVICETREE_append_rpi = "overlays/sdio-wlink8.dtbo overlays/i2c0-bcm2708.dtbo overlays/tlv320aic3x-simple.dtbo overlays/i2s-gpio28-31.dtbo "
-#KERNEL_DEVICETREE_append_raspberrypi-cm3 = "overlays/ov5640-gumstix.dtbo "
+KERNEL_DEVICETREE_append_rpi = "overlays/sdio-wlink8.dtbo overlays/i2c0-bcm2708.dtbo overlays/tlv320aic3x-simple.dtbo overlays/i2s-gpio28-31.dtbo "
+KERNEL_DEVICETREE_append_raspberrypi-cm3 = "overlays/ov5640-gumstix.dtbo "
 
 #
 # Where to place downloads
@@ -196,7 +196,7 @@ DISTRO ?= "poky"
 # E.g.: PACKAGE_CLASSES ?= "package_rpm package_deb package_ipk"
 # We default to rpm:
 PACKAGE_CLASSES ?= "package_rpm"
-PACKAGE_FEED_URIS = "https://packages.gumstix.com/rocko"
+PACKAGE_FEED_URIS = "https://packages.gumstix.com/thud"
 PACKAGE_FEED_BASE_PATHS ?= "rpm"
 PACKAGE_CLASSES_rpi = "package_rpm package_deb"
 PACKAGE_FEED_BASE_PATHS_rpi = "rpm deb"
