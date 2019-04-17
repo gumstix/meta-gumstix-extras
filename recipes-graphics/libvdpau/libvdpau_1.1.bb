@@ -6,7 +6,7 @@ DEPENDS = "xtrans libx11 libxext libice libsm libxscrnsaver libxt \
 	   libxcursor libxdamage libfontenc libxfont libxft libxi \
 	   libxinerama libxrandr libxres libxtst libxv libxvmc \
 	   libxxf86dga libxxf86vm libdmx libpciaccess libxkbfile \
-	   dri2proto \
+	   xorgproto \
 	   "
 LIC_FILES_CHKSUM = "file://COPYING;md5=83af8811a28727a13f04132cc33b7f58"
 
