@@ -334,9 +334,10 @@ DISTRO_FEATURES_append_mx6 = " x11"
 DISTRO_FEATURES_remove_rpi = "wayland"
 
 # RPI configurations to enable i2c, spi, uart
-SERIAL_CONSOLE_rpi = "115200 serial0"
+SERIAL_CONSOLES_rpi = "115200;tty2"
 ENABLE_UART_rpi = "1"
 ENABLE_I2C_rpi = "1"
+RPI_EXTRA_CONFIG = "\n# Gumstix Config Extras"
 # if using Wifi on Raspberry Pi CM3
 #RPI_EXTRA_CONFIG = '\n# Raspberry Pi CM3 WLink8 Enable\ndtoverlay=sdio-wlink8\n'
 
@@ -353,13 +354,14 @@ INSANE_SKIP_python-wstool = "installed-vs-shipped"
 #IMAGE_BOOT_FILES_overo ?= "MLO u-boot.img uImage"
 
 # AutoBSP
-RPI_EXTRA_CONFIG += '\n#For Raspberry Pi Compute Module:\n#dtoverlay=devicetree-rpi_cm\n'
-RPI_EXTRA_CONFIG += '\n#For Pi HAT connector:\n#dtoverlay=devicetree-rpi_hat\n'
+RPI_EXTRA_CONFIG = "\n#For Raspberry Pi Compute Module:\n#dtoverlay=devicetree-rpi_cm\n"
+RPI_EXTRA_CONFIG += "\n#For Pi HAT connector:\n#dtoverlay=devicetree-rpi_hat\n"
 
 # Raspberry Pi Userland, for Enable/Disable camera addon support
 # Feel free to comment it out, if you're not using cameras
-RPI_EXTRA_CONFIG += '\nstart_x=1'
-RPI_EXTRA_CONFIG += '\ngpu_mem=128\n'
+RPI_EXTRA_CONFIG += "\nstart_x=1"
+RPI_EXTRA_CONFIG += "\ngpu_mem=128\n"
+ENABLE_KGDB_raspberrypi-cm3 = "0"
 
 # Mask out toradex layers when not building imx devices
 A = "meta-toradex-nxp \
@@ -369,4 +371,5 @@ A_colibri-imx7 = ""
 A_colibri-imx6 = ""
 
 BBMASK .= "${A}"
+
 
