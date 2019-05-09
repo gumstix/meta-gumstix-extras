@@ -355,8 +355,8 @@ INSANE_SKIP_python-wstool = "installed-vs-shipped"
 
 # AutoBSP
 RPI_EXTRA_CONFIG = '# Gumstix Config Extras\n'
-RPI_EXTRA_CONFIG_append_raspberrypi-cm3 += '\n#For Raspberry Pi Compute Module:\ndtoverlay=devicetree-rpi_cm\n'
-RPI_EXTRA_CONFIG_append_raspberrypi3 += '\n#For Pi HAT connector:\n#dtoverlay=devicetree-rpi_hat\n'
+RPI_EXTRA_CONFIG_append_raspberrypi-cm3 += '\n#AutoBSP For Raspberry Pi Compute Module:\ndtoverlay=devicetree-rpi_cm\n'
+RPI_EXTRA_CONFIG_append_raspberrypi3 += '\n#AutoBSP For Pi HAT connector:\ndtoverlay=devicetree-rpi_hat\n'
 RPI_EXTRA_CONFIG_append_raspberrypi-cm3 += '\n# Enable Camera support for OV5640\n# dtparam=i2c0=on\n# dtoverlay=ov5640-gumstix'
 
 # Raspberry Pi Userland, for Enable/Disable camera addon support
