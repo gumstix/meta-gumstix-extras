@@ -52,6 +52,7 @@ RDEPENDS_packagegroup-gumstix = " \
     python3 \
     python3-pip \
     python3-pyserial \
+    python3-spidev \
     robovero-examples \
     robovero-python \
     rtklib \

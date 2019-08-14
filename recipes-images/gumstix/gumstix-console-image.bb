@@ -76,6 +76,8 @@ UTILITIES_INSTALL = " \
     wget \
     zip \
     python \
+    python3 \
+    python3-spidev \
     bzip2 \
     git \
 "
