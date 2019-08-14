@@ -37,3 +37,4 @@ BBMASK = "meta-ti/recipes-kernel \
 "
 #Need to remove dependency on rust for firefox
 LAYERDEPENDS_browser-layer_remove = "rust-layer"
+LAYERDEPENDS_browser-layer_remove = "clang-layer"
