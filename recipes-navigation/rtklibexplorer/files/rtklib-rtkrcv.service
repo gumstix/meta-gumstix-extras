@@ -1,0 +1,9 @@
+[Unit]
+Description=RTKLib service to provide cm-level positioning using low-cost receivers
+
+[Service]
+EnvironmentFile=/etc/rtklib/rtkrcv.conf
+ExecStart=/usr/bin/rtkrcv -s -p ${RTKRCV_TELNET_PORT} -o ${RTKRCV_OPTIONS} -w ${RTKRCV_PASSWORD}
+
+[Install]
+WantedBy=default.target

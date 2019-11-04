@@ -101,10 +101,8 @@ MACHINE ?= "overo"
 #MACHINE ?= "raspberrypi3"
 #MACHINE ?= "raspberrypi-cm"
 #MACHINE ?= "raspberrypi-cm3"
-#MACHINE ?= "colibri-imx6"
-#MACHINE ?= "colibri-imx7"
-#MACHINE ?= "imx6dqscm-1gb-gumstix"
 #MACHINE ?= "dragonboard-410c"
+#MACHINE ?= "jetson-nano"
 
 # Get rid of the mesa packaging errors for rasberrypi and dragonbard devices
 INSANE_SKIP_mesa_rpi = "installed-vs-shipped"
@@ -115,13 +113,6 @@ INSANE_SKIP_mesa_dragonboard-410c = "installed-vs-shipped"
 ACCEPT_FSL_EULA_mx6 = "1"
 ACCEPT_FSL_EULA_mx7 = "1"
 ACCEPT_EULA_dragonboard-410c = "1"
-
-# Use ext3 rootfs format to match u-boot configuration
-SDCARD_ROOTFS_colibri-imx6 = "${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.ext3"
-
-# Use gumstix device tree as default
-KERNEL_DEVICETREE_colibri-imx6 = "imx6dl-colibri-gumstix.dtb"
-KERNEL_DEVICETREE_colibri-imx7 = "imx7d-colibri-gumstix.dtb"
 
 # Fix upstream machine conf for raspberry pi
 KERNEL_DEVICETREE_rpi = " \
@@ -227,7 +218,7 @@ DISTRO ?= "poky"
 # E.g.: PACKAGE_CLASSES ?= "package_rpm package_deb package_ipk"
 # We default to rpm:
 PACKAGE_CLASSES ?= "package_rpm"
-PACKAGE_FEED_URIS = "https://packages.gumstix.com/rocko"
+PACKAGE_FEED_URIS = "https://packages.gumstix.com/warrior"
 PACKAGE_FEED_BASE_PATHS ?= "rpm"
 PACKAGE_CLASSES_rpi = "package_rpm package_deb"
 PACKAGE_FEED_BASE_PATHS_rpi = "rpm deb"
@@ -353,13 +344,6 @@ VIRTUAL-RUNTIME_graphical_init_manager = "lxdm"
 # Use bluez5 rather than bluez4
 DISTRO_FEATURES_append = " bluez5"
 
-# Remove the wayland feature because on iMX6, wayland is not compatible with X11
-# at the same time on Colibri iMX6. On NXP iMX6, you can enable wayland by removing
-# directfb and x11 feature, or enable both by removing directfb, or enable fb by
-# removing x11, wayland and directfb.
-DISTRO_FEATURES_remove_mx6 = "wayland"
-DISTRO_FEATURES_append_mx6 = " x11"
-
 # vc4graphics is required for rpi to build qtwayland
 # However vc4graphics will stop the HDMI from working on RPI CM and CM3
 DISTRO_FEATURES_remove_rpi = "wayland"
@@ -383,6 +367,10 @@ INSANE_SKIP_python-wstool = "installed-vs-shipped"
 #WKS_FILE_overo = "sdimage-gumstix.wks"
 #IMAGE_BOOT_FILES_overo ?= "MLO u-boot.img uImage"
 
+# extra image building variables for the jetson
+IMAGE_CLASSES_jetson-nano += "image_types_tegra"
+IMAGE_FSTYPES_jetson-nano = "tegraflash"
+
 # AutoBSP
 RPI_EXTRA_CONFIG += '\n#For Raspberry Pi Compute Module:\n#dtoverlay=devicetree-rpi_cm\n'
 RPI_EXTRA_CONFIG += '\n#For Pi HAT connector:\n#dtoverlay=devicetree-rpi_hat\n'
@@ -393,10 +381,10 @@ RPI_EXTRA_CONFIG += '\nstart_x=1'
 RPI_EXTRA_CONFIG += '\ngpu_mem=128\n'
 
 # Mask out toradex layers when not building imx devices
-A = "meta-toradex-nxp \
-    meta-toradex-bsp-common \
+A = " \
+    meta-tegra \
+    meta-gumstix/recipes-kernel/linux/linux-tegra_4.9.%.bbappend \
 "
-A_colibri-imx7 = ""
-A_colibri-imx6 = ""
+A_jetson-nano = ""
 
 BBMASK .= "${A}"

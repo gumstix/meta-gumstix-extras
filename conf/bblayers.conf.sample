@@ -16,24 +16,11 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-openembedded/meta-webserver \
   ##COREBASE##/meta-gumstix \
   ##COREBASE##/meta-gumstix-extras \
-  ##COREBASE##/meta-ros \
   ##COREBASE##/meta-ti \
-  ##COREBASE##/meta-java \
   ##COREBASE##/meta-qt5 \
-  ##COREBASE##/meta-browser \
   ##COREBASE##/meta-raspberrypi \
-  ##COREBASE##/oe-meta-go \
-  ##COREBASE##/meta-toradex-nxp \
-  ##COREBASE##/meta-toradex-bsp-common \
-  ##COREBASE##/meta-freescale \
-  ##COREBASE##/meta-fsl-arm-extra \
-  ##COREBASE##/meta-qcom \ 
+  ##COREBASE##/meta-tegra \
   "
 
 BBMASK = "meta-ti/recipes-kernel \
-    meta-freescale/recipes-graphics/gtk+ \
-    meta-toradex-bsp-common/recipes-devtools/mtd \
-    meta-browser/recipes-browser/firefox* \
 "
-#Need to remove dependency on rust for firefox
-LAYERDEPENDS_browser-layer_remove = "rust-layer"

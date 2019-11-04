@@ -43,7 +43,6 @@ NETWORK_TOOLS_INSTALL = " \
     iputils \
     iw \
     ntp \
-    uim \
 "
 
 MEDIA_TOOLS_INSTALL = " \
@@ -76,6 +75,8 @@ UTILITIES_INSTALL = " \
     wget \
     zip \
     python \
+    python3 \
+    python3-pip \
     bzip2 \
     git \
 "
@@ -106,6 +107,16 @@ IMAGE_INSTALL_append_rpi += " \
     dpkg \
     apt \
     userland \
+"
+
+IMAGE_INSTALL_append_jetson-nano += " \
+    kernel-modules \
+    gstreamer1.0-plugins-tegra \
+    gstreamer1.0-plugins-nvvideo4linux2 \
+    gstreamer1.0-omx-tegra \
+    gstreamer1.0-plugins-nveglgles \
+    tegra-tools \
+    nvgstcapture \
 "
 
 ROOTFS_CMD ?= ""
