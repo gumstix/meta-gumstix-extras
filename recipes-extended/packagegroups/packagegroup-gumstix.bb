@@ -24,7 +24,6 @@ RDEPENDS_packagegroup-gumstix = " \
     i2c-tools \
     iperf3 \
     kernel-devsrc \
-    librxtx-java \
     lowpan-tools \
     mavlink-socket \
     nano \
@@ -58,8 +57,4 @@ RDEPENDS_packagegroup-gumstix = " \
     sshd \
     uart-loop-test \
     vlc \
-"
-
-RDEPENDS_packagegroup-gumstix_append_overo = " \
-    omap3-isp-live \
 "
