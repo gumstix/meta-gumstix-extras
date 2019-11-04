@@ -8,10 +8,8 @@ inherit packagegroup
 PACKAGES = "packagegroup-gumstix"
 
 RDEPENDS_packagegroup-gumstix = " \
-    ${ROS_INSTALL} \
     apache2 \
     boost \
-    caspa-streaming \
     cronie \
     devmem2 \
     dtc \
@@ -54,7 +52,7 @@ RDEPENDS_packagegroup-gumstix = " \
     python3-pyserial \
     robovero-examples \
     robovero-python \
-    rtklib \
+    rtklibexplorer \
     screen \
     spidev-test \
     sshd \
@@ -62,26 +60,6 @@ RDEPENDS_packagegroup-gumstix = " \
     vlc \
 "
 
-RDEPENDS_packagegroup-gumstix_remove_dragonboard-410c += " \
-    openjdk-8 \
-"
-
 RDEPENDS_packagegroup-gumstix_append_overo = " \
     omap3-isp-live \
-"
-
-RDEPENDS_packagegroup-gumstix_remove_rpi = " \
-    packagegroup-core-tools-testapps \
-    ttn-pkt-fwd \
-    librxtx-java \
-    openocd \
-    opencv \
-    packagegroup-ros-world \
-"
-
-
-ROS_INSTALL = " \
-    packagegroup-ros-world \
-    python-distutils \
-    python-wstool \
 "
