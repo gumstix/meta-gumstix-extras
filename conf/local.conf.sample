@@ -149,6 +149,19 @@ KERNEL_DEVICETREE_rpi = " \
 KERNEL_DEVICETREE_append_rpi = "overlays/sdio-wlink8.dtbo overlays/i2c0-bcm2708.dtbo overlays/tlv320aic3x-simple.dtbo overlays/i2s-gpio28-31.dtbo "
 KERNEL_DEVICETREE_append_raspberrypi-cm3 = "overlays/ov5640-gumstix.dtbo "
 
+# Jetson Nano specific changes
+KERNEL_DEVICETREE_jetson-nano = "_ddot_/_ddot_/_ddot_/_ddot_/nvidia/platform/t210/porg/kernel-dts/tegra210-p3448-0002-p3449-0000-b00.dtb"
+
+# add pcie_aspm=off to disable messages when using Google Coral TPU
+KERNEL_ARGS_jetson-nano = "console=ttyS0,115200 console=tty0 fbcon=map:0 net.ifnames=0 pcie_aspm=off"
+
+PARTITION_LAYOUT_TEMPLATE_jetson-nano = "flash_l4t_t210_emmc_p3448.xml"
+SDCARD_LAYOUT_TEMPLATE_jetson-nano = "flash_l4t_t210_emmc_p3448.xml"
+TEGRAFLASH_SDCARD_SIZE_jetson-nano = "14G"
+EMMC_SIZE_jetson-nano = "14G"
+TEGRA_SPIFLASH_BOOT_jetson-nano = "0"
+IMAGE_ROOTFS_SIZE_jetson-nano = "16384"
+
 #
 # Where to place downloads
 #
@@ -222,6 +235,7 @@ PACKAGE_FEED_URIS = "https://packages.gumstix.com/warrior"
 PACKAGE_FEED_BASE_PATHS ?= "rpm"
 
 PACKAGE_FEED_ARCHS_overo = "noarch overo cortexa8hf_neon"
+PACKAGE_FEED_ARCHS_jetson-nano = "noarch jetson_nano armv8a_tegra210 aarch64"
 
 PACKAGE_CLASSES_rpi = "package_rpm package_deb"
 PACKAGE_FEED_BASE_PATHS_rpi = "rpm deb"
@@ -388,6 +402,8 @@ A = " \
     meta-tegra \
     meta-gumstix/recipes-kernel/linux/linux-tegra_4.9.%.bbappend \
 "
-A_jetson-nano = ""
+A_jetson-nano = " \
+    meta-java/recipes-core/openjdk/openjdk-7_99b00-2.6.5.bb \
+"
 
 BBMASK .= "${A}"
