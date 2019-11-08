@@ -386,7 +386,7 @@ INSANE_SKIP_python-wstool = "installed-vs-shipped"
 
 # extra image building variables for the jetson
 IMAGE_CLASSES_jetson-nano += "image_types_tegra"
-IMAGE_FSTYPES_jetson-nano = "tegraflash"
+IMAGE_FSTYPES_jetson-nano = "tegraflash cpio.gz"
 
 # AutoBSP
 RPI_EXTRA_CONFIG += '\n#For Raspberry Pi Compute Module:\n#dtoverlay=devicetree-rpi_cm\n'
