@@ -109,7 +109,7 @@ IMAGE_INSTALL_append_rpi += " \
     userland \
 "
 
-IMAGE_INSTALL_append_jetson-nano += " \
+IMAGE_INSTALL_append_tegra += " \
     kernel-modules \
     gstreamer1.0-plugins-tegra \
     gstreamer1.0-plugins-nvvideo4linux2 \

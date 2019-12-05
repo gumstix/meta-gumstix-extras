@@ -103,6 +103,7 @@ MACHINE ?= "overo"
 #MACHINE ?= "raspberrypi-cm3"
 #MACHINE ?= "dragonboard-410c"
 #MACHINE ?= "jetson-nano"
+#MACHINE ?= "jetson-tx2"
 
 # Get rid of the mesa packaging errors for rasberrypi and dragonbard devices
 INSANE_SKIP_mesa_rpi = "installed-vs-shipped"
@@ -160,7 +161,6 @@ SDCARD_LAYOUT_TEMPLATE_jetson-nano = "flash_l4t_t210_emmc_p3448.xml"
 TEGRAFLASH_SDCARD_SIZE_jetson-nano = "14G"
 EMMC_SIZE_jetson-nano = "14G"
 TEGRA_SPIFLASH_BOOT_jetson-nano = "0"
-IMAGE_ROOTFS_SIZE_jetson-nano = "16384"
 
 #
 # Where to place downloads
@@ -236,6 +236,7 @@ PACKAGE_FEED_BASE_PATHS ?= "rpm"
 
 PACKAGE_FEED_ARCHS_overo = "noarch overo cortexa8hf_neon"
 PACKAGE_FEED_ARCHS_jetson-nano = "noarch jetson_nano armv8a_tegra210 aarch64"
+PACKAGE_FEED_ARCHS_jetson-tx2 = "noarch jetson_tx2 armv8a_tegra186 aarch64"
 
 PACKAGE_CLASSES_rpi = "package_rpm package_deb"
 PACKAGE_FEED_BASE_PATHS_rpi = "rpm deb"
@@ -384,9 +385,10 @@ INSANE_SKIP_python-wstool = "installed-vs-shipped"
 #WKS_FILE_overo = "sdimage-gumstix.wks"
 #IMAGE_BOOT_FILES_overo ?= "MLO u-boot.img uImage"
 
-# extra image building variables for the jetson
-IMAGE_CLASSES_jetson-nano += "image_types_tegra"
-IMAGE_FSTYPES_jetson-nano = "tegraflash cpio.gz"
+# extra image building variables for tegra builds 
+IMAGE_ROOTFS_SIZE_tegra = "16384"
+IMAGE_CLASSES_tegra += "image_types_tegra"
+IMAGE_FSTYPES_tegra = "tegraflash cpio.gz"
 
 # AutoBSP
 RPI_EXTRA_CONFIG += '\n#For Raspberry Pi Compute Module:\n#dtoverlay=devicetree-rpi_cm\n'
@@ -402,7 +404,7 @@ A = " \
     meta-tegra \
     meta-gumstix/recipes-kernel/linux/linux-tegra_4.9.%.bbappend \
 "
-A_jetson-nano = " \
+A_tegra = " \
     meta-java/recipes-core/openjdk/openjdk-7_99b00-2.6.5.bb \
 "
 
