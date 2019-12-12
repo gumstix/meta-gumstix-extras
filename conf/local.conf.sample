@@ -366,6 +366,9 @@ DISTRO_FEATURES_append = " bluez5"
 # However vc4graphics will stop the HDMI from working on RPI CM and CM3
 DISTRO_FEATURES_remove_rpi = "wayland"
 
+# xfce for tegra requires polkit
+DISTRO_FEATURES_append_tegra = " polkit"
+
 # RPI configurations to enable i2c, spi, uart
 SERIAL_CONSOLE_rpi = "115200 serial0"
 ENABLE_UART_rpi = "1"
@@ -388,7 +391,10 @@ INSANE_SKIP_python-wstool = "installed-vs-shipped"
 # extra image building variables for tegra builds 
 IMAGE_ROOTFS_SIZE_tegra = "16384"
 IMAGE_CLASSES_tegra += "image_types_tegra"
-IMAGE_FSTYPES_tegra = "tegraflash cpio.gz"
+IMAGE_FSTYPES_tegra = "tegraflash"
+# tegra-minimal-initramfs requires cpio.gz file type
+IMAGE_FSTYPES_append_pn-tegra-minimal-initramfs_tegra = " cpio.gz"
+IMAGE_FSTYPES_remove_pn-tegra-minimal-initramfs_tegra = "tegraflash"
 
 # AutoBSP
 RPI_EXTRA_CONFIG += '\n#For Raspberry Pi Compute Module:\n#dtoverlay=devicetree-rpi_cm\n'
