@@ -79,6 +79,7 @@ UTILITIES_INSTALL = " \
     python3-pip \
     bzip2 \
     git \
+    git-perltools \
 "
 
 GSTREAMER_INSTALL = " \
@@ -117,6 +118,30 @@ IMAGE_INSTALL_append_tegra += " \
     gstreamer1.0-plugins-nveglgles \
     tegra-tools \
     nvgstcapture \
+    cuda-toolkit \
+    cudnn \
+    tensorrt \
+    protobuf \
+    hdf5 \
+    python3 \
+    python3-numpy \
+    python3-keras-applications \
+    python3-keras-preprocessing \
+    python3-pip \
+    python3-wheel \
+    python3-protobuf \
+    python3-grpcio \
+    python3-absl \
+    python3-astor \
+    python3-gast \
+    python3-termcolor \
+    python3-h5py \
+    python3-pyparsing \
+    python3-matplotlib \
+    python3-kiwisolver \
+    python3-pillow \
+    opencv \
+    tensorflow-cuda \
 "
 
 ROOTFS_CMD ?= ""

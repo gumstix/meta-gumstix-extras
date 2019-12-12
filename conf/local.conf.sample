@@ -395,6 +395,19 @@ IMAGE_FSTYPES_tegra = "tegraflash"
 # tegra-minimal-initramfs requires cpio.gz file type
 IMAGE_FSTYPES_append_pn-tegra-minimal-initramfs_tegra = " cpio.gz"
 IMAGE_FSTYPES_remove_pn-tegra-minimal-initramfs_tegra = "tegraflash"
+# cuda libraries, by default saved to the same directory as other downloads
+#NVIDIA_DEVNET_MIRROR = "${TOPDIR}/downloads"
+# by default use ubuntu1604 libraries
+CUDA_BINARIES_NATIVE = "cuda-binaries-ubuntu1604-native"
+# configure cuda capabilities
+PACKAGECONFIG_pn-tensorflow-cuda_jetson-nano = "33"
+PACKAGECONFIG_pn-tensorflow-cuda_jetson-tx2 = "24"
+# add additional cuda packages to cuda-tools-native in meta-tegra
+CUDA_PKGS_append_pn-cuda-tools-native = " cusolver cublas cufft curand cudart driver-dev"
+# CUDA requires GCC 7
+GCCVERSION_tegra = "7.%"
+# GCC 7 doesn't support fmacro-prefix-map, results in "error: cannot compute suffix of object files: cannot compile"
+DEBUG_PREFIX_MAP_remove_tegra = "-fmacro-prefix-map=${WORKDIR}=/usr/src/debug/${PN}/${EXTENDPE}${PV}-${PR}"
 
 # AutoBSP
 RPI_EXTRA_CONFIG += '\n#For Raspberry Pi Compute Module:\n#dtoverlay=devicetree-rpi_cm\n'
@@ -408,7 +421,10 @@ RPI_EXTRA_CONFIG += '\ngpu_mem=128\n'
 # Mask out toradex layers when not building imx devices
 A = " \
     meta-tegra \
+    meta-tegra/contrib \
     meta-gumstix/recipes-kernel/linux/linux-tegra_4.9.%.bbappend \
+    meta-gumstix/recipes-devtools/cuda \
+    meta-gumstix/recipes-devtools/cudnn \
 "
 A_tegra = " \
     meta-java/recipes-core/openjdk/openjdk-7_99b00-2.6.5.bb \
