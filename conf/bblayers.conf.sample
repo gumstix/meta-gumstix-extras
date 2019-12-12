@@ -22,6 +22,7 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-tegra \
   ##COREBASE##/meta-tegra/contrib \
   ##COREBASE##/meta-java \
+  ##COREBASE##/meta-tensorflow \
   "
 
 BBMASK = "meta-ti/recipes-kernel \
