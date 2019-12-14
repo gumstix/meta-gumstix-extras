@@ -142,6 +142,8 @@ IMAGE_INSTALL_append_tegra += " \
     python3-pillow \
     opencv \
     tensorflow-cuda \
+    tensorflow-benchmark \
+    tensorflow-tf-trt-models \
 "
 
 ROOTFS_CMD ?= ""
