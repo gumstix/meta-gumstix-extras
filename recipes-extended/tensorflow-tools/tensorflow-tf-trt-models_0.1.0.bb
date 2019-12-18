@@ -5,6 +5,7 @@ LIC_FILES_CHKSUM = "file://LICENSE.md;md5=720c330bf4f4d0300ad6642ec1a89893"
 SRCREV = "${AUTOREV}" 
 SRC_URI = "gitsm://github.com/jkjung-avt/tf_trt_models.git \
            file://0001-Hard-code-the-gstreamer-pipeline-to-use-nvarguscamer.patch \
+           file://0002-Update-camera_tf_trt-script-to-allow-headless-stream.patch \
           "
 
 S = "${WORKDIR}/git"

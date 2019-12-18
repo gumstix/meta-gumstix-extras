@@ -1,0 +1,145 @@
+From 6d9a9060e8c11edfc0d6a60ef5cf21756ea5890f Mon Sep 17 00:00:00 2001
+From: "Andrew C. Smith" <acsmith@gumstix.com>
+Date: Tue, 17 Dec 2019 22:35:40 -0500
+Subject: [PATCH] Update camera_tf_trt script to allow headless streaming.
+
+---
+ camera_tf_trt.py | 79 ++++++++++++++++++++++++++++++++++++++++++++++----------
+ 1 file changed, 66 insertions(+), 13 deletions(-)
+
+diff --git a/camera_tf_trt.py b/camera_tf_trt.py
+index d844dd4..79f0ef1 100644
+--- a/camera_tf_trt.py
++++ b/camera_tf_trt.py
+@@ -62,6 +62,16 @@ def parse_args():
+     parser.add_argument('--confidence', dest='conf_th',
+                         help='confidence threshold [0.3]',
+                         default=0.3, type=float)
++    parser.add_argument('--ip-address', dest='stream_ip',
++                        help='ip address of the streaming target',
++                        default='0.0.0.0', type=str)
++    parser.add_argument('--port', dest='stream_port',
++                        help='udp port of the streaming target',
++                        default=5000, type=int)
++    parser.add_argument('--stealth', dest='do_stealth',
++                        help='disable the host video rendering'
++                        '(helpful for headless units when using --ip-address)',
++                        action='store_true')
+     args = parser.parse_args()
+     return args
+ 
+@@ -75,6 +85,29 @@ def open_display_window(width, height):
+                                     'for Jetson TX2/TX1')
+ 
+ 
++def draw_fps(img, fps):
++    """Draw fps number at top-left corner of the image."""
++    font = cv2.FONT_HERSHEY_PLAIN
++    line = cv2.LINE_AA
++
++    fps_text = 'FPS: {:.1f}'.format(fps)
++    cv2.putText(img, fps_text, (11, 20), font, 1.0, (32, 32, 32), 4, line)
++    cv2.putText(img, fps_text, (10, 20), font, 1.0, (240, 240, 240), 1, line)
++    return img
++
++
++def draw_help(img, fps):
++    """Draw help message at top-left corner of the image."""
++    help_text = "'Esc' to Quit, 'H' for FPS & Help, 'F' for Fullscreen"
++    font = cv2.FONT_HERSHEY_PLAIN
++    line = cv2.LINE_AA
++
++    fps_text = 'FPS: {:.1f}'.format(fps)
++    cv2.putText(img, help_text, (11, 50), font, 1.0, (32, 32, 32), 4, line)
++    cv2.putText(img, help_text, (10, 50), font, 1.0, (240, 240, 240), 1, line)
++    return img
++
++
+ def draw_help_and_fps(img, fps):
+     """Draw help message and fps number at top-left corner of the image."""
+     help_text = "'Esc' to Quit, 'H' for FPS & Help, 'F' for Fullscreen"
+@@ -95,7 +128,18 @@ def set_full_screen(full_scrn):
+     cv2.setWindowProperty(WINDOW_NAME, cv2.WND_PROP_FULLSCREEN, prop)
+ 
+ 
+-def loop_and_detect(cam, tf_sess, conf_th, vis, od_type):
++def open_video_stream(width, height, stream_ip, stream_port):
++
++    # open an output stream for the video
++    gst_str = 'appsrc ! videoconvert ! ' \
++            'video/x-raw,width={},height={},framerate=30/1 ! ' \
++            'nvvidconv ! nvv4l2h264enc ! h264parse ! rtph264pay ! ' \
++            'udpsink host={} port={}'.format(width, height, stream_ip, stream_port)
++    out_stream = cv2.VideoWriter(gst_str, cv2.CAP_GSTREAMER, 0, 30, (width, height), True)
++    return out_stream
++
++
++def loop_and_detect(cam, stream, tf_sess, conf_th, vis, stealth, od_type):
+     """Loop, grab images from camera, and do object detection.
+ 
+     # Arguments
+@@ -104,23 +148,27 @@ def loop_and_detect(cam, tf_sess, conf_th, vis, od_type):
+       conf_th: confidence/score threshold for object detection.
+       vis: for visualization.
+     """
+-    show_fps = True
++    show_help = True
+     full_scrn = False
+     fps = 0.0
+     tic = time.time()
+-    while True:
+-        if cv2.getWindowProperty(WINDOW_NAME, 0) < 0:
+-            # Check to see if the user has closed the display window.
+-            # If yes, terminate the while loop.
+-            break
+ 
++    while True:
+         img = cam.read()
+         if img is not None:
+             box, conf, cls = detect(img, tf_sess, conf_th, od_type=od_type)
+             img = vis.draw_bboxes(img, box, conf, cls)
+-            if show_fps:
+-                img = draw_help_and_fps(img, fps)
+-            cv2.imshow(WINDOW_NAME, img)
++
++            img = draw_fps(img, fps)
++            if stream is not None and stream.isOpened():
++                stream.write(img)
++
++            if show_help:
++                img = draw_help(img, fps)
++
++            if stealth is False and cv2.getWindowProperty(WINDOW_NAME, 0) >= 0:
++                cv2.imshow(WINDOW_NAME, img)
++
+             toc = time.time()
+             curr_fps = 1.0 / (toc - tic)
+             # calculate an exponentially decaying average of fps number
+@@ -131,7 +179,7 @@ def loop_and_detect(cam, tf_sess, conf_th, vis, od_type):
+         if key == 27:  # ESC key: quit program
+             break
+         elif key == ord('H') or key == ord('h'):  # Toggle help/fps
+-            show_fps = not show_fps
++            show_help = not show_help
+         elif key == ord('F') or key == ord('f'):  # Toggle fullscreen
+             full_scrn = not full_scrn
+             set_full_screen(full_scrn)
+@@ -185,8 +233,13 @@ def main():
+     # grab image and do object detection (until stopped by user)
+     logger.info('starting to loop and detect')
+     vis = BBoxVisualization(cls_dict)
+-    open_display_window(cam.img_width, cam.img_height)
+-    loop_and_detect(cam, tf_sess, args.conf_th, vis, od_type=od_type)
++    if args.do_stealth == False:
++        open_display_window(cam.img_width, cam.img_height)
++    if args.stream_ip != '0.0.0.0':
++        stream = open_video_stream(cam.img_width, cam.img_height, args.stream_ip, args.stream_port)
++    else:
++        stream = None
++    loop_and_detect(cam, stream, tf_sess, args.conf_th, vis, args.do_stealth, od_type=od_type)
+ 
+     logger.info('cleaning up')
+     cam.stop()  # terminate the sub-thread in camera
+-- 
+2.7.4
+
