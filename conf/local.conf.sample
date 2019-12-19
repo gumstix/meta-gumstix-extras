@@ -367,8 +367,8 @@ DISTRO_FEATURES_append = " bluez5"
 # However vc4graphics will stop the HDMI from working on RPI CM and CM3
 DISTRO_FEATURES_remove_rpi = "wayland"
 
-# xfce for tegra requires polkit
-DISTRO_FEATURES_append_tegra = " polkit"
+# xfce requires polkit
+DISTRO_FEATURES_append = " polkit"
 
 # RPI configurations to enable i2c, spi, uart
 SERIAL_CONSOLE_rpi = "115200 serial0"
