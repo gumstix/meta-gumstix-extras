@@ -48,10 +48,6 @@ SOURCE_MIRROR_URL ?= "http://source-cache.gumstix.org/"
 INHERIT += "own-mirrors"
 #BB_GENERATE_MIRROR_TARBALLS = "1"
 
-# Raspberry pi ov5640 camera driver and unicam driver require 4.14 kernel
-PREFERRED_PROVIDER_virtual/kernel_raspberrypi-cm3 = "linux-raspberrypi"
-PREFERRED_VERSION_linux-raspberrypi = "1:4.14%"
-
 #
 # Parallelism Options
 #
@@ -133,7 +129,6 @@ KERNEL_DEVICETREE_rpi = " \
     overlays/i2c-rtc.dtbo \
     overlays/iqaudio-dac.dtbo \
     overlays/iqaudio-dacplus.dtbo \
-    overlays/lirc-rpi.dtbo \
     overlays/pitft22.dtbo \
     overlays/pitft28-resistive.dtbo \
     overlays/pitft35-resistive.dtbo \
