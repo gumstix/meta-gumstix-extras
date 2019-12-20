@@ -421,6 +421,7 @@ A = " \
     meta-gumstix/recipes-kernel/linux/linux-tegra_4.9.%.bbappend \
     meta-gumstix/recipes-devtools/cuda \
     meta-gumstix/recipes-devtools/cudnn \
+    meta-tensorflow/recipes-devtools/openjdk/openjdk-8-native_212b04.bb \
 "
 A_tegra = " \
     meta-java/recipes-core/openjdk/openjdk-7_99b00-2.6.5.bb \
