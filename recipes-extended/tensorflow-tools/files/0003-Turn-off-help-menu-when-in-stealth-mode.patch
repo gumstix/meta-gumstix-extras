@@ -1,0 +1,25 @@
+From aeebe1971f6dad4ed38d2bef55c7d87ddbfd8dee Mon Sep 17 00:00:00 2001
+From: "Andrew C. Smith" <acsmith@gumstix.com>
+Date: Thu, 23 Jan 2020 09:33:03 -0500
+Subject: [PATCH] Turn off help menu when in stealth mode.
+
+---
+ camera_tf_trt.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/camera_tf_trt.py b/camera_tf_trt.py
+index 79f0ef1..ef502ae 100644
+--- a/camera_tf_trt.py
++++ b/camera_tf_trt.py
+@@ -163,7 +163,7 @@ def loop_and_detect(cam, stream, tf_sess, conf_th, vis, stealth, od_type):
+             if stream is not None and stream.isOpened():
+                 stream.write(img)
+ 
+-            if show_help:
++            if show_help and not stealth:
+                 img = draw_help(img, fps)
+ 
+             if stealth is False and cv2.getWindowProperty(WINDOW_NAME, 0) >= 0:
+-- 
+2.7.4
+

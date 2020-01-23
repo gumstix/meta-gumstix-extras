@@ -6,6 +6,7 @@ SRCREV = "${AUTOREV}"
 SRC_URI = "gitsm://github.com/jkjung-avt/tf_trt_models.git \
            file://0001-Hard-code-the-gstreamer-pipeline-to-use-nvarguscamer.patch \
            file://0002-Update-camera_tf_trt-script-to-allow-headless-stream.patch \
+           file://0003-Turn-off-help-menu-when-in-stealth-mode.patch \
           "
 
 S = "${WORKDIR}/git"
