@@ -232,7 +232,7 @@ PACKAGE_FEED_BASE_PATHS ?= "rpm"
 PACKAGE_FEED_ARCHS_overo = "noarch overo cortexa8hf_neon"
 PACKAGE_FEED_ARCHS_jetson-nano = "noarch jetson_nano armv8a_tegra210 aarch64"
 PACKAGE_FEED_ARCHS_jetson-tx2 = "noarch jetson_tx2 armv8a_tegra186 aarch64"
-PACKAGE_FEED_ARCHS_rpi = "noarch all cortexa7hf-neon-vfpv4 raspberrypi_cm3"
+PACKAGE_FEED_ARCHS_rpi = "noarch cortexa7hf_neon_vfpv4 cortexa7t2hf_neon_vfpv4 raspberrypi_cm3"
 
 PACKAGE_CLASSES_rpi = "package_rpm package_deb"
 PACKAGE_FEED_BASE_PATHS_rpi = "rpm deb"
