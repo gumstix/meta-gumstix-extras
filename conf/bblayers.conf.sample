@@ -25,6 +25,7 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-tensorflow \
   ##COREBASE##/meta-browser \
   ##COREBASE##/meta-clang \
+  ##COREBASE##/meta-python2 \
   "
 
 BBMASK = "meta-ti/recipes-kernel \
