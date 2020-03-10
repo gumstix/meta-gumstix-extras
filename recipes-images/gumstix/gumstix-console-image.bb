@@ -108,6 +108,7 @@ IMAGE_INSTALL_append_rpi += " \
     dpkg \
     apt \
     userland \
+    python3-rpi-ws281x \
 "
 
 IMAGE_INSTALL_append_tegra += " \
