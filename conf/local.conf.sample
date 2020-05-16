@@ -25,6 +25,9 @@ PREFERRED_PROVIDER_java2-runtime = "${DEFAULTJRE}"
 PREFERRED_PROVIDER_openjdk-8-jre = "${DEFAULTJRE}"
 PREFERRED_PROVIDER_virtual/libg2d_mx6 = "imx-gpu-g2d"
 
+# openjdk on ubuntu1804 fails the version check
+EXTRA_OEMAKE_pn-openjdk-8-native += " DISABLE_HOTSPOT_OS_VERSION_CHECK=ok"
+
 # Specify SGX GFX providers for Pepper
 # PREFERRED_PROVIDER_virtual/egl_pepper ?= "libgles-omap3"
 # PREFERRED_PROVIDER_virtual/libgles1_pepper ?= "libgles-omap3"
