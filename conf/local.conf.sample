@@ -370,7 +370,7 @@ DISTRO_FEATURES_remove_rpi = "wayland"
 DISTRO_FEATURES_append = " polkit"
 
 # RPI configurations to enable i2c, spi, uart
-SERIAL_CONSOLE_rpi = "115200 serial0"
+SERIAL_CONSOLES_rpi = "115200;ttyS0"
 ENABLE_UART_rpi = "1"
 ENABLE_I2C_rpi = "1"
 # if using Wifi on Raspberry Pi CM3
