@@ -25,6 +25,7 @@ SYSTEM_TOOLS_INSTALL = " \
     cpufrequtils \
     systemd-analyze \
     tzdata \
+    rtk-hciattach \
 "
 
 DEV_TOOLS_INSTALL = " \
