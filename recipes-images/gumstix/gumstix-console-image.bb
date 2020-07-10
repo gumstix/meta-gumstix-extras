@@ -81,6 +81,7 @@ UTILITIES_INSTALL = " \
     bzip2 \
     git \
     git-perltools \
+    resize-rootfs \
 "
 
 GSTREAMER_INSTALL = " \

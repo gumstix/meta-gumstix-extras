@@ -1,0 +1,9 @@
+[Unit]
+Description=Resize root filesystem to fit available disk space
+
+[Service]
+ExecStart=/usr/sbin/resize-rootfs
+ExecStartPost=/bin/systemctl disable resize-rootfs.service
+
+[Install]
+WantedBy=multi-user.target
