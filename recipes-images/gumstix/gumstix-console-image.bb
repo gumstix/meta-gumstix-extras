@@ -63,8 +63,8 @@ UTILITIES_INSTALL = " \
     diffutils \
     dtc \
     findutils \
-    gpsd \
     grep \
+    gpsd \
     gzip \
     less \
     nano \
@@ -75,12 +75,12 @@ UTILITIES_INSTALL = " \
     vim \
     wget \
     zip \
-    python \
     python3 \
     python3-pip \
     bzip2 \
     git \
     git-perltools \
+    resize-rootfs \
 "
 
 GSTREAMER_INSTALL = " \
