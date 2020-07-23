@@ -63,8 +63,8 @@ UTILITIES_INSTALL = " \
     diffutils \
     dtc \
     findutils \
-    grep \
     gpsd \
+    grep \
     gzip \
     less \
     nano \
@@ -75,6 +75,7 @@ UTILITIES_INSTALL = " \
     vim \
     wget \
     zip \
+    python \
     python3 \
     python3-pip \
     bzip2 \
