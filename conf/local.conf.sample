@@ -103,6 +103,7 @@ MACHINE ?= "overo"
 #MACHINE ?= "raspberrypi-cm3"
 #MACHINE ?= "dragonboard-410c"
 #MACHINE ?= "jetson-nano"
+#MACHINE ?= "jetson-nano-emmc"
 #MACHINE ?= "jetson-tx2"
 
 # Get rid of the mesa packaging errors for rasberrypi and dragonbard devices
