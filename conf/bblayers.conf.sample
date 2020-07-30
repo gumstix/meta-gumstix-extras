@@ -22,7 +22,6 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-tegra \
   ##COREBASE##/meta-tegra/contrib \
   ##COREBASE##/meta-java \
-  ##COREBASE##/meta-tensorflow \
   ##COREBASE##/meta-browser \
   ##COREBASE##/meta-clang \
   ##COREBASE##/meta-python2 \
