@@ -400,7 +400,6 @@ A = " \
     meta-gumstix/recipes-devtools/cudnn \
     meta-gumstix/recipes-devtools/gcc \
     meta-tensorflow/recipes-devtools/openjdk/openjdk-8-native_212b04.bb \
-    meta-python2 \
 "
 A_tegra = " \
     meta-java/recipes-core/openjdk/openjdk-7_99b00-2.6.5.bb \
