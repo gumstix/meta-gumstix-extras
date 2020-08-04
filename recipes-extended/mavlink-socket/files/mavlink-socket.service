@@ -1,9 +1,0 @@
-[Unit]
-Description=MAVLink UDP Socket Daemon for Serial Port
-
-[Service]
-ExecStart=/usr/bin/mavlink-socket $TARGET_IP $MAVLINK_DEVICE $MAVLINK_BAUD
-EnvironmentFile=/etc/mavlink-socket.conf
-
-[Install]
-WantedBy=default.target

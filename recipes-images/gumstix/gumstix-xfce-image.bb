@@ -13,7 +13,6 @@ IMAGE_INSTALL += " \
     network-manager-applet \
     packagegroup-xfce-extended \
     packagegroup-xfce-multimedia \
-    chromium-x11 \
 "
 
 # Network Manager manages WPA supplicant---we don't need an interface-specific

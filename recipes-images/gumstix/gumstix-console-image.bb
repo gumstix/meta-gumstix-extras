@@ -121,9 +121,6 @@ IMAGE_INSTALL_append_tegra += " \
     gstreamer1.0-plugins-nveglgles \
     tegra-tools \
     nvgstcapture \
-    cuda-toolkit \
-    cudnn \
-    tensorrt \
     protobuf \
     hdf5 \
     python3 \
@@ -143,10 +140,6 @@ IMAGE_INSTALL_append_tegra += " \
     python3-matplotlib \
     python3-kiwisolver \
     python3-pillow \
-    opencv \
-    tensorflow-cuda \
-    tensorflow-benchmark \
-    tensorflow-tf-trt-models \
 "
 
 ROOTFS_CMD ?= ""
