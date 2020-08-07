@@ -408,3 +408,4 @@ A_tegra = " \
 "
 
 BBMASK .= "${A}"
+DISABLE_OVERSCAN="1"
