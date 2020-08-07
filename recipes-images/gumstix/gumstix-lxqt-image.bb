@@ -1,4 +1,4 @@
-DESCRIPTION = "The Gumstix XFCE image.  This provides simple desktop \
+DESCRIPTION = "The Gumstix LXQT image.  This provides simple desktop \
 environment using X11."
 LICENSE = "MIT"
 
@@ -11,8 +11,10 @@ IMAGE_INSTALL += " \
     man \
     man-pages \
     network-manager-applet \
-    packagegroup-xfce-extended \
-    packagegroup-xfce-multimedia \
+    packagegroup-lxqt-base \
+    psplash \
+    lxdm-theme \
+    chromium-x11 \
 "
 
 # Network Manager manages WPA supplicant---we don't need an interface-specific
