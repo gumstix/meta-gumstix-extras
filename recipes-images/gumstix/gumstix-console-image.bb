@@ -159,4 +159,12 @@ remove_wpa() {
 inherit extrausers
 EXTRA_USERS_PARAMS = " \
     useradd -P gumstix -G sudo gumstix; \
+    usermod -P gumstix root; \
+    usermod -d /root root; \
 "
+
+update_sudoers(){
+    sed -i 's/# %sudo/%sudo/' ${IMAGE_ROOTFS}/etc/sudoers
+}
+
+ROOTFS_POSTPROCESS_COMMAND += "update_sudoers;"
