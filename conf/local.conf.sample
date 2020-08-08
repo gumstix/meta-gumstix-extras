@@ -102,7 +102,6 @@ MACHINE ?= "overo"
 #MACHINE ?= "raspberrypi-cm"
 #MACHINE ?= "raspberrypi-cm3"
 #MACHINE ?= "dragonboard-410c"
-#MACHINE ?= "jetson-nano"
 #MACHINE ?= "jetson-nano-emmc"
 #MACHINE ?= "jetson-tx2"
 
@@ -121,18 +120,6 @@ KERNEL_DEVICETREE_append_rpi = "overlays/sdio-wlink8.dtbo overlays/i2c0-bcm2708.
 KERNEL_DEVICETREE_append_raspberrypi-cm3 = "overlays/ov5640-gumstix.dtbo "
 # Add updated overlay for raspberry pi display
 VC4DTBO = "vc4-fkms-v3d"
-
-# Jetson Nano specific changes
-KERNEL_DEVICETREE_jetson-nano = "_ddot_/_ddot_/_ddot_/_ddot_/nvidia/platform/t210/porg/kernel-dts/tegra210-p3448-0002-p3449-0000-b00.dtb"
-
-# add pcie_aspm=off to disable messages when using Google Coral TPU
-KERNEL_ARGS_jetson-nano = "console=ttyS0,115200 console=tty0 fbcon=map:0 net.ifnames=0 pcie_aspm=off"
-
-PARTITION_LAYOUT_TEMPLATE_jetson-nano = "flash_l4t_t210_emmc_p3448.xml"
-SDCARD_LAYOUT_TEMPLATE_jetson-nano = "flash_l4t_t210_emmc_p3448.xml"
-TEGRAFLASH_SDCARD_SIZE_jetson-nano = "14G"
-EMMC_SIZE_jetson-nano = "14G"
-TEGRA_SPIFLASH_BOOT_jetson-nano = "0"
 
 #
 # Where to place downloads
@@ -207,12 +194,9 @@ PACKAGE_FEED_URIS = "https://packages.gumstix.com/warrior"
 PACKAGE_FEED_BASE_PATHS ?= "rpm"
 
 PACKAGE_FEED_ARCHS_overo = "noarch overo cortexa8hf_neon"
-PACKAGE_FEED_ARCHS_jetson-nano = "noarch jetson_nano armv8a_tegra210 aarch64"
+PACKAGE_FEED_ARCHS_jetson-nano-emmc = "noarch jetson_nano armv8a_tegra210 aarch64"
 PACKAGE_FEED_ARCHS_jetson-tx2 = "noarch jetson_tx2 armv8a_tegra186 aarch64"
 PACKAGE_FEED_ARCHS_rpi = "noarch cortexa7hf_neon_vfpv4 cortexa7t2hf_neon_vfpv4 raspberrypi_cm3"
-
-PACKAGE_CLASSES_rpi = "package_rpm package_deb"
-PACKAGE_FEED_BASE_PATHS_rpi = "rpm deb"
 
 # Use local PR server by default
 PRSERV_HOST ?= "localhost:0"
@@ -396,15 +380,10 @@ A = " \
     meta-tegra \
     meta-tegra/contrib \
     meta-gumstix/recipes-kernel/linux/linux-tegra_4.9.%.bbappend \
-    meta-gumstix/recipes-devtools/cuda \
-    meta-gumstix/recipes-devtools/cudnn \
-    meta-gumstix/recipes-devtools/gcc \
-    meta-tensorflow/recipes-devtools/openjdk/openjdk-8-native_212b04.bb \
     meta-raspberrypi/recipes-core/psplash/psplash_%.bbappend \
 "
 A_tegra = " \
     meta-java/recipes-core/openjdk/openjdk-7_99b00-2.6.5.bb \
-    meta-tensorflow/recipes-devtools/openjdk/openjdk-8-native_212b04.bb \
     meta-python2/recipes-core/images \
 "
 
