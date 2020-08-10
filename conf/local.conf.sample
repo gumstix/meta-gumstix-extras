@@ -104,6 +104,8 @@ MACHINE ?= "overo"
 #MACHINE ?= "dragonboard-410c"
 #MACHINE ?= "jetson-nano-emmc"
 #MACHINE ?= "jetson-tx2"
+#MACHINE ?= "jetson-tx2-4gb"
+#MACHINE ?= "jetson-xavier-nx-devkit-emmc"
 
 # Get rid of the mesa packaging errors for rasberrypi and dragonbard devices
 INSANE_SKIP_mesa_rpi = "installed-vs-shipped"
@@ -192,11 +194,6 @@ DISTRO ?= "poky"
 PACKAGE_CLASSES ?= "package_rpm"
 PACKAGE_FEED_URIS = "https://packages.gumstix.com/warrior"
 PACKAGE_FEED_BASE_PATHS ?= "rpm"
-
-PACKAGE_FEED_ARCHS_overo = "noarch overo cortexa8hf_neon"
-PACKAGE_FEED_ARCHS_jetson-nano-emmc = "noarch jetson_nano armv8a_tegra210 aarch64"
-PACKAGE_FEED_ARCHS_jetson-tx2 = "noarch jetson_tx2 armv8a_tegra186 aarch64"
-PACKAGE_FEED_ARCHS_rpi = "noarch cortexa7hf_neon_vfpv4 cortexa7t2hf_neon_vfpv4 raspberrypi_cm3"
 
 # Use local PR server by default
 PRSERV_HOST ?= "localhost:0"
