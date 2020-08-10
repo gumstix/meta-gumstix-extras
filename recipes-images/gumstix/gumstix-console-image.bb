@@ -119,8 +119,16 @@ IMAGE_INSTALL_append_tegra += " \
     gstreamer1.0-plugins-nvvideo4linux2 \
     gstreamer1.0-omx-tegra \
     gstreamer1.0-plugins-nveglgles \
+    gstreamer1.0-plugins-nvarguscamerasrc \
+    gstreamer1.0-plugins-nvv4l2camerasrc \
+    gstreamer1.0-plugins-nvvideosinks \
+    gstreamer1.0-plugins-nvjpeg \
+    nvgstapps \
     tegra-tools \
     nvgstcapture \
+    cuda-toolkit \
+    cudnn \
+    tensorrt \
     protobuf \
     hdf5 \
     python3 \
@@ -140,6 +148,7 @@ IMAGE_INSTALL_append_tegra += " \
     python3-matplotlib \
     python3-kiwisolver \
     python3-pillow \
+    opencv \
 "
 
 ROOTFS_CMD ?= ""
