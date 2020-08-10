@@ -104,6 +104,8 @@ MACHINE ?= "overo"
 #MACHINE ?= "dragonboard-410c"
 #MACHINE ?= "jetson-nano-emmc"
 #MACHINE ?= "jetson-tx2"
+#MACHINE ?= "jetson-tx2-4gb"
+#MACHINE ?= "jetson-xavier-nx-devkit-emmc"
 
 # Get rid of the mesa packaging errors for rasberrypi and dragonbard devices
 INSANE_SKIP_mesa_rpi = "installed-vs-shipped"
