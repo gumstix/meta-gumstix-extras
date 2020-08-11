@@ -160,7 +160,6 @@ inherit extrausers
 EXTRA_USERS_PARAMS = " \
     useradd -P gumstix -G sudo gumstix; \
     usermod -P gumstix root; \
-    usermod -d /root root; \
 "
 
 update_sudoers(){
