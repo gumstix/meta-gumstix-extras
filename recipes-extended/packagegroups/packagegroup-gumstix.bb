@@ -24,8 +24,6 @@ RDEPENDS_packagegroup-gumstix = " \
     i2c-tools \
     iperf3 \
     kernel-devsrc \
-    lowpan-tools \
-    mavlink-socket \
     nano \
     ofono \
     omap3-writeprom \
@@ -49,12 +47,8 @@ RDEPENDS_packagegroup-gumstix = " \
     python3 \
     python3-pip \
     python3-pyserial \
-    robovero-examples \
-    robovero-python \
     rtklibexplorer \
     screen \
-    spidev-test \
     sshd \
-    uart-loop-test \
     vlc \
 "
