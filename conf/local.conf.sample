@@ -104,6 +104,7 @@ MACHINE ?= "overo"
 #MACHINE ?= "dragonboard-410c"
 #MACHINE ?= "jetson-nano"
 #MACHINE ?= "jetson-tx2"
+#MACHINE ?= "verdin-imx8mm"
 
 # Get rid of the mesa packaging errors for rasberrypi and dragonbard devices
 INSANE_SKIP_mesa_rpi = "installed-vs-shipped"
@@ -428,6 +429,7 @@ A = " \
     meta-gumstix/recipes-devtools/gcc \
     meta-tensorflow/recipes-devtools/openjdk/openjdk-8-native_212b04.bb \
     meta-python2 \
+    meta-toradex-bsp-common/recipes-core/systemd/systemd_%.bbappend \
 "
 A_tegra = " \
     meta-java/recipes-core/openjdk/openjdk-7_99b00-2.6.5.bb \
@@ -436,3 +438,8 @@ A_tegra = " \
 "
 
 BBMASK .= "${A}"
+
+# Uncomment to accept EULA for FMRIB Software Library
+# Needed to compile Verdin images
+#ACCEPT_FSL_EULA = "1"
+DISTRO_FEATURES_append_mx8mm="x11"

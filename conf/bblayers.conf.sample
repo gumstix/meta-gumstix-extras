@@ -26,6 +26,10 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-browser \
   ##COREBASE##/meta-clang \
   ##COREBASE##/meta-python2 \
+  ##COREBASE##/meta-toradex-nxp \
+  ##COREBASE##/meta-freescale \
+  ##COREBASE##/meta-freescale-3rdparty \
+  ##COREBASE##/meta-toradex-bsp-common \
   "
 
 BBMASK = "meta-ti/recipes-kernel \
