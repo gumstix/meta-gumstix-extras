@@ -442,4 +442,6 @@ BBMASK .= "${A}"
 # Uncomment to accept EULA for FMRIB Software Library
 # Needed to compile Verdin images
 #ACCEPT_FSL_EULA = "1"
+
 TDX_MATRIX_BUILD_TIME ?= "${DATE}${TIME}"
+TDX_MATRIX_BUILD_TIME[vardepsexclude] += "DATE TIME"
