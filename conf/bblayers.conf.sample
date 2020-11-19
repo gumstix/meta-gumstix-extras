@@ -28,7 +28,12 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-arm/meta-arm \
   ##COREBASE##/meta-arm/meta-arm-toolchain \
   ##COREBASE##/meta-qt5-extra \
+  ##COREBASE##/meta-ros/meta-ros2-foxy \
+  ##COREBASE##/meta-ros/meta-ros2 \
+  ##COREBASE##/meta-ros/meta-ros-common \
   "
 
 BBMASK = "meta-ti/recipes-kernel \
 "
+ROS_DISTRO="foxy"
+OE_RELEASE_SERIES="dunfell"
