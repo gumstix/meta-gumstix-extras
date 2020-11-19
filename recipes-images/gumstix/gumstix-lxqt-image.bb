@@ -10,7 +10,7 @@ IMAGE_INSTALL += " \
     gnome-bluetooth \
     man \
     man-pages \
-    network-manager-applet \
+    lxqt-connman-applet \
     packagegroup-lxqt-base \
     psplash \
     lxdm-theme \
