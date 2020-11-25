@@ -192,7 +192,7 @@ DISTRO ?= "gumstix-poky"
 # E.g.: PACKAGE_CLASSES ?= "package_rpm package_deb package_ipk"
 # We default to rpm:
 PACKAGE_CLASSES ?= "package_rpm"
-PACKAGE_FEED_URIS = "https://packages.gumstix.com/warrior"
+PACKAGE_FEED_URIS = "https://packages.gumstix.com/dunfell"
 PACKAGE_FEED_BASE_PATHS ?= "rpm"
 
 # Use local PR server by default
