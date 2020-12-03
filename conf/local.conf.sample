@@ -106,6 +106,7 @@ MACHINE ?= "overo"
 #MACHINE ?= "jetson-tx2"
 #MACHINE ?= "jetson-tx2-4gb"
 #MACHINE ?= "jetson-xavier-nx-devkit-emmc"
+#MACHINE ?= "raspberrypi4-64"
 
 # Get rid of the mesa packaging errors for rasberrypi and dragonbard devices
 INSANE_SKIP_mesa_rpi = "installed-vs-shipped"
@@ -118,7 +119,7 @@ ACCEPT_FSL_EULA_mx7 = "1"
 ACCEPT_EULA_dragonboard-410c = "1"
 
 # Add dtoverlays for Gumstix wifi and sensor modules on raspberry pi machines
-KERNEL_DEVICETREE_append_rpi = "overlays/sdio-wlink8.dtbo overlays/i2c0-bcm2708.dtbo overlays/tlv320aic3x-simple.dtbo overlays/i2s-gpio28-31.dtbo "
+KERNEL_DEVICETREE_append_rpi = "overlays/sdio-wlink8.dtbo overlays/i2c0.dtbo overlays/tlv320aic3x-simple.dtbo overlays/i2s-gpio28-31.dtbo "
 KERNEL_DEVICETREE_append_raspberrypi-cm3 = "overlays/ov5640-gumstix.dtbo "
 # Add updated overlay for raspberry pi display
 VC4DTBO = "vc4-fkms-v3d"
@@ -172,7 +173,8 @@ VC4DTBO = "vc4-fkms-v3d"
 # Ultimately when creating custom policy, people will likely end up subclassing 
 # these defaults.
 #
-DISTRO ?= "gumstix-poky"
+DISTRO ?= "poky"
+DISTRO_raspberrypi4-64 = "gumstix-poky"
 # As an example of a subclass there is a "bleeding" edge policy configuration
 # where many versions are set to the absolute latest code from the upstream 
 # source control systems. This is just mentioned here as an example, its not
@@ -378,10 +380,15 @@ A = " \
     meta-tegra/contrib \
     meta-gumstix/recipes-kernel/linux/linux-tegra_4.9.%.bbappend \
     meta-raspberrypi/recipes-core/psplash/psplash_%.bbappend \
+    meta-ros \
 "
 A_tegra = " \
     meta-java/recipes-core/openjdk/openjdk-7_99b00-2.6.5.bb \
     meta-python2/recipes-core/images \
+"
+
+A_remove_raspberrypi4-64 = " \
+    meta-ros \
 "
 
 BBMASK .= "${A}"
@@ -487,8 +494,6 @@ ROS_LOCAL_CONF_SETTINGS_VERSION = "2.1"
 # Can remove if DISTRO is "webos". If not using mcf, replace ${MCF_OPENEMBEDDED_VERSION} with the version of OpenEmbedded
 # being used. See the comments in files/ros*.mcf for its format.
 ROS_DISTRO_VERSION_APPEND = "+3.1-453-dunfell"
-
-#DISTRO = "ros2"
 
 # If not using mcf, replace ${MCF_OE_RELEASE_SERIES} with the OpenEmbedded release series being used.
 ROS_OE_RELEASE_SERIES_SUFFIX = "-dunfell"
