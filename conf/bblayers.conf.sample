@@ -22,7 +22,7 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-tegra \
   ##COREBASE##/meta-tegra/contrib \
   ##COREBASE##/meta-java \
-  ##COREBASE##/meta-browser \
+  ##COREBASE##/meta-browser/meta-chromium \
   ##COREBASE##/meta-clang \
   ##COREBASE##/meta-python2 \
   ##COREBASE##/meta-arm/meta-arm \
